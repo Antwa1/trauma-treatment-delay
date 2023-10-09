@@ -107,20 +107,21 @@ play a pivotal role in the treatment of the trauma patient, as they
 provide the initial care in the critical stage of trauma. In Sweden,
 trauma teams are lead by a team leader who is a surgeon, and include
 practitioners from the specialities of intensive care, orthopedics,
-nursing and support staff. For the trauma team to be mobilized, trauma
-code has to be activated, often by an emergency nurse. The nurse uses
-information gathered by the first responders to see if the patient fits
-any of the criteria for trauma code. Most healthcare facilities have
-established criteria or guidelines that trigger trauma code activation.
-These criteria typically include mechanisms of injury, physiological
-criteria, anatomical criteria and other specific indicators of severe
-trauma. There are different levels of trauma code with different
-criteria correlating with severity of injury, with level 1 mobilizing
-the most personnel to the trauma room. Once in the trauma room, the team
-works systematically to manage the patients injuries. They handle the
-most urgent problems first, such as airways and breathing, with the aim
-to rapidly assess and stabilise the patient, prioritise their injuries
-and arrange for site of definitive care. [@Hedberg_2020]
+nursing and support staff[@västra_G]. For the trauma team to be
+mobilized, trauma code has to be activated, often by an emergency nurse.
+The nurse uses information gathered by the first responders to see if
+the patient fits any of the criteria for trauma code. Most healthcare
+facilities have established criteria or guidelines that trigger trauma
+code activation. These criteria typically include mechanisms of injury,
+physiological criteria, anatomical criteria and other specific
+indicators of severe trauma. There are different levels of trauma code
+with different criteria correlating with severity of injury, with level
+1 mobilizing the most personnel to the trauma room. Once in the trauma
+room, the team works systematically to manage the patients injuries.
+They handle the most urgent problems first, such as airways and
+breathing, with the aim to rapidly assess and stabilise the patient,
+prioritise their injuries and arrange for site of definitive care.
+[@Hedberg_2020]
 
 ## Mortality and morbidity (MoM) conferences
 
