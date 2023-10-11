@@ -37,3 +37,32 @@ tog bort csl: bmcemerg.csl
 
 etiska tillstånd för detta projekt, skilt från swetrau. Etiska tillstånd
 diarienummer
+
+The categorical factors
+
+-   sex- Gender
+
+-   survival after 30 days- res_survival
+
+-   highest hospital care level- host_care_level
+
+-   GCS- ed_gcs_sum
+
+-   respiratory rate- ed_rr_value
+
+-   systolic blood pressure- ed_sbp_value
+
+-   working hours
+
+-   weekend
+
+-   time from arrival at the hospital until first computed tomography
+    (CT)- dt_ed_first_ct
+
+-   if the patient was intubated- ed_intubated eller pre_intubated
+
+We also included the continuous factors
+
+-   age- pt_age_yrs
+
+-   ISS- ISS
