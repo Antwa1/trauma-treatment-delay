@@ -6,6 +6,9 @@ noacsr::source_all_functions()
 ## Prepare data
 prepared.data <- prepare_data(data)
 
+##clean data
+New.subset <- New_subset(data)
+
 ## Create subset
 subset.data <- Create_subset(data)
 
