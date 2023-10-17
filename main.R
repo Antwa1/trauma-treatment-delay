@@ -10,10 +10,13 @@ prepared.data <- prepare_data(data)
 New.subset <- New_subset(data)
 
 ## Create subset
-subset.data <- Create_subset(data)
+subset.data <- Create_factors(data)
+
+## view data
+view.data <- view_data(data)
 
 
-print(subset.data)
+print()
 
 ## Welcome!
 
