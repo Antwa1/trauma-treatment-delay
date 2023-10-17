@@ -19,7 +19,7 @@ Create_factors <- function(dataset){
   
   New.subset <- subset(New.subset, !(is.na(ed_gcs_sum) | ed_gcs_sum == 999 | ed_gcs_sum == 99))
   
-  New.subset$ed_gcs_sum <- as.factor(New.subset$ed_gcs_sum)
+  New.subset$Total_GCS <- as.factor(New.subset$ed_gcs_sum)
   
   ## Making gender into a factor
   New.subset <- subset(New.subset, !is.na(Gender))
@@ -28,21 +28,58 @@ Create_factors <- function(dataset){
   New.subset$Gender <- as.factor(New.subset$Gender)
   
   
-  
-  New.subset$res_survival <- as.factor(New.subset$res_survival)
-  
-  New.subset$host_care_level <- as.factor(New.subset$host_care_level)
-  
-  New.subset$ed_rr_value <- as.factor(New.subset$ed_rr_value)
-  
-  New.subset$ed_sbp_value <- as.factor(New.subset$ed_sbp_value)
-  
-  New.subset$dt_ed_first_ct <- as.factor(New.subset$dt_ed_first_ct)
-  
-  New.subset$pre_intubated <- as.factor(New.subset$pre_intubated)
+  ## Survival after 30 days
+  New.subset <- subset(New.subset, !(is.na(res_survival) | res_survival == 999 | res_survival == 99))
+
+  New.subset$res_survival <- ifelse(New.subset$res_survival == 1, "Dead", "Alive")
+   
+  New.subset$survival_after_30_days <- as.factor(New.subset$res_survival)
   
 
+  ## Highest hospital care level
+  New.subset$host_care_level <- ifelse(New.subset$host_care_level == 1, "ER",
+                               ifelse(New.subset$host_care_level == 2, "General care department",
+                                      ifelse(New.subset$host_care_level == 3, "OR",
+                                             ifelse(New.subset$host_care_level == 4, "Specialized care department",
+                                                    ifelse(New.subset$host_care_level == 5, "ICU", NA)))))
+  
+  New.subset <- subset(New.subset, !(is.na(host_care_level) | host_care_level == 999 | host_care_level == 99))
+  
+  New.subset$Highest_care_level <- as.factor(New.subset$host_care_level)
+  
+  ## Respiratory rate into rts and replacing missing values
+  New.subset$ed_rr_value <- ifelse(New.subset$ed_rr_value >= 0 & New.subset$ed_rr_value <= 0, 0,
+                                  ifelse(New.subset$ed_rr_value >= 1 & New.subset$ed_rr_value <= 5, 1,
+                                         ifelse(New.subset$ed_rr_value >= 6 & New.subset$ed_rr_value <= 9, 2,
+                                                ifelse(New.subset$ed_rr_value >= 30 & New.subset$ed_rr_value <= 98, 3,
+                                                       ifelse(New.subset$ed_rr_value >= 10 & New.subset$ed_rr_value <= 29, 4,  New.subset$ed_rr_value)))))
+  
+  New.subset$ed_rr_value <- ifelse(is.na(New.subset$ed_rr_value) | New.subset$ed_rr_value == 999 | New.subset$ed_rr_value == 99, New.subset$ed_rr_rtscat, New.subset$ed_rr_value)  
+  
+  New.subset <- subset(New.subset, !(is.na(ed_rr_value) | ed_rr_value == 999 | ed_rr_value == 99))
+  
+  New.subset$Respiratory_rate <- as.factor(New.subset$ed_rr_value)
+  
+  ## SBP into rts and replacing missing values
+  New.subset$ed_sbp_value <- ifelse(New.subset$ed_sbp_value >= 0 & New.subset$ed_sbp_value <= 0, 0,
+                                   ifelse(New.subset$ed_sbp_value >= 1 & New.subset$ed_sbp_value <= 49, 1,
+                                          ifelse(New.subset$ed_sbp_value >= 50 & New.subset$ed_sbp_value <= 75, 2,
+                                                 ifelse(New.subset$ed_sbp_value >= 76 & New.subset$ed_sbp_value <= 89, 3,
+                                                        ifelse(New.subset$ed_sbp_value >= 89 & New.subset$ed_sbp_value <= 300, 4,  New.subset$ed_sbp_value)))))
+  
+  New.subset$ed_sbp_value <- ifelse(is.na(New.subset$ed_sbp_value) | New.subset$ed_sbp_value == 999, New.subset$ed_sbp_rtscat, New.subset$ed_sbp_value) 
+  
+  New.subset <- subset(New.subset, !(is.na(ed_sbp_value) | ed_sbp_value == 999))
+  
+  New.subset$Systolic_blood_pressure <- as.factor(New.subset$ed_sbp_value)
+  
+  ##
+   New.subset$pre_intubated <- as.factor(New.subset$pre_intubated)
+  
 
+ 
+    New.subset$dt_ed_first_ct <- as.factor(New.subset$dt_ed_first_ct)
+  
   return(factors.data)
 }
 
