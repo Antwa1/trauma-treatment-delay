@@ -7,17 +7,19 @@ Create_factors <- function(dataset){
                      ifelse(New.subset$ed_gcs_sum >= 4 & New.subset$ed_gcs_sum <= 5, 1,
                             ifelse(New.subset$ed_gcs_sum >= 6 & New.subset$ed_gcs_sum <= 8, 2,
                                    ifelse(New.subset$ed_gcs_sum >= 9 & New.subset$ed_gcs_sum <= 12, 3,
-                                          ifelse(New.subset$ed_gcs_sum >= 13 & New.subset$ed_gcs_sum <= 15, 4,  New.subset$ed_gcs_sum)))))
+                                          ifelse(New.subset$ed_gcs_sum >= 13 & New.subset$ed_gcs_sum <= 15, 4,
+                                                 ifelse(New.subset$ed_gcs_sum == 99, "intubated", New.subset$ed_gcs_sum))))))
   
   New.subset$pre_gcs_sum <- ifelse(New.subset$pre_gcs_sum >= 3 & New.subset$pre_gcs_sum <= 3, 0,
                                   ifelse(New.subset$pre_gcs_sum >= 4 & New.subset$pre_gcs_sum <= 5, 1,
                                          ifelse(New.subset$pre_gcs_sum >= 6 & New.subset$pre_gcs_sum <= 8, 2,
                                                 ifelse(New.subset$pre_gcs_sum >= 9 & New.subset$pre_gcs_sum <= 12, 3,
-                                                       ifelse(New.subset$pre_gcs_sum >= 13 & New.subset$pre_gcs_sum <= 15, 4,  New.subset$pre_gcs_sum)))))
+                                                       ifelse(New.subset$pre_gcs_sum >= 13 & New.subset$pre_gcs_sum <= 15, 4,
+                                                              ifelse(New.subset$ed_gcs_sum == 99, "intubated", New.subset$pre_gcs_sum))))))
                                   
-  New.subset$ed_gcs_sum <- ifelse(is.na(New.subset$ed_gcs_sum) | New.subset$ed_gcs_sum == 999 | New.subset$ed_gcs_sum == 99, New.subset$pre_gcs_sum, New.subset$ed_gcs_sum)  
+  New.subset$ed_gcs_sum <- ifelse(is.na(New.subset$ed_gcs_sum) | New.subset$ed_gcs_sum == 999, New.subset$pre_gcs_sum, New.subset$ed_gcs_sum)  
   
-  New.subset <- subset(New.subset, !(is.na(ed_gcs_sum) | ed_gcs_sum == 999 | ed_gcs_sum == 99))
+  New.subset <- subset(New.subset, !(is.na(ed_gcs_sum) | ed_gcs_sum == 999))
   
   New.subset$Total_GCS <- as.factor(New.subset$ed_gcs_sum)
   
@@ -29,7 +31,7 @@ Create_factors <- function(dataset){
   
   
   ## Survival after 30 days
-  New.subset <- subset(New.subset, !(is.na(res_survival) | res_survival == 999 | res_survival == 99))
+  New.subset <- subset(New.subset, !(is.na(res_survival) | res_survival == 999))
 
   New.subset$res_survival <- ifelse(New.subset$res_survival == 1, "Dead", "Alive")
    
@@ -43,7 +45,7 @@ Create_factors <- function(dataset){
                                              ifelse(New.subset$host_care_level == 4, "Specialized care department",
                                                     ifelse(New.subset$host_care_level == 5, "ICU", NA)))))
   
-  New.subset <- subset(New.subset, !(is.na(host_care_level) | host_care_level == 999 | host_care_level == 99))
+  New.subset <- subset(New.subset, !(is.na(host_care_level) | host_care_level == 999))
   
   New.subset$Highest_care_level <- as.factor(New.subset$host_care_level)
   
@@ -65,7 +67,7 @@ Create_factors <- function(dataset){
                                    ifelse(New.subset$ed_sbp_value >= 1 & New.subset$ed_sbp_value <= 49, 1,
                                           ifelse(New.subset$ed_sbp_value >= 50 & New.subset$ed_sbp_value <= 75, 2,
                                                  ifelse(New.subset$ed_sbp_value >= 76 & New.subset$ed_sbp_value <= 89, 3,
-                                                        ifelse(New.subset$ed_sbp_value >= 89 & New.subset$ed_sbp_value <= 300, 4,  New.subset$ed_sbp_value)))))
+                                                        ifelse(New.subset$ed_sbp_value >= 89 & New.subset$ed_sbp_value <= 500, 4,  New.subset$ed_sbp_value)))))
   
   New.subset$ed_sbp_value <- ifelse(is.na(New.subset$ed_sbp_value) | New.subset$ed_sbp_value == 999, New.subset$ed_sbp_rtscat, New.subset$ed_sbp_value) 
   
@@ -73,12 +75,38 @@ Create_factors <- function(dataset){
   
   New.subset$Systolic_blood_pressure <- as.factor(New.subset$ed_sbp_value)
   
-  ##
-   New.subset$pre_intubated <- as.factor(New.subset$pre_intubated)
+  ##Intubation sorting and missing values
+  New.subset <- subset(New.subset, !(is.na(pre_intubated) | pre_intubated == 999))
   
-
+  New.subset$pre_intubated <- ifelse(New.subset$pre_intubated == 1, "Yes", "No")
+  
+  New.subset$Intubated_prehospitaly <- as.factor(New.subset$pre_intubated)
+  
+  ##Fixing years
+  New.subset <- subset(New.subset, !(is.na(pt_age_yrs) | pt_age_yrs == 999))
+  
+  New.subset$Age <- as.numeric(New.subset$pt_age_yrs)
+  
+  ##Fixing ISS
+  New.subset <- subset(New.subset, !(is.na(ISS) | ISS == 999))
+  
+  New.subset$ISS <- as.numeric(New.subset$ISS)
  
-    New.subset$dt_ed_first_ct <- as.factor(New.subset$dt_ed_first_ct)
+  ##Replacing NA in OFI_dealy with no delay
+  New.subset$OFI_delay[is.na(New.subset$OFI_delay)] <- "No delay to treatment"
+ 
+  ##removing redundant columns
+  New.subset$res_survival <- NULL
+  New.subset$host_care_level <- NULL
+  New.subset$ed_gcs_sum <- NULL
+  New.subset$ed_rr_value <- NULL
+  New.subset$ed_sbp_value <- NULL
+  New.subset$dt_ed_first_ct <- NULL
+  New.subset$pre_intubated <- NULL
+  New.subset$pt_age_yrs <- NULL
+  New.subset$pre_gcs_sum <- NULL
+  New.subset$ed_rr_rtscat <- NULL
+  
   
   return(factors.data)
 }
