@@ -69,6 +69,8 @@ Create_factors <- function(dataset){
                                                  ifelse(New.subset$ed_sbp_value >= 76 & New.subset$ed_sbp_value <= 89, 3,
                                                         ifelse(New.subset$ed_sbp_value >= 89 & New.subset$ed_sbp_value <= 500, 4,  New.subset$ed_sbp_value)))))
   
+  
+  
   New.subset$ed_sbp_value <- ifelse(is.na(New.subset$ed_sbp_value) | New.subset$ed_sbp_value == 999, New.subset$ed_sbp_rtscat, New.subset$ed_sbp_value) 
   
   New.subset <- subset(New.subset, !(is.na(ed_sbp_value) | ed_sbp_value == 999))
@@ -82,6 +84,18 @@ Create_factors <- function(dataset){
   
   New.subset$Intubated_prehospitaly <- as.factor(New.subset$pre_intubated)
   
+  ##CT scan categorizing
+  New.subset$dt_ed_first_ct <- ifelse(New.subset$dt_ed_first_ct >= 1 & New.subset$dt_ed_first_ct <= 30, "1-30 mins",
+                                  ifelse(New.subset$dt_ed_first_ct >= 31 & New.subset$dt_ed_first_ct <= 60, "31-60 mins",
+                                         ifelse(New.subset$dt_ed_first_ct >= 61 & New.subset$dt_ed_first_ct <= 120, "61-120 mins",
+                                                ifelse(New.subset$dt_ed_first_ct >= 121 & New.subset$dt_ed_first_ct <= 9999, "120+ mins", New.subset$dt_ed_first_ct))))
+  
+  New.subset <- subset(New.subset, !is.na(dt_ed_first_ct))
+  
+  
+  New.subset$Time_until_first_CT <- as.factor(New.subset$dt_ed_first_ct)
+  
+  
   ##Fixing years
   New.subset <- subset(New.subset, !(is.na(pt_age_yrs) | pt_age_yrs == 999))
   
@@ -91,7 +105,20 @@ Create_factors <- function(dataset){
   New.subset <- subset(New.subset, !(is.na(ISS) | ISS == 999))
   
   New.subset$ISS <- as.numeric(New.subset$ISS)
+  
+  ##Dates
+  library(stringr)
+  New.subset[c('Date', 'Time')] <- str_split_fixed(New.subset$DateTime_ArrivalAtHospital, ' ', 2)
+  New.subset$work_hours <- with(New.subset, ifelse(New.subset$Time >= "08:00" & New.subset$Time <= "16:59", "Yes", "No")) 
+
+  ##Weekdays
+  New.subset$Date <- as.Date(New.subset$Date)
  
+  New.subset$weekday <- weekdays(New.subset$Date)
+  
+  New.subset$weekday <- gsub("Monday|Tuesday|Wednesday|Thursday|Friday", "weekday", New.subset$weekday)
+  New.subset$weekday <- gsub("Saturday|Sunday", "weekend", New.subset$weekday)
+  
   ##Replacing NA in OFI_dealy with no delay
   New.subset$OFI_delay[is.na(New.subset$OFI_delay)] <- "No delay to treatment"
  
@@ -106,7 +133,9 @@ Create_factors <- function(dataset){
   New.subset$pt_age_yrs <- NULL
   New.subset$pre_gcs_sum <- NULL
   New.subset$ed_rr_rtscat <- NULL
-  
+  New.subset$DateTime_ArrivalAtHospital <- NULL
+  New.subset$Date <- NULL
+  New.subset$Time <- NULL
   
   return(factors.data)
 }

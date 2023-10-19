@@ -66,5 +66,3 @@ We also included the continuous factors
 -   age- pt_age_yrs
 
 -   ISS- ISS
-
-New.subset\$dt_ed_first_ct \<- as.factor(New.subset\$dt_ed_first_ct)
