@@ -137,6 +137,6 @@ Create_factors <- function(dataset){
   New.subset$Date <- NULL
   New.subset$Time <- NULL
   
-  return(factors.data)
+  return(New.subset)
 }
 
