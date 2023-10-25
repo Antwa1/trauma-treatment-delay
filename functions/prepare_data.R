@@ -1,6 +1,6 @@
 library(rofi)
 
-prepare_data <- function(dataset){
+prepare.data <- function(){
   
   ## Import data
   data <- rofi::import_data(test = TRUE)
