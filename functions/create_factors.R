@@ -134,6 +134,7 @@ create.factors <- function(dataset){
         "pt_age_yrs",
         "pre_gcs_sum",
         "ed_rr_rtscat",
+        "ed_sbp_rtscat",
         "DateTime_ArrivalAtHospital",
         "Date",
         "Time"
