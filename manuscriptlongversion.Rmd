@@ -243,3 +243,9 @@ included in the database are screened for OFIs.
 
 Multivariable and potentially univariable logistical regression. A 5%
 significance level and 95% confidence levels will be used.
+
+Rstudio was used to perform the logistical regression. The dependent
+variable is OFI_delay, which is the presence of the ofi delayed
+treatment.
+
+## Ethical considerations
