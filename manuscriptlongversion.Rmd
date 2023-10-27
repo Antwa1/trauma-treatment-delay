@@ -217,7 +217,13 @@ they were missing information in one of the examined patient factors.
 The outcome is delayed treatment, which is defined as more than 30
 minutes passing from arrival before receiving treatment, as identified
 by the multidisciplinary review board and recorded in the trauma care
-quality database.
+quality database. The independent variables are gender, patient survival
+after 30 days from admission, highest hospital care level, GCS on
+arrival, respiratory rate on arrival, systolic blood pressure on
+arrival, time from arrival at the hospital until first computed
+tomography, if the patient was intubated on arrival and whether they
+arrived during weekend or working hours. Those are used as factor
+variables. ISS and age are used as continuous variables.
 
 ## Data sources/measurement
 
@@ -249,3 +255,15 @@ variable is OFI_delay, which is the presence of the ofi delayed
 treatment.
 
 ## Ethical considerations
+
+Ethical permit is required and exists. The ethical review number is
+2021-02541 and 2021-03531. An ethical problem that might be brought up
+is the anonymity of the patients. In the registry, patients social
+security number is present and could theoretically be used to identify
+the patient in question. This will not be a problem though, as in the
+analysis, the social security number is removed from the data before the
+logistical regression is ran. Furthermore, the results will be presented
+with patients grouped together, not individually. This will make it
+impossible for anyone to identify patients. During the analysis, a VPN
+was used to access the database to ensure that no data was leaked or
+used for other purposes.
