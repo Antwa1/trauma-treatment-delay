@@ -1,4 +1,7 @@
 library(gtsummary)
+library(magrittr)
+library(dplyr)
+library(car)
 
 model.data <- function(dataset){
   
@@ -12,7 +15,12 @@ model.data <- function(dataset){
   
   
   ## view model
-  tbl_regression(model, exponentiate = TRUE)
+  model %>%
+    tbl_regression(exponentiate = TRUE) %>%
+    bold_p() %>%
+    bold_labels()
+    
+
 
   factors.data %>%
     tbl_summary(  # Create summary statistics for different groups
@@ -25,7 +33,6 @@ model.data <- function(dataset){
       statistic = list(all_continuous() ~ "{mean} ± {sd}"),
       digits = list(all_continuous() ~ c(2, 2))
     ) %>%
-    add_p()  # Add p-values
   
   
   return(model)
