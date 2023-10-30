@@ -33,6 +33,10 @@ model.data <- function(dataset){
       statistic = list(all_continuous() ~ "{mean} ± {sd}"),
       digits = list(all_continuous() ~ c(2, 2))
     ) %>%
+    
+library(ggplot2)
+  ggplot(factors.data, aes(x = Age)) +
+    geom_density(alpha = .2, fill = "#FF6666")
   
   
   return(model)
