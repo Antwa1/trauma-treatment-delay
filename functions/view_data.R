@@ -19,7 +19,7 @@ model.data <- function(dataset){
     tbl_regression(exponentiate = TRUE) %>%
     bold_p() %>%
     bold_labels()
-    
+    add_p(digits = c(p = 3))
 
 
   factors.data %>%
