@@ -192,7 +192,7 @@ conference for further review.
 
 We conducted a registry based cohort study using data from the trauma
 registry and trauma care quality database at the Karolinska University
-Hospital in Solna. The trauma registry includes about 14000 patients
+Hospital in Solna. The trauma registry includes about 11864 patients
 treated between 2012 and 2022. The trauma care quality database is a
 subset of the trauma registry and includes about 8000 patients selected
 for review between 2013 and 2022. This project will link the two
@@ -267,3 +267,25 @@ with patients grouped together, not individually. This will make it
 impossible for anyone to identify patients. During the analysis, a VPN
 was used to access the database to ensure that no data was leaked or
 used for other purposes.
+
+## Results
+
+Out of the 11864 patients treated at KS between 2012 and 2022, 1835 were
+included in the study. The patient characteristics were as follows in
+Table 1.
+
+```{r}
+  factors.data %>%
+    tbl_summary(  # Create summary statistics for different groups
+      by = OFI_delay,
+      label = list(
+        Age = "Age (years)",
+        Gender = "Gender",
+        Total_GCS = "GCS"
+      ),
+      statistic = list(all_continuous() ~ "{mean} ± {sd}"),
+      digits = list(all_continuous() ~ c(2, 2))
+    ) %>%
+    add_p()  # Add p-values
+  
+```
