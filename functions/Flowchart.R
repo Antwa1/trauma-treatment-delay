@@ -3,51 +3,56 @@ library(glue)
 library(htmlTable)
 library(grid)
 library(magrittr)
+library(gtsummary)
 
-org_cohort <- boxGrob(glue("Treated at KS between 2012 and 2022",
+treated <- boxGrob(glue("Treated at KS between 2012 and 2022",
                            "n = {pop}",
-                           pop = txtInt(11,864),
+                           pop = txtInt(11864),
                            .sep = "\n"))
-eligible <- boxGrob(glue("Eligible",
+screened <- boxGrob(glue("Screened for ofi",
                          "n = {pop}",
-                         pop = txtInt(10032),
+                         pop = txtInt(6582),
                          .sep = "\n"))
-included <- boxGrob(glue("Randomized",
+included <- boxGrob(glue("Included in study",
                          "n = {incl}",
-                         incl = txtInt(122),
+                         incl = txtInt(1835),
                          .sep = "\n"))
-grp_a <- boxGrob(glue("Treatment A",
+delay <- boxGrob(glue("Delay in treatment",
                       "n = {recr}",
-                      recr = txtInt(43),
+                      recr = txtInt(28),
                       .sep = "\n"))
 
-grp_b <- boxGrob(glue("Treatment B",
+no_delay <- boxGrob(glue("No delay in treatment",
                       "n = {recr}",
-                      recr = txtInt(122 - 43 - 30),
+                      recr = txtInt(1807),
                       .sep = "\n"))
 
-excluded <- boxGrob(glue("Excluded (n = {tot}):",
-                         " - not interested: {uninterested}",
-                         " - contra-indicated: {contra}",
-                         tot = 30,
-                         uninterested = 12,
-                         contra = 30 - 12,
-                         .sep = "\n"),
-                    just = "left")
+not_screened <- boxGrob(glue("Not screened for ofi",
+                             "n = {recr}",
+                             recr = txtInt(11864-6582),
+                             .sep = "\n"))
 
+missing_data <- boxGrob(glue("Missing data",
+                             "n = {recr}",
+                             recr = txtInt(6582-1807),
+                             .sep = "\n"))
 grid.newpage()
-vert <- spreadVertical(org_cohort,
-                       eligible = eligible,
+vert <- spreadVertical(treated = treated,
+                       screened = screened,
                        included = included,
-                       grps = grp_a)
+                       grps = delay)
 grps <- alignVertical(reference = vert$grps,
-                      grp_a, grp_b) %>%
+                      delay, no_delay) %>%
   spreadHorizontal()
 vert$grps <- NULL
 
-excluded <- moveBox(excluded,
-                    x = .8,
-                    y = coords(vert$included)$top + distance(vert$eligible, vert$included, half = TRUE, center = FALSE))
+not_screened <- moveBox(not_screened,
+                    x = .85,
+                    y = .75,)
+
+missing_data <- moveBox(missing_data,
+                    x = .85,
+                    y = .5,)
 
 for (i in 1:(length(vert) - 1)) {
   connectGrob(vert[[i]], vert[[i + 1]], type = "vert") %>%
@@ -55,11 +60,12 @@ for (i in 1:(length(vert) - 1)) {
 }
 connectGrob(vert$included, grps[[1]], type = "N")
 connectGrob(vert$included, grps[[2]], type = "N")
-
-connectGrob(vert$eligible, excluded, type = "L")
+connectGrob(vert$treated, not_screened, type = "L")
+connectGrob(vert$screened, missing_data, type = "L")
 
 # Print boxes
 vert
 grps
-excluded
+not_screened
+missing_data
 
