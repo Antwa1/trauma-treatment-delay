@@ -35,6 +35,8 @@ tog bort csl: bmcemerg.csl
 
 <https://openarchive.ki.se/xmlui/bitstream/handle/10616/44832/Thesis_Martin_Gerdin.pdf?sequence=3&isAllowed=y>
 
+as.gt till word
+
 etiska tillstånd för detta projekt, skilt från swetrau. Etiska tillstånd
 diarienummer
 
