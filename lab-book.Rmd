@@ -37,6 +37,9 @@ tog bort csl: bmcemerg.csl
 
 as.gt till word
 
+kommentera att best clinical practice är dt inom 30 min. Många får inte
+det, bara liten andel får det som största problem
+
 etiska tillstånd för detta projekt, skilt från swetrau. Etiska tillstånd
 diarienummer
 

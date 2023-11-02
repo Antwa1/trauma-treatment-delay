@@ -374,3 +374,21 @@ missing_data
 
 
 ```
+
+In the following table, the results from the regression analysis is
+displayed.
+
+The odds ratio is calculated, as well as a 95% confidence interval. The
+p value is also shown.
+
+```{r}
+library(gtsummary)
+  
+  
+  ## view model
+  model %>%
+    tbl_regression(exponentiate = TRUE) %>%
+    bold_p() %>%
+    bold_labels()
+    add_p(digits = c(p = 3))
+```

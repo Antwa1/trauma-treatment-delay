@@ -1,7 +1,6 @@
 library(gtsummary)
 library(magrittr)
 library(dplyr)
-library(car)
 
 model.data <- function(dataset){
   
