@@ -7,11 +7,17 @@ model.data <- function(dataset){
   ## regression model
   model <-
     glm(
-      OFI_delay ~ Total_GCS + Gender + survival_after_30_days + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Time_until_first_CT + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
+      OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Time_until_first_CT + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
       data = factors.data,
       family = binomial
     )
-  
+
+  model1 <-
+    glm(
+      OFI_delay ~ Total_GCS,
+      data = factors.data,
+      family = binomial
+    )
   
   ## view model
   model %>%
@@ -33,10 +39,7 @@ model.data <- function(dataset){
       digits = list(all_continuous() ~ c(2, 2))
     ) %>%
     
-library(ggplot2)
-  ggplot(factors.data, aes(x = Age)) +
-    geom_density(alpha = .2, fill = "#FF6666")
-  
+
   
   return(model)
 }

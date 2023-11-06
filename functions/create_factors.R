@@ -4,19 +4,19 @@ library(stringr)
 create.factors <- function(dataset){
  
   ## Making gcs into rts and replacing missing values
+
   dataset$ed_gcs_sum <- ifelse(dataset$ed_gcs_sum >= 3 & dataset$ed_gcs_sum <= 3, 0,
-                     ifelse(dataset$ed_gcs_sum >= 4 & dataset$ed_gcs_sum <= 5, 1,
-                            ifelse(dataset$ed_gcs_sum >= 6 & dataset$ed_gcs_sum <= 8, 2,
-                                   ifelse(dataset$ed_gcs_sum >= 9 & dataset$ed_gcs_sum <= 12, 3,
-                                          ifelse(dataset$ed_gcs_sum >= 13 & dataset$ed_gcs_sum <= 15, 4,
-                                                 ifelse(dataset$ed_gcs_sum == 99, "intubated", dataset$ed_gcs_sum))))))
+                               ifelse(dataset$ed_gcs_sum >= 4 & dataset$ed_gcs_sum <= 5, 1,
+                                      ifelse(dataset$ed_gcs_sum >= 6 & dataset$ed_gcs_sum <= 8, 2,
+                                             ifelse(dataset$ed_gcs_sum >= 9 & dataset$ed_gcs_sum <= 12, 3,
+                                                    ifelse(dataset$ed_gcs_sum >= 13 & dataset$ed_gcs_sum <= 15, 4, dataset$ed_gcs_sum)))))
   
   dataset$pre_gcs_sum <- ifelse(dataset$pre_gcs_sum >= 3 & dataset$pre_gcs_sum <= 3, 0,
-                                  ifelse(dataset$pre_gcs_sum >= 4 & dataset$pre_gcs_sum <= 5, 1,
-                                         ifelse(dataset$pre_gcs_sum >= 6 & dataset$pre_gcs_sum <= 8, 2,
-                                                ifelse(dataset$pre_gcs_sum >= 9 & dataset$pre_gcs_sum <= 12, 3,
-                                                       ifelse(dataset$pre_gcs_sum >= 13 & dataset$pre_gcs_sum <= 15, 4,
-                                                              ifelse(dataset$ed_gcs_sum == 99, "intubated", dataset$pre_gcs_sum))))))
+                                ifelse(dataset$pre_gcs_sum >= 4 & dataset$pre_gcs_sum <= 5, 1,
+                                       ifelse(dataset$pre_gcs_sum >= 6 & dataset$pre_gcs_sum <= 8, 2,
+                                              ifelse(dataset$pre_gcs_sum >= 9 & dataset$pre_gcs_sum <= 12, 3,
+                                                     ifelse(dataset$pre_gcs_sum >= 13 & dataset$pre_gcs_sum <= 15, 4, dataset$ed_gcs_sum)))))
+  
                                   
   dataset$ed_gcs_sum <- ifelse(is.na(dataset$ed_gcs_sum) | dataset$ed_gcs_sum == 999, dataset$pre_gcs_sum, dataset$ed_gcs_sum)  
   
@@ -119,6 +119,10 @@ create.factors <- function(dataset){
   
   ##Replacing NA in OFI_dealy with no delay
   dataset$OFI_delay[is.na(dataset$OFI_delay)] <- "No delay to treatment"
+  
+  dataset$OFI_delay <- as.factor(dataset$OFI_delay)
+  
+  dataset$ofi <- as.factor(dataset$ofi)
  
   ##removing redundant columns
   dataset <-
@@ -140,6 +144,7 @@ create.factors <- function(dataset){
         "Time"
       )
     )]
+
   
   return(dataset)
 }
