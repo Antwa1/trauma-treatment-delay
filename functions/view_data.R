@@ -14,13 +14,13 @@ model.data <- function(dataset){
 
   model1 <-
     glm(
-      OFI_delay ~ Total_GCS,
+      OFI_delay ~ Gender,
       data = factors.data,
       family = binomial
     )
   
   ## view model
-  model %>%
+  model1 %>%
     tbl_regression(exponentiate = TRUE) %>%
     bold_p() %>%
     bold_labels()

@@ -2,7 +2,10 @@ library(rofi)
 
 clean.dataset <- function(dataset){
   ## create new colum for outcome to be observed
-  dataset$OFI_delay <- as.factor(ifelse(dataset$Problemomrade_.FMP == "Handläggning", "Delay to treatment", "No delay to treatment"))
+  dataset$OFI_delay <- as.factor(ifelse(dataset$Problemomrade_.FMP == "Handläggning", "Delay to treatment",
+                                        ifelse(dataset$Problemomrade_.FMP == "Lång tid till DT", "Delay to treatment",
+                                               ifelse(dataset$Problemomrade_.FMP == "Lång tid till op", "Delay to treatment",
+                                                      "No delay to treatment"))))
   
   ## remove all columns except the analyzed ones
   dataset <-
