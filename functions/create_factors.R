@@ -51,15 +51,17 @@ create.factors <- function(dataset){
   dataset$Highest_care_level <- as.factor(dataset$host_care_level)
   
   ## Respiratory rate into rts and replacing missing values
-  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value >= 0 & dataset$ed_rr_value <= 0, 0,
-                                  ifelse(dataset$ed_rr_value >= 1 & dataset$ed_rr_value <= 5, 1,
-                                         ifelse(dataset$ed_rr_value >= 6 & dataset$ed_rr_value <= 9, 2,
-                                                ifelse(dataset$ed_rr_value >= 30 & dataset$ed_rr_value <= 98, 3,
-                                                       ifelse(dataset$ed_rr_value >= 10 & dataset$ed_rr_value <= 29, 4,  dataset$ed_rr_value)))))
+  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 0, 0,
+                                ifelse(dataset$ed_rr_value >= 1 & dataset$ed_rr_value <= 5, 1,
+                                       ifelse(dataset$ed_rr_value >= 6 & dataset$ed_rr_value <= 9, 2,
+                                              ifelse(dataset$ed_rr_value >= 30 & dataset$ed_rr_value <= 98, 3,
+                                                     ifelse(dataset$ed_rr_value >= 10 & dataset$ed_rr_value <= 29, 4,
+                                                            ifelse(dataset$ed_rr_value == 99, "missing",
+                                                                   ifelse(is.na(dataset$ed_rr_value), "missing", dataset$ed_rr_value)))))))
   
-  dataset$ed_rr_value <- ifelse(is.na(dataset$ed_rr_value) | dataset$ed_rr_value == 999 | dataset$ed_rr_value == 99, dataset$ed_rr_rtscat, dataset$ed_rr_value)  
+  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 999, dataset$ed_rr_rtscat, dataset$ed_rr_value)  
   
-  dataset <- subset(dataset, !(is.na(ed_rr_value) | ed_rr_value == 999 | ed_rr_value == 99))
+  dataset <- subset(dataset, !(ed_rr_value == 999))
   
   dataset$Respiratory_rate <- as.factor(dataset$ed_rr_value)
   

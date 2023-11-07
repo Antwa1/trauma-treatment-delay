@@ -14,13 +14,20 @@ model.data <- function(dataset){
 
   model1 <-
     glm(
-      OFI_delay ~ Gender,
+      OFI_delay ~Gender + ISS + Age + work_hours + Highest_care_level,
+      data = factors.data,
+      family = binomial
+    )
+  
+  model2 <-
+    glm(
+      OFI_delay ~ Intubated_prehospitaly,
       data = factors.data,
       family = binomial
     )
   
   ## view model
-  model1 %>%
+  model2 %>%
     tbl_regression(exponentiate = TRUE) %>%
     bold_p() %>%
     bold_labels()
