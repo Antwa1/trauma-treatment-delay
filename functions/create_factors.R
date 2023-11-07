@@ -4,10 +4,9 @@ library(stringr)
 create.factors <- function(dataset){
  
   ## Making gcs into rts and replacing missing values
-  dataset <- dataset %>%
-    mutate(ed_gcs_sum = ifelse(is.na(ed_gcs_sum), pre_gcs_sum, ed_gcs_sum))
   
-  dataset$ed_gcs_sum <- ifelse(dataset$ed_gcs_sum == 999 | dataset$ed_gcs_sum == 99, dataset$pre_gcs_sum, dataset$ed_gcs_sum)
+  dataset <- dataset %>%
+    mutate(ed_gcs_sum = if_else(is.na(ed_gcs_sum) | ed_gcs_sum == 999 | ed_gcs_sum == 99, pre_gcs_sum, ed_gcs_sum))
   
   dataset$Total_GCS <- as.numeric(dataset$ed_gcs_sum)
   
@@ -39,18 +38,14 @@ create.factors <- function(dataset){
   
   ## Respiratory rate into rts and replacing missing values
   dataset <- dataset %>%
-    mutate(ed_rr_value = coalesce(ed_rr_value, pre_rr_value))
-  
-  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 999 | dataset$ed_rr_value == 99, dataset$pre_rr_value, dataset$ed_rr_value)
+    mutate(ed_rr_value = if_else(is.na(ed_rr_value) | ed_rr_value == 999 | ed_rr_value == 99, pre_rr_value, ed_rr_value))
   
   dataset$Respiratory_rate <- as.numeric(dataset$ed_rr_value)
   
   ## SBP into rts and replacing missing values
+  
   dataset <- dataset %>%
-    mutate(ed_sbp_value = ifelse(is.na(ed_sbp_value), pre_gcs_sum, ed_sbp_value))
-  
-  dataset$ed_sbp_value <- ifelse(dataset$ed_sbp_value == 999 | dataset$ed_sbp_value == 99, dataset$pre_sbp_value, dataset$ed_sbp_value)
-  
+    mutate(ed_sbp_value = if_else(is.na(ed_sbp_value) | ed_sbp_value == 999 | ed_sbp_value == 99, pre_sbp_value, ed_sbp_value))
   
   dataset$Systolic_blood_pressure <- as.numeric(dataset$ed_sbp_value)
   
@@ -121,7 +116,9 @@ create.factors <- function(dataset){
         "ed_sbp_rtscat",
         "DateTime_ArrivalAtHospital",
         "Date",
-        "Time"
+        "Time",
+        "pre_rr_value",
+        "pre_sbp_value"
       )
     )]
 

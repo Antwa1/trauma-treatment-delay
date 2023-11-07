@@ -7,31 +7,49 @@ model.data <- function(dataset){
   ## regression model
   model <-
     glm(
-      OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Time_until_first_CT + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
+      OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
       data = factors.data,
       family = binomial
     )
 
-  model1 <-
-    glm(
-      OFI_delay ~Gender + ISS + Age + Highest_care_level + weekday + work_hours + Intubated_prehospitaly, 
-      data = factors.data,
-      family = binomial
+ # Your predictor variables
+  predictor_variables <- c("Total_GCS", "Gender", "Highest_care_level", "Respiratory_rate", "Systolic_blood_pressure", "Intubated_prehospitaly", "ISS", "Age", "weekday", "work_hours")
+  
+  # Loop through predictor variables and store regression results
+  results_list <- lapply(predictor_variables, function(var) {
+    formula <- as.formula(paste("OFI_delay ~", var))
+    res.logist <- glm(formula, data = factors.data, family = binomial)
+    
+    # Store the results summary in the list
+    summary(res.logist)
+  })
+  
+  result_data <- do.call(rbind, lapply(results_list, function(res) {
+    cbind(
+      variable = rownames(coef(res)),
+      coef(res),
+      p_values <- res$coefficients[, "Pr(>|z|)"]
+    )
+  }))
+  
+  fancy_table <-
+    tbl_merge(
+      tbls        = list(model, result_data),
+      tab_spanner = c("Adjusted", "Unadjusted")
     )
   
-  model <-
-    glm(
-      OFI_delay ~ Time_until_first_CT,
-      data = factors.data,
-      family = binomial
-    )
+  fancy_table
+  
+  
   
   ## view model
-  model1 %>%
-    tbl_regression(exponentiate = TRUE) %>%
+  model %>%
+    tbl_regression(exponentiate = TRUE,
+        pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
     bold_p() %>%
     bold_labels()
     add_p(digits = c(p = 3))
+    
 
 
   factors.data %>%
@@ -40,8 +58,9 @@ model.data <- function(dataset){
       label = list(
         Age = "Age (years)",
         Gender = "Gender",
-        Total_GCS = "GCS"
-      ),
+        Total_GCS = "GCS"),
+        pvalue_fun = ~ style_pvalue(.x, digits = 2),
+      
       statistic = list(all_continuous() ~ "{mean} ± {sd}"),
       digits = list(all_continuous() ~ c(2, 2))
     ) %>%

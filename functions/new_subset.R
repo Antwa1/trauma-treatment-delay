@@ -24,7 +24,9 @@ clean.dataset <- function(dataset){
       "pre_gcs_sum",
       "ed_rr_rtscat",
       "ed_sbp_rtscat",
-      "DateTime_ArrivalAtHospital"
+      "DateTime_ArrivalAtHospital",
+      "pre_rr_value",
+      "pre_sbp_value"
     )]
   
   ## remove rows without OFI

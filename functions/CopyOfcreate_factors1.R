@@ -59,7 +59,7 @@ create.factors <- function(dataset){
                                                             ifelse(dataset$ed_rr_value == 99, "missing",
                                                                    ifelse(is.na(dataset$ed_rr_value), "missing", dataset$ed_rr_value)))))))
   
-  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 999, dataset$ed_rr_rtscat, dataset$ed_rr_value)  
+ dataset$ed_rr_value <- ifelse(is.na(dataset$ed_rr_value) | dataset$ed_rr_value == 999 | dataset$ed_rr_value == 99, dataset$ed_rr_rtscat, dataset$ed_rr_value) 
   
   dataset <- subset(dataset, !(ed_rr_value == 999))
   
