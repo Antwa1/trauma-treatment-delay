@@ -14,14 +14,14 @@ model.data <- function(dataset){
 
   model1 <-
     glm(
-      OFI_delay ~Gender + ISS + Age + work_hours + Highest_care_level,
+      OFI_delay ~Gender + ISS + Age + Highest_care_level + weekday + work_hours
       data = factors.data,
       family = binomial
     )
   
   model2 <-
     glm(
-      OFI_delay ~ Intubated_prehospitaly,
+      OFI_delay ~ Time_until_first_CT,
       data = factors.data,
       family = binomial
     )
