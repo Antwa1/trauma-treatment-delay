@@ -14,7 +14,7 @@ model.data <- function(dataset){
 
   model1 <-
     glm(
-      OFI_delay ~Gender + ISS + Age + Highest_care_level + weekday + work_hours,
+      OFI_delay ~Gender + ISS + Age + Highest_care_level + weekday + work_hours + Intubated_prehospitaly, 
       data = factors.data,
       family = binomial
     )
@@ -27,7 +27,7 @@ model.data <- function(dataset){
     )
   
   ## view model
-  model %>%
+  model1 %>%
     tbl_regression(exponentiate = TRUE) %>%
     bold_p() %>%
     bold_labels()
