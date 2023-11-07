@@ -4,13 +4,25 @@ library(stringr)
 create.factors <- function(dataset){
  
   ## Making gcs into rts and replacing missing values
-  dataset$pre_gcs_sum <- ifelse(dataset$pre_gcs_sum == 99, "missing", dataset$pre_gcs_sum)
+
+  dataset$ed_gcs_sum <- ifelse(dataset$ed_gcs_sum >= 3 & dataset$ed_gcs_sum <= 3, 0,
+                               ifelse(dataset$ed_gcs_sum >= 4 & dataset$ed_gcs_sum <= 5, 1,
+                                      ifelse(dataset$ed_gcs_sum >= 6 & dataset$ed_gcs_sum <= 8, 2,
+                                             ifelse(dataset$ed_gcs_sum >= 9 & dataset$ed_gcs_sum <= 12, 3,
+                                                    ifelse(dataset$ed_gcs_sum >= 13 & dataset$ed_gcs_sum <= 15, 4, dataset$ed_gcs_sum)))))
   
-  dataset$pre_gcs_sum <- ifelse(is.na(dataset$pre_gcs_sum), "missing", dataset$pre_gcs_sum)
+  dataset$pre_gcs_sum <- ifelse(dataset$pre_gcs_sum >= 3 & dataset$pre_gcs_sum <= 3, 0,
+                                ifelse(dataset$pre_gcs_sum >= 4 & dataset$pre_gcs_sum <= 5, 1,
+                                       ifelse(dataset$pre_gcs_sum >= 6 & dataset$pre_gcs_sum <= 8, 2,
+                                              ifelse(dataset$pre_gcs_sum >= 9 & dataset$pre_gcs_sum <= 12, 3,
+                                                     ifelse(dataset$pre_gcs_sum >= 13 & dataset$pre_gcs_sum <= 15, 4, dataset$ed_gcs_sum)))))
+  
+                                  
+  dataset$ed_gcs_sum <- ifelse(is.na(dataset$ed_gcs_sum) | dataset$ed_gcs_sum == 999, dataset$pre_gcs_sum, dataset$ed_gcs_sum)  
   
   dataset <- subset(dataset, !(is.na(ed_gcs_sum) | ed_gcs_sum == 999))
   
-  dataset$Total_GCS <- as.numeric(dataset$ed_gcs_sum)
+  dataset$Total_GCS <- as.factor(dataset$ed_gcs_sum)
   
   ## Making gender into a factor
   dataset <- subset(dataset, !is.na(Gender))
@@ -39,24 +51,35 @@ create.factors <- function(dataset){
   dataset$Highest_care_level <- as.factor(dataset$host_care_level)
   
   ## Respiratory rate into rts and replacing missing values
-  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 99, "missing", dataset$ed_rr_value)
+  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 0, 0,
+                                ifelse(dataset$ed_rr_value >= 1 & dataset$ed_rr_value <= 5, 1,
+                                       ifelse(dataset$ed_rr_value >= 6 & dataset$ed_rr_value <= 9, 2,
+                                              ifelse(dataset$ed_rr_value >= 30 & dataset$ed_rr_value <= 98, 3,
+                                                     ifelse(dataset$ed_rr_value >= 10 & dataset$ed_rr_value <= 29, 4,
+                                                            ifelse(dataset$ed_rr_value == 99, "missing",
+                                                                   ifelse(is.na(dataset$ed_rr_value), "missing", dataset$ed_rr_value)))))))
   
-  dataset$ed_rr_value <- ifelse(is.na(dataset$ed_rr_value), "missing", dataset$ed_rr_value)
+  dataset$ed_rr_value <- ifelse(dataset$ed_rr_value == 999, dataset$ed_rr_rtscat, dataset$ed_rr_value)  
   
-  dataset <- subset(dataset, !ed_rr_value == 999)
+  dataset <- subset(dataset, !(ed_rr_value == 999))
   
-  dataset$Respiratory_rate <- as.numeric(dataset$ed_rr_value)
+  dataset$Respiratory_rate <- as.factor(dataset$ed_rr_value)
   
   ## SBP into rts and replacing missing values
+  dataset$ed_sbp_value <- ifelse(dataset$ed_sbp_value >= 0 & dataset$ed_sbp_value <= 0, 0,
+                                   ifelse(dataset$ed_sbp_value >= 1 & dataset$ed_sbp_value <= 49, 1,
+                                          ifelse(dataset$ed_sbp_value >= 50 & dataset$ed_sbp_value <= 75, 2,
+                                                 ifelse(dataset$ed_sbp_value >= 76 & dataset$ed_sbp_value <= 89, 3,
+                                                        ifelse(dataset$ed_sbp_value >= 89 & dataset$ed_sbp_value <= 500, 4,  dataset$ed_sbp_value)))))
+  
+  dataset$ed_sbp_value <- ifelse(is.na(dataset$ed_sbp_value) | dataset$ed_sbp_value == 999, dataset$ed_sbp_rtscat, dataset$ed_sbp_value)
   
   dataset <- subset(dataset, !(is.na(ed_sbp_value) | ed_sbp_value == 999))
   
-  dataset$Systolic_blood_pressure <- as.numeric(dataset$ed_sbp_value)
+  dataset$Systolic_blood_pressure <- as.factor(dataset$ed_sbp_value)
   
   ##Intubation sorting and missing values
-  dataset <- subset(dataset, !(pre_intubated == 999))
-  
-  dataset$pre_intubated <- ifelse(is.na(dataset$pre_intubated), "No", dataset$pre_intubated)
+  dataset <- subset(dataset, !(is.na(pre_intubated) | pre_intubated == 999))
   
   dataset$pre_intubated <- ifelse(dataset$pre_intubated == 1, "Yes", "No")
   
