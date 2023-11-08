@@ -52,11 +52,15 @@ create.factors <- function(dataset){
   ##Intubation sorting and missing values
   dataset <- subset(dataset, !(pre_intubated == 999))
   
-  dataset$pre_intubated <- ifelse(is.na(dataset$pre_intubated), "No", dataset$pre_intubated)
+  dataset$ed_intubated <- ifelse(dataset$ed_intubated == 1, 3, 2)
   
-  dataset$pre_intubated <- ifelse(dataset$pre_intubated == 1, "Yes", "No")
+  dataset <- dataset %>%
+    mutate(pre_intubated = if_else(is.na(pre_intubated) | pre_intubated == 2, ed_intubated, pre_intubated))
   
-  dataset$Intubated_prehospitaly <- as.factor(dataset$pre_intubated)
+  dataset$Intubated <- as.factor(ifelse(dataset$pre_intubated == 1, "Intubated prehospitaly",
+                                        ifelse(dataset$pre_intubated == 2, "Not intubated",
+                                               ifelse(dataset$pre_intubated == 3, "Intubated at hosptital",
+                                               "unknown"))))
   
   ##CT scan categorizing
   dataset$dt_ed_first_ct <- ifelse(dataset$dt_ed_first_ct >= 1 & dataset$dt_ed_first_ct <= 30, "1-30 mins",
@@ -121,7 +125,8 @@ create.factors <- function(dataset){
         "pre_sbp_value",
         "ofi",
         "survival_after_30_days",
-        "Time_until_first_CT"
+        "Time_until_first_CT",
+        "ed_intubated"
       )
     )]
 

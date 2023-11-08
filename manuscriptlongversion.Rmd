@@ -274,21 +274,7 @@ Out of the 11864 patients treated at KS between 2012 and 2022, 1835 were
 included in the study. The patient characteristics were as follows in
 Table 1.
 
-```{r}
-  factors.data %>%
-    tbl_summary(  # Create summary statistics for different groups
-      by = OFI_delay,
-      label = list(
-        Age = "Age (years)",
-        Gender = "Gender",
-        Total_GCS = "GCS"
-      ),
-      statistic = list(all_continuous() ~ "{mean} ± {sd}"),
-      digits = list(all_continuous() ~ c(2, 2))
-    ) %>%
-    add_p()  # Add p-values
-  
-```
+![](table1.png)
 
 Out of the 11,864, 5,282 patients were not screened for ofi, which
 excludes them from the study. Out of the remaining 6,582 patients, 4,775
@@ -300,95 +286,10 @@ and have data registered in all parameters examined for the study, 28
 patients were found to have received delayed treatment during their stay
 at the hospital.
 
-```{r}
-library(Gmisc, quietly = TRUE)
-library(glue)
-library(htmlTable)
-library(grid)
-library(magrittr)
-library(gtsummary)
-
-treated <- boxGrob(glue("Treated at KS between 2012 and 2022",
-                           "n = {pop}",
-                           pop = txtInt(11864),
-                           .sep = "\n"))
-screened <- boxGrob(glue("Screened for ofi",
-                         "n = {pop}",
-                         pop = txtInt(6582),
-                         .sep = "\n"))
-included <- boxGrob(glue("Included in study",
-                         "n = {incl}",
-                         incl = txtInt(1835),
-                         .sep = "\n"))
-delay <- boxGrob(glue("Delay in treatment",
-                      "n = {recr}",
-                      recr = txtInt(28),
-                      .sep = "\n"))
-
-no_delay <- boxGrob(glue("No delay in treatment",
-                      "n = {recr}",
-                      recr = txtInt(1807),
-                      .sep = "\n"))
-
-not_screened <- boxGrob(glue("Not screened for ofi",
-                             "n = {recr}",
-                             recr = txtInt(11864-6582),
-                             .sep = "\n"))
-
-missing_data <- boxGrob(glue("Missing data",
-                             "n = {recr}",
-                             recr = txtInt(6582-1807),
-                             .sep = "\n"))
-grid.newpage()
-vert <- spreadVertical(treated = treated,
-                       screened = screened,
-                       included = included,
-                       grps = delay)
-grps <- alignVertical(reference = vert$grps,
-                      delay, no_delay) %>%
-  spreadHorizontal()
-vert$grps <- NULL
-
-not_screened <- moveBox(not_screened,
-                    x = .85,
-                    y = .77,)
-
-missing_data <- moveBox(missing_data,
-                    x = .85,
-                    y = .5,)
-
-for (i in 1:(length(vert) - 1)) {
-  connectGrob(vert[[i]], vert[[i + 1]], type = "vert") %>%
-    print
-}
-connectGrob(vert$included, grps[[1]], type = "N")
-connectGrob(vert$included, grps[[2]], type = "N")
-connectGrob(vert$treated, not_screened, type = "L")
-connectGrob(vert$screened, missing_data, type = "L")
-
-# Print boxes
-vert
-grps
-not_screened
-missing_data
-
-
-```
+![](Rplot.png)
 
 In the following table, the results from the regression analysis is
 displayed.
 
 The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
-
-```{r}
-library(gtsummary)
-  
-  
-  ## view model
-  model %>%
-    tbl_regression(exponentiate = TRUE) %>%
-    bold_p() %>%
-    bold_labels()
-    add_p(digits = c(p = 3))
-```

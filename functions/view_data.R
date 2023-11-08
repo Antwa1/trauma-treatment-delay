@@ -7,7 +7,7 @@ model.data <- function(dataset){
   ## regression model
   model <-
     glm(
-      OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
+      OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Intubated + ISS + Age + weekday + work_hours,
       data = factors.data,
       family = binomial)
       
@@ -20,6 +20,7 @@ model.data <- function(dataset){
 }
   
   unadjust2 <- tbl_uvregression(data = factors.data,
+                                exponentiate = TRUE,
                                 method = glm,
                                 y = OFI_delay,
                                 method.args = list(family = binomial),
@@ -52,7 +53,6 @@ fancy_table <-
         Age = "Age (years)",
         Gender = "Gender",
         Total_GCS = "GCS"),
-        pvalue_fun = ~ style_pvalue(.x, digits = 2),
       
       statistic = list(all_continuous() ~ "{mean} ± {sd}"),
       digits = list(all_continuous() ~ c(2, 2))
