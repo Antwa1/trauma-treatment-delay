@@ -118,7 +118,10 @@ create.factors <- function(dataset){
         "Date",
         "Time",
         "pre_rr_value",
-        "pre_sbp_value"
+        "pre_sbp_value",
+        "ofi",
+        "survival_after_30_days",
+        "Time_until_first_CT"
       )
     )]
 

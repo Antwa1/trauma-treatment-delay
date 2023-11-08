@@ -9,46 +9,39 @@ model.data <- function(dataset){
     glm(
       OFI_delay ~ Total_GCS + Gender + Highest_care_level + Respiratory_rate + Systolic_blood_pressure + Intubated_prehospitaly + ISS + Age + weekday + work_hours,
       data = factors.data,
-      family = binomial
-    )
-
- # Your predictor variables
-  predictor_variables <- c("Total_GCS", "Gender", "Highest_care_level", "Respiratory_rate", "Systolic_blood_pressure", "Intubated_prehospitaly", "ISS", "Age", "weekday", "work_hours")
+      family = binomial)
+      
+      adjusted <-
+        tbl_regression(model, exponentiate = TRUE,
+                       pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
+        bold_p() %>%
+        bold_labels()
+      add_p(digits = c(p = 3))
+}
   
-  # Loop through predictor variables and store regression results
-  results_list <- lapply(predictor_variables, function(var) {
-    formula <- as.formula(paste("OFI_delay ~", var))
-    res.logist <- glm(formula, data = factors.data, family = binomial)
+  unadjust2 <- tbl_uvregression(data = factors.data,
+                                method = glm,
+                                y = OFI_delay,
+                                method.args = list(family = binomial),
+                                pvalue_fun = ~ style_pvalue(.x, digits = 2),
+                                hide_n = TRUE
+  ) %>%
+    bold_p(t = 0.05) %>%
+    bold_labels()
     
-    # Store the results summary in the list
-    summary(res.logist)
-  })
-  
-  result_data <- do.call(rbind, lapply(results_list, function(res) {
-    cbind(
-      variable = rownames(coef(res)),
-      coef(res),
-      p_values <- res$coefficients[, "Pr(>|z|)"]
-    )
-  }))
-  
-  fancy_table <-
+
+fancy_table <-
     tbl_merge(
-      tbls        = list(model, result_data),
+      tbls        = list(adjusted, unadjust2),
       tab_spanner = c("Adjusted", "Unadjusted")
     )
   
-  fancy_table
+  
   
   
   
   ## view model
-  model %>%
-    tbl_regression(exponentiate = TRUE,
-        pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
-    bold_p() %>%
-    bold_labels()
-    add_p(digits = c(p = 3))
+
     
 
 
@@ -68,4 +61,4 @@ model.data <- function(dataset){
 
   
   return(model)
-}
+
