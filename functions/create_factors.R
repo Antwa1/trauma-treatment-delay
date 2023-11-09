@@ -8,6 +8,10 @@ create.factors <- function(dataset){
   dataset <- dataset %>%
     mutate(ed_gcs_sum = if_else(is.na(ed_gcs_sum) | ed_gcs_sum == 999 | ed_gcs_sum == 99, pre_gcs_sum, ed_gcs_sum))
   
+  dataset <- dataset %>%
+    mutate(ed_gcs_sum = na_if(ed_gcs_sum, 99)) %>%
+    mutate(ed_gcs_sum = na_if(ed_gcs_sum, 999))
+  
   dataset$Total_GCS <- as.numeric(dataset$ed_gcs_sum)
   
   ## Making gender into a factor
@@ -86,7 +90,7 @@ create.factors <- function(dataset){
   
   ##Dates
   dataset[c('Date', 'Time')] <- str_split_fixed(dataset$DateTime_ArrivalAtHospital, ' ', 2)
-  dataset$work_hours <- with(dataset, ifelse(dataset$Time >= "08:00" & dataset$Time <= "16:59", "Yes", "No")) 
+  dataset$work_hours <- with(dataset, ifelse(dataset$Time >= "08:00" & dataset$Time <= "16:59", "Work-hours", "On-call")) 
 
   ##Weekdays
   dataset$Date <- as.Date(dataset$Date)

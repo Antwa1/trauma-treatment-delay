@@ -217,13 +217,12 @@ they were missing information in one of the examined patient factors.
 The outcome is delayed treatment, which is defined as more than 30
 minutes passing from arrival before receiving treatment, as identified
 by the multidisciplinary review board and recorded in the trauma care
-quality database. The independent variables are gender, patient survival
-after 30 days from admission, highest hospital care level, GCS on
-arrival, respiratory rate on arrival, systolic blood pressure on
-arrival, time from arrival at the hospital until first computed
-tomography, if the patient was intubated on arrival and whether they
-arrived during weekend or working hours. Those are used as factor
-variables. ISS and age are used as continuous variables.
+quality database. The independent variables are gender, highest hospital
+care level, GCS on arrival, respiratory rate on arrival, systolic blood
+pressure on arrival, if the patient was intubated on arrival, whether
+they arrived during weekend or working hours, ISS and age. Of these
+variables, GCS, respiratory rate, systolic blood pressure, intubation,
+ISS and age are used as continuous variables in the analysis
 
 ## Data sources/measurement
 
@@ -270,23 +269,24 @@ used for other purposes.
 
 ## Results
 
-Out of the 11864 patients treated at KS between 2012 and 2022, 1835 were
-included in the study. The patient characteristics were as follows in
-Table 1.
-
-![](table1.png)
-
-Out of the 11,864, 5,282 patients were not screened for ofi, which
-excludes them from the study. Out of the remaining 6,582 patients, 4,775
+Out of the 14,022, 5,710 patients were not screened for ofi, which
+excludes them from the study. Out of the remaining 8,312 patients, 1,823
 patients had missing data in one or more of the analysed parameters,
 which led to exclusion from the study.
 
-In the remaining group of 1,835 patients who have been screened for ofi
-and have data registered in all parameters examined for the study, 28
+In the remaining group of 6,489 patients who have been screened for ofi
+and have data registered in all parameters examined for the study, 69
 patients were found to have received delayed treatment during their stay
 at the hospital.
 
 ![](Rplot.png)
+
+The 6,489 patients included in the study. 68% of the individuals
+included were men, with the remaining 32% being women. The mean value
+for the ISS score was 10.49, with the standard deviation being 11.4. The
+patients had a mean GCS of ... with a standard deviation of ...
+
+![](table1.png)
 
 In the following table, the results from the regression analysis is
 displayed.

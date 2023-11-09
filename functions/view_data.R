@@ -46,17 +46,21 @@ fancy_table <-
     
 
 
-  factors.data %>%
-    tbl_summary(  # Create summary statistics for different groups
-      by = OFI_delay,
-      label = list(
-        Age = "Age (years)",
-        Gender = "Gender",
-        Total_GCS = "GCS"),
-      
-      statistic = list(all_continuous() ~ "{mean} ± {sd}"),
-      digits = list(all_continuous() ~ c(2, 2))
-    ) %>%
+factors.data %>%
+  tbl_summary(  
+    by = OFI_delay,
+    label = list(
+      Age = "Age (years)",
+      Gender = "Gender",
+      Total_GCS = "GCS"),
+    statistic = list(all_continuous() ~ "{mean} ± {sd}"),
+    digits = list(all_continuous() ~ c(2, 2))
+  ) %>%
+  add_overall() %>%
+  modify_header(update = list(stat_1 ~ "**Overall**")) %>%
+  modify_spanning_header(c("stat_1", "stat_2"), 
+                         label = "Other Groups", 
+                         spanner = "OFI_delay")
     
 
   
