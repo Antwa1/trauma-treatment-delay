@@ -44,12 +44,20 @@ create.factors <- function(dataset){
   dataset <- dataset %>%
     mutate(ed_rr_value = if_else(is.na(ed_rr_value) | ed_rr_value == 999 | ed_rr_value == 99, pre_rr_value, ed_rr_value))
   
+  dataset <- dataset %>%
+    mutate(ed_rr_value = na_if(ed_rr_value, 99)) %>%
+    mutate(ed_rr_value = na_if(ed_rr_value, 999))
+  
   dataset$Respiratory_rate <- as.numeric(dataset$ed_rr_value)
   
   ## SBP into rts and replacing missing values
   
   dataset <- dataset %>%
     mutate(ed_sbp_value = if_else(is.na(ed_sbp_value) | ed_sbp_value == 999 | ed_sbp_value == 99, pre_sbp_value, ed_sbp_value))
+  
+  dataset <- dataset %>%
+    mutate(ed_sbp_value = na_if(ed_sbp_value, 99)) %>%
+    mutate(ed_sbp_value = na_if(ed_sbp_value, 999))
   
   dataset$Systolic_blood_pressure <- as.numeric(dataset$ed_sbp_value)
   

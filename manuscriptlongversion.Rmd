@@ -192,13 +192,13 @@ conference for further review.
 
 We conducted a registry based cohort study using data from the trauma
 registry and trauma care quality database at the Karolinska University
-Hospital in Solna. The trauma registry includes about 11864 patients
+Hospital in Solna. The trauma registry includes about 14,022 patients
 treated between 2012 and 2022. The trauma care quality database is a
 subset of the trauma registry and includes about 8000 patients selected
 for review between 2013 and 2022. This project will link the two
 databases and assess how different patient level factors, such as age,
-sex, mechanism of injury, and injury severity, are associated with
-delayed treatment using logistic regression.
+sex, blood pressure, and injury severity, are associated with delayed
+treatment using logistic regression.
 
 ## Outcome
 
@@ -246,12 +246,19 @@ included in the database are screened for OFIs.
 
 ## Statistical methods
 
-Multivariable and potentially univariable logistical regression. A 5%
-significance level and 95% confidence levels will be used.
+Multivariable and univariable logistical regression. A 5% significance
+level and 95% confidence levels will be used.
 
-Rstudio was used to perform the logistical regression. The dependent
-variable is OFI_delay, which is the presence of the ofi delayed
-treatment.
+Rstudio was used to perform the logistical regression. The code was
+written to clean and prepare the data from the database. The data was
+processed to have the variables customized to fit into the logistical
+regression model.
+
+For the missing hospital values in GCS, RR and SBP, values from EMT
+personnel were used
+
+The dependent variable is OFI_delay, which is the presence of the ofi
+delayed treatment.
 
 ## Ethical considerations
 
@@ -284,7 +291,18 @@ at the hospital.
 The 6,489 patients included in the study. 68% of the individuals
 included were men, with the remaining 32% being women. The mean value
 for the ISS score was 10.49, with the standard deviation being 11.4. The
-patients had a mean GCS of ... with a standard deviation of ...
+patients had a mean GCS of ... with a standard deviation of ... The
+majority of the patients had General care department as their highest
+care level, followed by ICU, ER, OR and lastly specialized care
+department. The mean respiratory rate in the overall group was ..., with
+a standard deviation of ... The mean SBP was ..., having a standard
+deviation of ... The majority of patients, 85%, were not intubated
+during their stay in the hospital, followed by 9.1% intubated at the
+hospital and 6% intubated prehospitaly. The mean age of the patients was
+... years old, with a standard deviation of ... Most of the patients
+arrived during on-call hours,..., with the rest arriving during working
+hours. 67% of the patients arrived on a weekday, with the rest arriving
+on the weekend.
 
 ![](table1.png)
 
