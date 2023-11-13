@@ -9,8 +9,11 @@ prepared.data <- prepare.data()
 ##clean data
 cleaned.data <- clean.dataset(prepared.data)
 
-## Create subset
+## Create subset 1
 factors.data <- create.factors(cleaned.data)
+
+## Create subset 2
+factors.data2 <- create.factors2(cleaned.data)
 
 ## view data
 view.data <- model.data(factors.data)

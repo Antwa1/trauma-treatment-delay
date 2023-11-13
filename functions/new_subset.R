@@ -27,7 +27,8 @@ clean.dataset <- function(dataset){
       "DateTime_ArrivalAtHospital",
       "pre_rr_value",
       "pre_sbp_value",
-      "ed_intubated"
+      "ed_intubated",
+      "ed_emerg_proc"
     )]
   
   ## remove rows without OFI

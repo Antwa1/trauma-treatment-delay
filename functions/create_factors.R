@@ -3,30 +3,12 @@ library(stringr)
 ## Creating function
 create.factors <- function(dataset){
  
-  ## Making gcs into rts and replacing missing values
-  
-  dataset <- dataset %>%
-    mutate(ed_gcs_sum = if_else(is.na(ed_gcs_sum) | ed_gcs_sum == 999 | ed_gcs_sum == 99, pre_gcs_sum, ed_gcs_sum))
-  
-  dataset <- dataset %>%
-    mutate(ed_gcs_sum = na_if(ed_gcs_sum, 99)) %>%
-    mutate(ed_gcs_sum = na_if(ed_gcs_sum, 999))
-  
-  dataset$Total_GCS <- as.numeric(dataset$ed_gcs_sum)
-  
+
   ## Making gender into a factor
   dataset <- subset(dataset, !is.na(Gender))
   
   
   dataset$Gender <- as.factor(dataset$Gender)
-  
-  
-  ## Survival after 30 days
-  dataset <- subset(dataset, !(is.na(res_survival) | res_survival == 999))
-
-  dataset$res_survival <- ifelse(dataset$res_survival == 1, "Dead", "Alive")
-   
-  dataset$survival_after_30_days <- as.factor(dataset$res_survival)
   
 
   ## Highest hospital care level
@@ -40,27 +22,7 @@ create.factors <- function(dataset){
   
   dataset$Highest_care_level <- as.factor(dataset$host_care_level)
   
-  ## Respiratory rate into rts and replacing missing values
-  dataset <- dataset %>%
-    mutate(ed_rr_value = if_else(is.na(ed_rr_value) | ed_rr_value == 999 | ed_rr_value == 99, pre_rr_value, ed_rr_value))
-  
-  dataset <- dataset %>%
-    mutate(ed_rr_value = na_if(ed_rr_value, 99)) %>%
-    mutate(ed_rr_value = na_if(ed_rr_value, 999))
-  
-  dataset$Respiratory_rate <- as.numeric(dataset$ed_rr_value)
-  
-  ## SBP into rts and replacing missing values
-  
-  dataset <- dataset %>%
-    mutate(ed_sbp_value = if_else(is.na(ed_sbp_value) | ed_sbp_value == 999 | ed_sbp_value == 99, pre_sbp_value, ed_sbp_value))
-  
-  dataset <- dataset %>%
-    mutate(ed_sbp_value = na_if(ed_sbp_value, 99)) %>%
-    mutate(ed_sbp_value = na_if(ed_sbp_value, 999))
-  
-  dataset$Systolic_blood_pressure <- as.numeric(dataset$ed_sbp_value)
-  
+
   ##Intubation sorting and missing values
   dataset <- subset(dataset, !(pre_intubated == 999))
   
@@ -73,19 +35,9 @@ create.factors <- function(dataset){
                                         ifelse(dataset$pre_intubated == 2, "Not intubated",
                                                ifelse(dataset$pre_intubated == 3, "Intubated at hosptital",
                                                "unknown"))))
-  
-  ##CT scan categorizing
-  dataset$dt_ed_first_ct <- ifelse(dataset$dt_ed_first_ct >= 1 & dataset$dt_ed_first_ct <= 30, "1-30 mins",
-                                  ifelse(dataset$dt_ed_first_ct >= 31 & dataset$dt_ed_first_ct <= 60, "31-60 mins",
-                                         ifelse(dataset$dt_ed_first_ct >= 61 & dataset$dt_ed_first_ct <= 120, "61-120 mins",
-                                                ifelse(dataset$dt_ed_first_ct >= 121 & dataset$dt_ed_first_ct <= 9999, "120+ mins", dataset$dt_ed_first_ct))))
-  
-  dataset <- subset(dataset, !is.na(dt_ed_first_ct))
-  
-  
-  dataset$Time_until_first_CT <- as.factor(dataset$dt_ed_first_ct)
-  
-  
+  dataset <- subset(dataset, !(is.na(Intubated)))
+                               
+
   ##Fixing years
   dataset <- subset(dataset, !(is.na(pt_age_yrs) | pt_age_yrs == 999))
   
@@ -103,10 +55,12 @@ create.factors <- function(dataset){
   ##Weekdays
   dataset$Date <- as.Date(dataset$Date)
  
-  dataset$weekday <- weekdays(dataset$Date)
+  dataset$Weekday <- weekdays(dataset$Date)
   
-  dataset$weekday <- gsub("Monday|Tuesday|Wednesday|Thursday|Friday", "weekday", dataset$weekday)
-  dataset$weekday <- gsub("Saturday|Sunday", "weekend", dataset$weekday)
+  dataset$Weekday <- gsub("Monday|Tuesday|Wednesday|Thursday|Friday", "weekday", dataset$Weekday)
+  dataset$Weekday <- gsub("Saturday|Sunday", "weekend", dataset$Weekday)
+  
+  dataset <- subset(dataset, !(is.na(Weekday)))
   
   ##Replacing NA in OFI_dealy with no delay
   dataset$OFI_delay[is.na(dataset$OFI_delay)] <- "No delay to treatment"
@@ -138,7 +92,8 @@ create.factors <- function(dataset){
         "ofi",
         "survival_after_30_days",
         "Time_until_first_CT",
-        "ed_intubated"
+        "ed_intubated",
+        "ed_emerg_proc"
       )
     )]
 
