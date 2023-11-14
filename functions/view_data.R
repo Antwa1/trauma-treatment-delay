@@ -53,7 +53,7 @@ adjusted2 <-
   bold_p() %>%
   bold_labels()
 add_p(digits = c(p = 3))
-}
+
 
 unadjust2 <- tbl_uvregression(data = factors.data2,
                               exponentiate = TRUE,

@@ -4,10 +4,10 @@ author: "Anton Wasielewski"
 subtitle: A retrospective cohort study on the factors affecting the delays in trauma
   care
 output:
-  pdf_document: default
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
+  pdf_document: default
 bibliography: bibliography.bib
 csl: vancouver.csl
 editor_options:
@@ -314,7 +314,9 @@ p value is also shown.
 ## Discussion
 
 The results show that generally, patients do not systemically receive
-delayed treatment because of a patient level factor.
+delayed treatment because of a patient level factor. This should be seen
+as a good thing, as it suggests that the delayed treatment happens more
+at random than because of a factor on a patient level.
 
 As we see in the results, there was only one variable that, when
 adjusted, had a correlation with the risk for a patient of receiving

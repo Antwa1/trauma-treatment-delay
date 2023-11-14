@@ -21,16 +21,16 @@ create.factors2 <- function(dataset){
   dataset$ISS <- as.numeric(dataset$ISS)
   
   ##Fixing inital procedure into categories
-   dataset$ed_emerg_proc <- ifelse(dataset$ed_emerg_proc == 1, "Thoracotomy",
+   dataset$ed_emerg_proc <- ifelse(dataset$ed_emerg_proc == 1, NA,
                                     ifelse(dataset$ed_emerg_proc == 2, "Laparotomy – hemostasis",
-                                           ifelse(dataset$ed_emerg_proc == 3, "Packing of the pelvis",
+                                           ifelse(dataset$ed_emerg_proc == 3, NA,
                                                   ifelse(dataset$ed_emerg_proc == 4, "Revascularization (including surgery for pulseless limb",
                                                          ifelse(dataset$ed_emerg_proc == 5, "Radiological intervention (Endovascular=embolization, stent, stentgraft)",
                                                                 ifelse(dataset$ed_emerg_proc == 6, "Craniotomy",
                                                                        ifelse(dataset$ed_emerg_proc == 7, "Intracranial pressure measurement as the only measure",
                                                                               ifelse(dataset$ed_emerg_proc == 8, "Other action",
-                                                                                     ifelse(dataset$ed_emerg_proc == 99, "No emergency measures performed",
-                                                                                        ifelse(dataset$ed_emerg_proc == 999, "Unknown", NA))))))))))
+                                                                                     ifelse(dataset$ed_emerg_proc == 99, "ANo emergency measures performed",
+                                                                                        ifelse(dataset$ed_emerg_proc == 999, NA, NA))))))))))
    
    dataset <- subset(dataset, !(is.na(ed_emerg_proc)))
    
