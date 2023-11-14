@@ -288,19 +288,16 @@ at the hospital.
 
 ![](Rplot.png)
 
-The 6,489 patients included in the study. 68% of the individuals
-included were men, with the remaining 32% being women. The mean value
-for the ISS score was 10.49, with the standard deviation being 11.4. The
-patients had a mean GCS of ... with a standard deviation of ... The
-majority of the patients had General care department as their highest
-care level, followed by ICU, ER, OR and lastly specialized care
-department. The mean respiratory rate in the overall group was ..., with
-a standard deviation of ... The mean SBP was ..., having a standard
-deviation of ... The majority of patients, 85%, were not intubated
-during their stay in the hospital, followed by 9.1% intubated at the
-hospital and 6% intubated prehospitaly. The mean age of the patients was
-... years old, with a standard deviation of ... Most of the patients
-arrived during on-call hours,..., with the rest arriving during working
+The 7,051 patients included in the study. 69% of the individuals
+included were men, with the remaining 31% being women. The mean value
+for the ISS score was 11.30, with the standard deviation being 13.22.
+The majority of the patients had General care department as their
+highest care level, followed by ER, ICU, OR and lastly specialized care
+department. The majority of patients, 82%, were not intubated during
+their stay in the hospital, followed by 9.2% intubated at the hospital
+and 8.4% intubated prehospitaly. The mean age of the patients was 44.95
+years old, with a standard deviation of 21.37. Most of the patients
+arrived during on-call hour, 60%, with the rest arriving during working
 hours. 67% of the patients arrived on a weekday, with the rest arriving
 on the weekend.
 
@@ -312,4 +309,16 @@ displayed.
 The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
 
-![](results.png)
+![](results1.png)
+
+## Discussion
+
+The results show that generally, patients do not systemically receive
+delayed treatment because of a patient level factor.
+
+As we see in the results, there was only one variable that, when
+adjusted, had a correlation with the risk for a patient of receiving
+delayed treatment, being the highest hospital care level. Compared with
+having the ER as the highest care level, patients who were in the ICU or
+the OR had a substantially lowered chance of receiving delayed
+treatment.
