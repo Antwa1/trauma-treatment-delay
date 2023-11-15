@@ -203,7 +203,9 @@ treatment using logistic regression.
 ## Outcome
 
 The outcome is delayed treatment, as identified by the multidisciplinary
-review board and recorded in the trauma care quality database.
+review board and recorded in the trauma care quality database. The
+outcome we'll be using is "long time untill CT" and "long time until
+operation", which will be referred to as delayed treatment from now on.
 
 ## Participants
 
@@ -214,15 +216,14 @@ they were missing information in one of the examined patient factors.
 
 ## Variables
 
-The outcome is delayed treatment, which is defined as more than 30
-minutes passing from arrival before receiving treatment, as identified
-by the multidisciplinary review board and recorded in the trauma care
-quality database. The independent variables are gender, highest hospital
-care level, GCS on arrival, respiratory rate on arrival, systolic blood
-pressure on arrival, if the patient was intubated on arrival, whether
-they arrived during weekend or working hours, ISS and age. Of these
-variables, GCS, respiratory rate, systolic blood pressure, intubation,
-ISS and age are used as continuous variables in the analysis
+The outcome is delayed treatment as identified by the multidisciplinary
+review board and recorded in the trauma care quality database. The
+independent variables are gender, highest hospital care level, GCS on
+arrival, respiratory rate on arrival, systolic blood pressure on
+arrival, if the patient was intubated on arrival, whether they arrived
+during weekend or working hours, ISS and age. Of these variables, GCS,
+respiratory rate, systolic blood pressure, intubation, ISS and age are
+used as continuous variables in the analysis
 
 ## Data sources/measurement
 
@@ -242,7 +243,8 @@ wrong.
 The study size is all of the eligible patients that was treated at the
 hospital between 2012 and 2022. Starting 2013 only a subgroup of
 patients were screened for OFIs, but starting 2017 all patients that are
-included in the database are screened for OFIs.
+included in the database are screened for OFIs. During this period, 69
+patients were deemed to have received delayed treatment.
 
 ## Statistical methods
 
@@ -252,7 +254,19 @@ level and 95% confidence levels will be used.
 Rstudio was used to perform the logistical regression. The code was
 written to clean and prepare the data from the database. The data was
 processed to have the variables customized to fit into the logistical
-regression model.
+regression model, such as making them into factors, renaming outcomes in
+the database and removing unknown values.
+
+Using the one in ten rule, 7 independent variables were used for the
+logistical regression given that we have 69 patients with delayed
+treatment. The one in ten rule states that for every variable examined,
+10 events are needed in the group. In this case, this means that because
+we have 69 patients with the examined outcome, we can have 7 variables.
+As we had more variables we wanted to use in the regression model, we
+decided to run two logistical regression models. One with gender, age,
+ISS, emergency procedure, SBP, RR and GCS. The other one with gender,
+age, ISS, highest care level, intubation, whether they arrived during
+work hours and whether they arrived on a weekday.
 
 For the missing hospital values in GCS, RR and SBP, values from EMT
 personnel were used
@@ -288,28 +302,57 @@ at the hospital.
 
 ![](Rplot.png)
 
-The 7,051 patients included in the study. 69% of the individuals
-included were men, with the remaining 31% being women. The mean value
-for the ISS score was 11.30, with the standard deviation being 13.22.
-The majority of the patients had General care department as their
-highest care level, followed by ER, ICU, OR and lastly specialized care
-department. The majority of patients, 82%, were not intubated during
-their stay in the hospital, followed by 9.2% intubated at the hospital
-and 8.4% intubated prehospitaly. The mean age of the patients was 44.95
-years old, with a standard deviation of 21.37. Most of the patients
-arrived during on-call hour, 60%, with the rest arriving during working
-hours. 67% of the patients arrived on a weekday, with the rest arriving
-on the weekend.
+7,051 patients included in the first logistical regression. 69% of the
+individuals included were men, with the remaining 31% being women. The
+mean value for the ISS score was 11.30, with the standard deviation
+being 13.22. The majority of the patients had General care department as
+their highest care level, followed by ER, ICU, OR and lastly specialized
+care department. The majority of patients, 82%, were not intubated
+during their stay in the hospital, followed by 9.2% intubated at the
+hospital and 8.4% intubated prehospitaly. The mean age of the patients
+was 44.95 years old, with a standard deviation of 21.37. Most of the
+patients arrived during on-call hour, 60%, with the rest arriving during
+working hours. 67% of the patients arrived on a weekday, with the rest
+arriving on the weekend.
 
 ![](table1.png)
 
-In the following table, the results from the regression analysis is
-displayed.
+In the following table, the results from the first regression analysis
+is displayed.
 
 The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
 
 ![](results1.png)
+
+For the second logistical regression, we had a group size of 7,344
+patients, with 70 of them having received delayed treatment. The reason
+for this group having more patients is because of the exclusion criteria
+that patients can't have data missing in any of the examined variables.
+In this group, fewer patients had missing data, leading to fewer
+exclusions. This resulted in different values in the same variables as
+previously used in the first logistical regression. 68% of the
+individuals included were men, with the remaining 32% being women. The
+mean value for the ISS score was 10.07, with the standard deviation
+being 10.27. The mean age of the patients was 44.20 years old, with a
+standard deviation of 21.41. The majority of the patients had no
+emergency measures performed, with 76% of the patients belonging to this
+group. Following this, the most common emergency procedures were other
+action, laparotomy, craniotomy, radiological intervention, intracranial
+pressure measurement, and lastly, revascularization. The mean SBP was
+137.60, with a standard deviation of 25.09. Mean respiratory rate was
+18.59 with a standard deviation of 5.10. Lastly, mean GCS was 13.95,
+with a standard deviation of 2.58.
+
+![](table2.png)
+
+In the following table, the results from the second regression analysis
+is displayed.
+
+The odds ratio is calculated in the same way as the previous regression
+model, as well as a 95% confidence interval. The p value is also shown.
+
+![](results2.png)
 
 ## Discussion
 
