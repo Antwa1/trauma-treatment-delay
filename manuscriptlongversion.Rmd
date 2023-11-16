@@ -323,6 +323,9 @@ is displayed.
 The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
 
+As the table below shows, most of the variables, when adjusted for, does
+not have an effect on the risk of receiving delayed treatment.
+
 ![](results1.png)
 
 For the second logistical regression, we had a group size of 7,344
