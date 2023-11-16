@@ -324,7 +324,12 @@ The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
 
 As the table below shows, most of the variables, when adjusted for, does
-not have an effect on the risk of receiving delayed treatment.
+not have an effect on the risk of receiving delayed treatment. Only two
+values in one of the categories had an effect, having ICU or OR compared
+to having ER as your highest care level. It suggests that patients who
+were in the ICU or OR as their highest care level had a lower chance of
+receiving delayed treatment compared with patients who had ER as their
+highest.
 
 ![](results1.png)
 
@@ -354,6 +359,9 @@ is displayed.
 
 The odds ratio is calculated in the same way as the previous regression
 model, as well as a 95% confidence interval. The p value is also shown.
+
+The analysis shows that when adjusted for, most variables do not have a
+correlation with receiving delayed treatment.
 
 ![](results2.png)
 
