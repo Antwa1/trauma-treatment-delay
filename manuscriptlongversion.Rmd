@@ -290,30 +290,34 @@ used for other purposes.
 
 ## Results
 
-Out of the 14,022, 5,710 patients were not screened for ofi, which
-excludes them from the study. Out of the remaining 8,312 patients, 1,823
-patients had missing data in one or more of the analysed parameters,
-which led to exclusion from the study.
+Out of the 14,022 patients receiving trauma care at Karolinska
+University Hospital, 5,710 patients were not screened for ofi, which
+excludes them from the study and leaves 8,312 patients that have been
+screened for ofi.
 
-In the remaining group of 6,489 patients who have been screened for ofi
-and have data registered in all parameters examined for the study, 69
-patients were found to have received delayed treatment during their stay
-at the hospital.
+As were running two logistical regression models with different
+variables and a missing value in a variable led to exclusion, the two
+groups did not have the same amount of participants. In the first
+logistical regression, 1,261 patients had missing data in one or more of
+the analysed parameters which left 7,051 individuals group, 69 of which
+hade delayed treatment. In the second logistical regression, 1,038
+patients had missing data in one or more of the analysed parameters
+which left 7,274 individuals group, 70 of which hade delayed treatment.
 
 ![](Rplot.png)
 
-7,051 patients included in the first logistical regression. 69% of the
-individuals included were men, with the remaining 31% being women. The
-mean value for the ISS score was 11.30, with the standard deviation
-being 13.22. The majority of the patients had General care department as
-their highest care level, followed by ER, ICU, OR and lastly specialized
-care department. The majority of patients, 82%, were not intubated
-during their stay in the hospital, followed by 9.2% intubated at the
-hospital and 8.4% intubated prehospitaly. The mean age of the patients
-was 44.95 years old, with a standard deviation of 21.37. Most of the
-patients arrived during on-call hour, 60%, with the rest arriving during
-working hours. 67% of the patients arrived on a weekday, with the rest
-arriving on the weekend.
+The 7,051 patients included in the first logistical regression had
+characteristics as shown in table1. 69% of the individuals included were
+men, with the remaining 31% being women. The mean value for the ISS
+score was 11.30, with the standard deviation being 13.22. The majority
+of the patients had General care department as their highest care level,
+followed by ER, ICU, OR and lastly specialized care department. The
+majority of patients, 82%, were not intubated during their stay in the
+hospital, followed by 9.2% intubated at the hospital and 8.4% intubated
+prehospitaly. The mean age of the patients was 44.95 years old, with a
+standard deviation of 21.37. Most of the patients arrived during on-call
+hour, 60%, with the rest arriving during working hours. 67% of the
+patients arrived on a weekday, with the rest arriving on the weekend.
 
 ![](table1.png)
 
@@ -324,24 +328,23 @@ The odds ratio is calculated, as well as a 95% confidence interval. The
 p value is also shown.
 
 As the table below shows, most of the variables, when adjusted for, does
-not have an effect on the risk of receiving delayed treatment. Only two
-values in one of the categories had an effect, having ICU or OR compared
-to having ER as your highest care level. It suggests that patients who
-were in the ICU or OR as their highest care level had a lower chance of
-receiving delayed treatment compared with patients who had ER as their
-highest.
+not have an effect on the risk of receiving delayed treatment. Only when
+not adjusted for, not being intubated had a correlation with increased
+incidence of delayed treatment, while having higher ISS had the inverse
+effect with lowering the rate of delayed treatment. Only two values in
+one of the categories had an effect, having ICU or OR compared to having
+ER as your highest care level. It suggests that patients who were in the
+ICU or OR as their highest care level had a lower chance of receiving
+delayed treatment compared with patients who had ER as their highest.
 
 ![](results1.png)
 
-For the second logistical regression, we had a group size of 7,344
-patients, with 70 of them having received delayed treatment. The reason
-for this group having more patients is because of the exclusion criteria
-that patients can't have data missing in any of the examined variables.
-In this group, fewer patients had missing data, leading to fewer
-exclusions. This resulted in different values in the same variables as
-previously used in the first logistical regression. 68% of the
-individuals included were men, with the remaining 32% being women. The
-mean value for the ISS score was 10.07, with the standard deviation
+Below are the characteristics of the group used in the second logistical
+regression. In this group, fewer patients had missing data, leading to
+fewer exclusions. This resulted in different values in the same
+variables as previously used in the first logistical regression. 68% of
+the individuals included were men, with the remaining 32% being women.
+The mean value for the ISS score was 10.07, with the standard deviation
 being 10.27. The mean age of the patients was 44.20 years old, with a
 standard deviation of 21.41. The majority of the patients had no
 emergency measures performed, with 76% of the patients belonging to this
@@ -361,7 +364,13 @@ The odds ratio is calculated in the same way as the previous regression
 model, as well as a 95% confidence interval. The p value is also shown.
 
 The analysis shows that when adjusted for, most variables do not have a
-correlation with receiving delayed treatment.
+correlation with receiving delayed treatment. Three variables, ISS, RR
+and GCS, had a correlation with receiving delayed treatment when not
+adjusted for. However, when adjusted for, the correlation dissapeared.
+In the case of emergency procedure, there was a correlation for all
+emergency procedures performed and having a lowered incidence of delayed
+treatment among the patients, compared with not receiving any emergency
+measures performed.
 
 ![](results2.png)
 
