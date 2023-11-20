@@ -1,13 +1,14 @@
 library(gtsummary)
 library(magrittr)
 library(dplyr)
+library(purrr)
 
 model.data <- function(dataset){
   
   ## regression model nr 1
   model1 <-
     glm(
-      OFI_delay ~ Gender + Highest_care_level + Intubated + ISS + Age + weekday + work_hours,
+      OFI_delay ~ Gender + Highest_care_level + Intubated + ISS + Age + Weekday + work_hours,
       data = factors.data,
       family = binomial)
       
@@ -16,10 +17,9 @@ model.data <- function(dataset){
                        pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
         bold_p() %>%
         bold_labels()
-      add_p(digits = c(p = 3))
 }
   
-  unadjust1 <- tbl_uvregression(data = factors.data1,
+  unadjust1 <- tbl_uvregression(data = factors.data,
                                 exponentiate = TRUE,
                                 method = glm,
                                 y = OFI_delay,
@@ -29,6 +29,7 @@ model.data <- function(dataset){
   ) %>%
     bold_p(t = 0.05) %>%
     bold_labels()
+
     
 
 fancy_table1 <-
@@ -36,9 +37,7 @@ fancy_table1 <-
       tbls        = list(adjusted1, unadjust1),
       tab_spanner = c("Adjusted", "Unadjusted")
     )
-  
-  
-  
+
   
 ## regression model nr 2
 model2 <-
@@ -52,7 +51,6 @@ adjusted2 <-
                  pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
   bold_p() %>%
   bold_labels()
-add_p(digits = c(p = 3))
 
 
 unadjust2 <- tbl_uvregression(data = factors.data2,
@@ -66,7 +64,6 @@ unadjust2 <- tbl_uvregression(data = factors.data2,
   bold_p(t = 0.05) %>%
   bold_labels()
 
-
 fancy_table2 <-
   tbl_merge(
     tbls        = list(adjusted2, unadjust2),
@@ -77,6 +74,7 @@ fancy_table2 <-
     
 
 ##table1
+table1 <-
 factors.data %>%
   tbl_summary(  
     by = OFI_delay,
@@ -87,11 +85,15 @@ factors.data %>%
     statistic = list(all_continuous() ~ "{mean} ± {sd}"),
     digits = list(all_continuous() ~ c(2, 2))
   ) %>%
-  add_overall("**Overall (N = {N})**") %>%
-  bold_labels()
+  add_p(list(all_continuous() ~ "t.test",
+             all_categorical() ~ "fisher.test")) %>%
+    add_overall("**Overall (N = {N})**") %>%
+   bold_labels()
+
 
 
 ##table2
+table2 <-
 factors.data2 %>%
   tbl_summary(  
     by = OFI_delay,
@@ -105,8 +107,11 @@ factors.data2 %>%
     statistic = list(all_continuous() ~ "{mean} ± {sd}"),
     digits = list(all_continuous() ~ c(2, 2))
   ) %>%
-  add_overall("**Overall (N = {N})**") %>%
+  add_p(list(all_continuous() ~ "t.test",
+             all_categorical() ~ "fisher.test")) %>%
+add_overall("**Overall (N = {N})**") %>%
   bold_labels()
   
   return(model)
+
 

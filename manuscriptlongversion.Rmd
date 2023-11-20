@@ -381,9 +381,13 @@ delayed treatment because of a patient level factor. This should be seen
 as a good thing, as it suggests that the delayed treatment happens more
 at random than because of a factor on a patient level.
 
-As we see in the results, there was only one variable that, when
-adjusted, had a correlation with the risk for a patient of receiving
-delayed treatment, being the highest hospital care level. Compared with
-having the ER as the highest care level, patients who were in the ICU or
-the OR had a substantially lowered chance of receiving delayed
-treatment.
+As we see in the results, there was one variable that, when adjusted,
+had a correlation with the risk for a patient of receiving delayed
+treatment, being the highest hospital care level. Compared with having
+the ER as the highest care level, patients who were in the ICU or the OR
+had a substantially lowered chance of receiving delayed treatment.
+
+The other variable that when adjusted for had a correlation with
+receiving delayed treatment was getting a emergency procedure. Compared
+to not receiving an emergency measure, all observed emergency procedures
+had a correlation with lower chance of delayed treatment.
