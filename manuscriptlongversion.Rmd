@@ -21,11 +21,11 @@ editor_options:
 
 Trauma, defined as the clinical entity composed of physical injury and
 the body's associated response [@gerdin_risk_2015], is and has long been
-a major cause of death around the world today [@WHO_2021]. Within modern
+a major cause of death around the world [@WHO_2021]. Within modern
 hospital care, the trauma system stands as an important part in
 healthcare and is crucial to lowering mortality and morbidity in injured
-patients through many means, such as hospital care, follow up and
-prevention programs [@Choi_2021].
+patients through many means, such as hospital care, patient follow up
+and prevention programs [@Choi_2021].
 
 ## Trauma Statistics
 
@@ -58,16 +58,16 @@ of dying from trauma, with young men with low socio-economic status
 being at most risk [@WHO_2021]. But it is not only patient level factors
 that affect what effect trauma has on people. About 90% of all trauma
 related deaths occur in low- and middle-income countries (LMIC), with
-death rates by trauma also being higher than in high income countries.
-Even within these LMIC, people of poorer socio-economic status have
-higher death rates from trauma. Problems identified within these
-countries that contribute to these statisitics were infrastructure,
-education and training, attributed to lack of funding, brain drain to
-HIC and lack of availability of basic amenities [@Shanthakumar_2021]. In
-HIC where funding and governance over the healthcare system is better
-designed, functioning trauma systems and dedicated trauma centers exist
-that have been shown to lower mortality but also improve functional
-outcome in trauma patients [@Nirula_2006].
+death rates by trauma also being higher than in HIC. Even within these
+LMIC, people of poorer socio-economic status have higher death rates
+from trauma. Problems identified within these countries that contribute
+to these statisitics were infrastructure, education and training,
+attributed to lack of funding, brain drain to HIC and lack of
+availability of basic amenities [@Shanthakumar_2021]. In HIC where
+funding and governance over the healthcare system is better designed,
+functioning trauma systems and dedicated trauma centers exist that have
+been shown to lower mortality but also improve functional outcome in
+trauma patients [@Nirula_2006].
 
 ## Trauma systems
 
@@ -88,20 +88,20 @@ more capable of treating these patients, with potential survival benefit
 increasing with higher injury severity [@Candefjord_2020]. Other studies
 have shown similar results, showing that treating injured patients at
 trauma centers is associated with a 15-30% decrease in mortality
-[@Moran_2018; \@Celso_2006; @MacKenzie_2006; \@Haas_2012] . During the
+[@Moran_2018; @Celso_2006; @MacKenzie_2006; @Haas_2012] . During the
 last three decades, the introduction of trauma systems has contributed
 to lowering the incidence of preventable death . This is attributed to
 the improvements in care for acute brain injuries and bleeding control.
-The incidence of late death because of sepsis and multiple organ
-failure, possibly a result of better and earlier resuscitation
-[@Asensio_2008]. Functioning trauma systems saves lives in the hospital,
-but their work outside of the hospital is just as important. Data
-collection from injured patients, such as mechanism of injury or
-mortality, are essential for creating databases that can be used for
-research. In turn, that research can be used for planning injury
-prevention programs that target the most common injuries in the right
-ways, e.g. teen drivers, children, specific occupations etc. These
-injury prevention programs can be planned on trauma center,
+The incidence of late death because of sepsis and multiple organ failure
+has also been lowered, possibly a result of better and earlier
+resuscitation [@Asensio_2008]. Functioning trauma systems saves lives in
+the hospital, but their work outside of the hospital is just as
+important. Data collection from injured patients, such as mechanism of
+injury or mortality, are essential for creating databases that can be
+used for research. In turn, that research can be used for planning
+injury prevention programs that target the most common injuries in the
+most efficient ways, e.g. teen drivers, children, specific occupations
+etc. These injury prevention programs can be planned on trauma center,
 organizational or government level[@ACS].
 
 Trauma teams are multidisciplinary and operate in these centers. They
@@ -111,7 +111,7 @@ trauma teams are lead by a team leader who is a surgeon, and include
 practitioners from the specialities of intensive care, orthopedics,
 nursing and support staff[@västra_G]. For the trauma team to be
 mobilized, trauma code has to be activated, often by an emergency nurse.
-The nurse uses information gathered by the first responders to see if
+The nurse uses information gathered by the first responders to assess if
 the patient fits any of the criteria for trauma code. Most healthcare
 facilities have established criteria or guidelines that trigger trauma
 code activation. These criteria typically include mechanisms of injury,
@@ -129,19 +129,23 @@ prioritise their injuries and arrange for site of definitive care.
 
 Many hospitals have a trauma registry where they log the patients
 information and timeline of what happened. The extent of the registry
-varies, with HIC having more complete registries. This logging of
-information is important work, as a cornerstone of trauma quality
-improvement programs is multidisciplinary MoM conferences. The MoM
-conference is a meeting where different specialities who work with
-trauma care sit down and discuss deaths and complications in order to
-look for preventable factors. These conferences are performed in many
-hospitals globally, almost everywhere where there are formal medical
-specialty departments and sometimes in smaller hospitals as well
-[@WHO_2009]. In Sweden, many hospitals have mortality conferences on
-deceased patient cases, but only one has MoM conferences to better their
-trauma care on patients who lived [@SweTrau_2023]. The reason being that
-this expansion of MoM conferences takes time and resources, which is why
-all hospitals don't implement this.
+varies, with HIC having more complete registries. In Sweden, 48 out of
+the 49 hospitals receiving trauma patients are connected to the national
+registry SweTrau, which functions as a national database designed to
+enable scientific processing with epidemiological technology
+[@SweTrau_2021] This logging of information is important work, as a
+cornerstone of trauma quality improvement programs is multidisciplinary
+MoM conferences. The MoM conference is a meeting where different
+specialities who work with trauma care sit down and discuss deaths and
+complications in order to look for preventable factors. These
+conferences are performed in many hospitals globally, almost everywhere
+where there are formal medical specialty departments and sometimes in
+smaller hospitals as well [@WHO_2009]. In Sweden, many hospitals have
+mortality conferences on deceased patient cases, but only one has MoM
+conferences to better their trauma care on patients who lived
+[@SweTrau_2023]. The reason being that this expansion of MoM conferences
+takes time and resources, which is why all hospitals don't implement
+this.
 
 The endpoint of these MoM conferences are opportunities for improvement
 (OFI). At the end of the conference, consensus is reached regarding the
@@ -155,7 +159,7 @@ treatment has been identified as a major error contributing to death,
 found in up to 52.9% of patients in said group [@Teixeira_2007]. Delayed
 treatment has been shown to have adverse effects on patients, showing
 why it is such an important issue and the need to develop strategies to
-combat [@Sampalis_1995; \@Sampalis_1994]. Although it is such a common
+combat [@Sampalis_1995; @Sampalis_1994]. Although it is such a common
 OFI, the patient level factors associated with delayed treatment are
 poorly understood. There may be several factors that correlate with
 receiving delayed treatment, but they have yet to be identified. Mapping
@@ -172,21 +176,20 @@ center.
 
 ## Setting
 
-Every year, Karolinska University hospital, which is the equivalent of a
-trauma level 1 hospital, admits 1500 trauma patients each year. To be
-added to the trauma registry, a patient must be over 15 years of age,
-had ISS\>9 and/or had trauma code activation. They get added to both the
-Karolinska Trauma registry as well as the national trauma registry
-(SweTrau). The registry includes data on vital signs, injuries,
-interventions and patient information. Another database, the trauma care
-quality database includes information relevant for MoM conferences. At
-Karolinska University Hospital, patients who die during hospital stay
-gets their case sent to a MoM everytime. However, for the rest of the
-patients, two specialized nurses determine whether they are. Several
-audit filters are set up to flag for patients with possible OFIs.
-Flagged patients are then reviewed by these two nurses who decide if
-there is a possible OFI, in which case their case is sent to a MoM
-conference for further review.
+Karolinska University hospital, which is the equivalent of a trauma
+level 1 hospital, admits 1500 trauma patients each year. To be added to
+the trauma registry, a patient must be over 15 years of age, had ISS\>9
+and/or had trauma code activation. They get added to both the Karolinska
+Trauma registry as well as the national trauma registry (SweTrau). The
+registry includes data on vital signs, injuries, interventions and
+patient information. Another database, the trauma care quality database
+includes information relevant for MoM conferences. At Karolinska
+University Hospital, patients who die during hospital stay gets their
+case sent to a MoM everytime. However, for the rest of the patients, two
+specialized nurses determine whether they are. Several audit filters are
+set up to flag for patients with possible OFIs. Flagged patients are
+then reviewed by these two nurses who decide if there is a possible OFI,
+in which case their case is sent to a MoM conference for further review.
 
 ## Study design
 
@@ -243,7 +246,7 @@ wrong.
 The study size is all of the eligible patients that was treated at the
 hospital between 2012 and 2022. Starting 2013 only a subgroup of
 patients were screened for OFIs, but starting 2017 all patients that are
-included in the database are screened for OFIs. During this period, 69
+included in the database are screened for OFIs. During this period, 72
 patients were deemed to have received delayed treatment.
 
 ## Statistical methods
@@ -258,10 +261,10 @@ regression model, such as making them into factors, renaming outcomes in
 the database and removing unknown values.
 
 Using the one in ten rule, 7 independent variables were used for the
-logistical regression given that we have 69 patients with delayed
+logistical regression given that we have 72 patients with delayed
 treatment. The one in ten rule states that for every variable examined,
 10 events are needed in the group. In this case, this means that because
-we have 69 patients with the examined outcome, we can have 7 variables.
+we have 72 patients with the examined outcome, we can have 7 variables.
 As we had more variables we wanted to use in the regression model, we
 decided to run two logistical regression models. One with gender, age,
 ISS, emergency procedure, SBP, RR and GCS. The other one with gender,
@@ -300,9 +303,10 @@ variables and a missing value in a variable led to exclusion, the two
 groups did not have the same amount of participants. In the first
 logistical regression, 1,261 patients had missing data in one or more of
 the analysed parameters which left 7,051 individuals group, 69 of which
-hade delayed treatment. In the second logistical regression, 1,038
+received delayed treatment. In the second logistical regression, 1,038
 patients had missing data in one or more of the analysed parameters
-which left 7,274 individuals group, 70 of which hade delayed treatment.
+which left 7,274 individuals group, 70 of which received delayed
+treatment.
 
 ![](Rplot.png)
 
@@ -376,18 +380,46 @@ measures performed.
 
 ## Discussion
 
+Key results
+
 The results show that generally, patients do not systemically receive
 delayed treatment because of a patient level factor. This should be seen
 as a good thing, as it suggests that the delayed treatment happens more
 at random than because of a factor on a patient level.
 
-As we see in the results, there was one variable that, when adjusted,
+As we see in the results, there were two variables that, when adjusted,
 had a correlation with the risk for a patient of receiving delayed
-treatment, being the highest hospital care level. Compared with having
-the ER as the highest care level, patients who were in the ICU or the OR
-had a substantially lowered chance of receiving delayed treatment.
+treatment, one being the highest hospital care level. Compared with
+having the ER as the highest care level, patients who were in the ICU or
+the OR had a substantially lowered chance of receiving delayed
+treatment. This can be attributed to
 
 The other variable that when adjusted for had a correlation with
 receiving delayed treatment was getting a emergency procedure. Compared
 to not receiving an emergency measure, all observed emergency procedures
-had a correlation with lower chance of delayed treatment.
+had a correlation with lower chance of delayed treatment. This can be
+attributed to
+
+Limitations
+
+In this study, one of the limitations was the amount of people having
+the recorded outcome being quite small, leading to having the variables
+being split up into
+
+Discuss limitations of the study, taking into account sources of
+potential bias or imprecision. Discuss both direction and magnitude of
+any potential bias
+
+Interpretation
+
+20
+
+Give a cautious overall interpretation of results considering
+objectives, limitations, multiplicity of analyses, results from similar
+studies, and other relevant evidence
+
+Generalisability
+
+21
+
+Discuss the generalisability (external validity) of the study results
