@@ -412,7 +412,7 @@ any potential bias
 
 Interpretation
 
-20
+The above results could
 
 Give a cautious overall interpretation of results considering
 objectives, limitations, multiplicity of analyses, results from similar
