@@ -383,9 +383,11 @@ measures performed.
 Key results
 
 The results show that generally, patients do not systemically receive
-delayed treatment because of a patient level factor. This should be seen
-as a good thing, as it suggests that the delayed treatment happens more
-at random than because of a factor on a patient level.
+delayed treatment because of a patient level factor. In both groups, ISS
+had an unadjusted odds ratio of 0.98 and 0.96 respectively. The
+disparity between these ORs is because of previously mentioned slightly
+different group sizes and patients because of the different patients
+being excluded.
 
 As we see in the results, there were two variables that, when adjusted,
 had a correlation with the risk for a patient of receiving delayed
@@ -412,7 +414,9 @@ any potential bias
 
 Interpretation
 
-The above results could
+The above shown results should be seen as a good thing, as it suggests
+that the delayed treatment happens more at random than because of a
+factor on a patient level.
 
 Give a cautious overall interpretation of results considering
 objectives, limitations, multiplicity of analyses, results from similar
@@ -421,5 +425,14 @@ studies, and other relevant evidence
 Generalisability
 
 21
+
+Discussing the generalisability of this study, we included the all the
+trauma patients treated and Karolinska University Hospital and excluded
+40.7% of that population based on that they had not been screened for
+ofi. Additional patients were excluded because of missing data, but no
+distinct groups except the not screened patients were removed. On that
+basis, this population should be a general representation of trauma
+patients at the equivalent of a level 1 trauma center, making this study
+generalisable.
 
 Discuss the generalisability (external validity) of the study results
