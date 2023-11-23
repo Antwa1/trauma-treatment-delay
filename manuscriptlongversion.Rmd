@@ -406,7 +406,15 @@ Limitations
 
 In this study, one of the limitations was the amount of people having
 the recorded outcome being quite small, leading to having the variables
-being split up into
+being split up into two groups for the logistical regression.
+Furthermore, the original plan was to divide RR, SBP and GCS into
+revised trauma score (RTS) categories, from 1-4. However, many of the
+RTS variables had few to no patients with the observed outcome. This led
+to separation in the logistical regression in these variables, referring
+to when an outcome variable separates a predictor variable completely,
+which occurs when the predictor is only associated with one outcome
+value. In the case it was RTS 3 and 4, which left RTS 1 and 2 with
+confidence intervalls of 0.00 to infinity.
 
 Discuss limitations of the study, taking into account sources of
 potential bias or imprecision. Discuss both direction and magnitude of
