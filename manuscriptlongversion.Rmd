@@ -413,12 +413,15 @@ RTS variables had few to no patients with the observed outcome. This led
 to separation in the logistical regression in these variables, referring
 to when an outcome variable separates a predictor variable completely,
 which occurs when the predictor is only associated with one outcome
-value. In the case it was RTS 3 and 4, which left RTS 1 and 2 with
-confidence intervalls of 0.00 to infinity.
+value [@OARC]. In the case of these variables, it was only RTS 3 and 4
+who had patients with the observed outcome, which left RTS 1 and 2 with
+confidence intervals of 0.00 to infinity. This way would have been the
+best way to examine these variables, but as that wasn't possible with
+this group of patients, we resorted to making these variables
+continuous.
 
-Discuss limitations of the study, taking into account sources of
-potential bias or imprecision. Discuss both direction and magnitude of
-any potential bias
+The biases that might have been present in this study would be selection
+bias and misclassification bias.
 
 Interpretation
 
