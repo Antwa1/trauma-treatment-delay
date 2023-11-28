@@ -258,7 +258,8 @@ Rstudio was used to perform the logistical regression. The code was
 written to clean and prepare the data from the database. The data was
 processed to have the variables customized to fit into the logistical
 regression model, such as making them into factors, renaming outcomes in
-the database and removing unknown values.
+the database and removing unknown values. The variables were either
+binary or continuous.
 
 Using the one in ten rule, 7 independent variables were used for the
 logistical regression given that we have 72 patients with delayed
@@ -272,10 +273,15 @@ age, ISS, highest care level, intubation, whether they arrived during
 work hours and whether they arrived on a weekday.
 
 For the missing hospital values in GCS, RR and SBP, values from EMT
-personnel were used
+personnel were used. This was accomplished by identifying missing data
+in the column for the hospital value of the variable and, if available,
+replacing the row in the dataset with the prehospital value. If a
+prehospital value is missing, the patient is excluded from the study.
 
-The dependent variable is OFI_delay, which is the presence of the ofi
-delayed treatment.
+The logistical regression is run through Rstudio using the glm command.
+To make the tables, the package gtsummary was used to visualize the
+adjusted and unadjusted regression, then merging the two tables into
+one.
 
 ## Ethical considerations
 
@@ -421,7 +427,8 @@ this group of patients, we resorted to making these variables
 continuous.
 
 The biases that might have been present in this study would be selection
-bias and misclassification bias.
+bias and misclassification bias. Our aim is to make this applicable to
+the whole trauma patient
 
 Interpretation
 
