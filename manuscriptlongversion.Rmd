@@ -316,56 +316,20 @@ treatment.
 
 ![](Rplot.png)
 
-The 7,051 patients included in the first logistical regression had
-characteristics as shown in table1. 69% of the individuals included were
-men, with the remaining 31% being women. The mean value for the ISS
-score was 11.30, with the standard deviation being 13.22. The majority
-of the patients had General care department as their highest care level,
-followed by ER, ICU, OR and lastly specialized care department. The
-majority of patients, 82%, were not intubated during their stay in the
-hospital, followed by 9.2% intubated at the hospital and 8.4% intubated
-prehospitaly. The mean age of the patients was 44.95 years old, with a
-standard deviation of 21.37. Most of the patients arrived during on-call
-hour, 60%, with the rest arriving during working hours. 67% of the
-patients arrived on a weekday, with the rest arriving on the weekend.
+Below are the characteristics of the group used in the logistical
+regression. Most of the patients were men, 68%, with that being a bit
+higher in the delayed treatment group, 74%. The mean value for the ISS
+score was 10.18, with that value being higher in the outcome group, at
+16.81. The mean age of the patients was 45.18 years old, with it being
+around the same in the delayed treatment group at 45.50. The mean number
+of injuries among the delayed treatment patients was at 6.33, which is
+higher than in the overall group at 4.76. The mean SBP was 137.33, with
+a standard deviation of 25.69. Mean respiratory rate was 18.59 with it
+being slightly higher in the outcome population at 20.39. Lastly, mean
+GCS was 13.93, being lower among patients with delayed treatment at
+12.56.
 
 ![](table1.png)
-
-In the following table, the results from the first regression analysis
-is displayed.
-
-The odds ratio is calculated, as well as a 95% confidence interval. The
-p value is also shown.
-
-As the table below shows, most of the variables, when adjusted for, does
-not have an effect on the risk of receiving delayed treatment. Only when
-not adjusted for, not being intubated had a correlation with increased
-incidence of delayed treatment, while having higher ISS had the inverse
-effect with lowering the rate of delayed treatment. Only two values in
-one of the categories had an effect, having ICU or OR compared to having
-ER as your highest care level. It suggests that patients who were in the
-ICU or OR as their highest care level had a lower chance of receiving
-delayed treatment compared with patients who had ER as their highest.
-
-![](results1.png)
-
-Below are the characteristics of the group used in the second logistical
-regression. In this group, fewer patients had missing data, leading to
-fewer exclusions. This resulted in different values in the same
-variables as previously used in the first logistical regression. 68% of
-the individuals included were men, with the remaining 32% being women.
-The mean value for the ISS score was 10.07, with the standard deviation
-being 10.27. The mean age of the patients was 44.20 years old, with a
-standard deviation of 21.41. The majority of the patients had no
-emergency measures performed, with 76% of the patients belonging to this
-group. Following this, the most common emergency procedures were other
-action, laparotomy, craniotomy, radiological intervention, intracranial
-pressure measurement, and lastly, revascularization. The mean SBP was
-137.60, with a standard deviation of 25.09. Mean respiratory rate was
-18.59 with a standard deviation of 5.10. Lastly, mean GCS was 13.95,
-with a standard deviation of 2.58.
-
-![](table2.png)
 
 In the following table, the results from the second regression analysis
 is displayed.
@@ -380,9 +344,9 @@ adjusted for. However, when adjusted for, the correlation dissapeared.
 In the case of emergency procedure, there was a correlation for all
 emergency procedures performed and having a lowered incidence of delayed
 treatment among the patients, compared with not receiving any emergency
-measures performed.
+measures performed
 
-![](results2.png)
+![](results1.png)
 
 ## Discussion
 

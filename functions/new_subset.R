@@ -10,25 +10,17 @@ clean.dataset <- function(dataset){
   dataset <-
     dataset[, c(
       "Gender",
-      "res_survival",
-      "host_care_level",
       "ed_gcs_sum",
       "ed_rr_value",
       "ed_sbp_value",
-      "dt_ed_first_ct",
-      "pre_intubated",
       "pt_age_yrs",
       "ISS",
       "ofi",
       "OFI_delay",
       "pre_gcs_sum",
-      "ed_rr_rtscat",
-      "ed_sbp_rtscat",
-      "DateTime_ArrivalAtHospital",
       "pre_rr_value",
       "pre_sbp_value",
-      "ed_intubated",
-      "ed_emerg_proc"
+      "NumberOfInjuries"
     )]
   
   ## remove rows without OFI

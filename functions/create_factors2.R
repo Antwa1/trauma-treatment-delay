@@ -20,21 +20,10 @@ create.factors2 <- function(dataset){
   
   dataset$ISS <- as.numeric(dataset$ISS)
   
-  ##Fixing inital procedure into categories
-   dataset$ed_emerg_proc <- ifelse(dataset$ed_emerg_proc == 1, NA,
-                                    ifelse(dataset$ed_emerg_proc == 2, "Laparotomy – hemostasis",
-                                           ifelse(dataset$ed_emerg_proc == 3, NA,
-                                                  ifelse(dataset$ed_emerg_proc == 4, "Revascularization (including surgery for pulseless limb",
-                                                         ifelse(dataset$ed_emerg_proc == 5, "Radiological intervention (Endovascular=embolization, stent, stentgraft)",
-                                                                ifelse(dataset$ed_emerg_proc == 6, "Craniotomy",
-                                                                       ifelse(dataset$ed_emerg_proc == 7, "Intracranial pressure measurement as the only measure",
-                                                                              ifelse(dataset$ed_emerg_proc == 8, "Other action",
-                                                                                     ifelse(dataset$ed_emerg_proc == 99, "ANo emergency measures performed",
-                                                                                        ifelse(dataset$ed_emerg_proc == 999, NA, NA))))))))))
-   
-   dataset <- subset(dataset, !(is.na(ed_emerg_proc)))
-   
-   dataset$Emergency_procedure <- as.factor(dataset$ed_emerg_proc)
+  ##Number of injuries removing missing values and making it continuous
+  dataset <- subset(dataset, !(is.na(NumberOfInjuries) | NumberOfInjuries == 999))
+  
+  dataset$Number_of_injuries <- as.numeric(dataset$NumberOfInjuries)
   
   ## SBP into rts and replacing missing values
   
@@ -86,27 +75,17 @@ create.factors2 <- function(dataset){
   dataset <-
     dataset[,!(
       names(dataset) %in% c(
-        "res_survival",
-        "host_care_level",
+
+
         "ed_gcs_sum",
         "ed_rr_value",
         "ed_sbp_value",
-        "dt_ed_first_ct",
-        "pre_intubated",
         "pt_age_yrs",
         "pre_gcs_sum",
-        "ed_rr_rtscat",
-        "ed_sbp_rtscat",
-        "DateTime_ArrivalAtHospital",
-        "Date",
-        "Time",
         "pre_rr_value",
         "pre_sbp_value",
         "ofi",
-        "survival_after_30_days",
-        "Time_until_first_CT",
-        "ed_intubated",
-        "ed_emerg_proc"
+        "NumberOfInjuries"
       )
     )]
 
