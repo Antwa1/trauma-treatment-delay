@@ -221,12 +221,11 @@ they were missing information in one of the examined patient factors.
 
 The outcome is delayed treatment as identified by the multidisciplinary
 review board and recorded in the trauma care quality database. The
-independent variables are gender, highest hospital care level, GCS on
-arrival, respiratory rate on arrival, systolic blood pressure on
-arrival, if the patient was intubated on arrival, whether they arrived
-during weekend or working hours, ISS and age. Of these variables, GCS,
-respiratory rate, systolic blood pressure, intubation, ISS and age are
-used as continuous variables in the analysis
+independent variables are gender, GCS on arrival, respiratory rate on
+arrival, systolic blood pressure on arrival, number of injuries, ISS and
+age. Of these variables, GCS, respiratory rate, systolic blood pressure,
+number of injuries, ISS and age are used as continuous variables in the
+analysis. Gender is used as a categorical variable.
 
 ## Data sources/measurement
 
@@ -246,8 +245,13 @@ wrong.
 The study size is all of the eligible patients that was treated at the
 hospital between 2012 and 2022. Starting 2013 only a subgroup of
 patients were screened for OFIs, but starting 2017 all patients that are
-included in the database are screened for OFIs. During this period, 72
-patients were deemed to have received delayed treatment.
+included in the database are screened for OFIs. Out of the 14,022
+patients in the database, 7,378 were included in the study, with the
+rest being excluded due to either not being screened for ofi or missing
+values in the examined variables. 72 patients were deemed to have
+received delayed treatment. However, only 70 patients with the
+registered outcome were included in the study due to missing values
+among two of the patients.
 
 ## Statistical methods
 
@@ -259,18 +263,15 @@ written to clean and prepare the data from the database. The data was
 processed to have the variables customized to fit into the logistical
 regression model, such as making them into factors, renaming outcomes in
 the database and removing unknown values. The variables were either
-binary or continuous.
+binary or continuous. This code was used on scrambled data at first so
+to avoid selection bias as much as possible. When the code was finished,
+it was run on the unscrambled data.
 
 Using the one in ten rule, 7 independent variables were used for the
 logistical regression given that we have 72 patients with delayed
 treatment. The one in ten rule states that for every variable examined,
 10 events are needed in the group. In this case, this means that because
 we have 72 patients with the examined outcome, we can have 7 variables.
-As we had more variables we wanted to use in the regression model, we
-decided to run two logistical regression models. One with gender, age,
-ISS, emergency procedure, SBP, RR and GCS. The other one with gender,
-age, ISS, highest care level, intubation, whether they arrived during
-work hours and whether they arrived on a weekday.
 
 For the missing hospital values in GCS, RR and SBP, values from EMT
 personnel were used. This was accomplished by identifying missing data
@@ -280,8 +281,7 @@ prehospital value is missing, the patient is excluded from the study.
 
 The logistical regression is run through Rstudio using the glm command.
 To make the tables, the package gtsummary was used to visualize the
-adjusted and unadjusted regression, then merging the two tables into
-one.
+adjusted and unadjusted regression.
 
 ## Ethical considerations
 
@@ -304,15 +304,10 @@ University Hospital, 5,710 patients were not screened for ofi, which
 excludes them from the study and leaves 8,312 patients that have been
 screened for ofi.
 
-As were running two logistical regression models with different
-variables and a missing value in a variable led to exclusion, the two
-groups did not have the same amount of participants. In the first
-logistical regression, 1,261 patients had missing data in one or more of
-the analysed parameters which left 7,051 individuals group, 69 of which
-received delayed treatment. In the second logistical regression, 1,038
-patients had missing data in one or more of the analysed parameters
-which left 7,274 individuals group, 70 of which received delayed
-treatment.
+As we were running the logistical regression, further were excluded from
+the study due to missing data. Among the 8,312 patients screened for
+ofi, 7,378 were included in the study. 934 patients were excluded from
+the study due to missing values in one or more variables.
 
 ![](Rplot.png)
 
@@ -337,18 +332,19 @@ is displayed.
 The odds ratio is calculated in the same way as the previous regression
 model, as well as a 95% confidence interval. The p value is also shown.
 
-The analysis shows that when adjusted for, most variables do not have a
-correlation with receiving delayed treatment. Three variables, ISS, RR
-and GCS, had a correlation with receiving delayed treatment when not
-adjusted for. However, when adjusted for, the correlation dissapeared.
-In the case of emergency procedure, there was a correlation for all
-emergency procedures performed and having a lowered incidence of delayed
-treatment among the patients, compared with not receiving any emergency
-measures performed
+The analysis shows that some variables seem to have a correlation with
+patients receiving delayed treatment. ISS and respiratory rate both have
+a trend that patient with higher values seem to have a lower incidence
+of delayed treatment, both unadjusted and adjusted. GCS had the opposite
+correlation, with lower GCS often having lower incidence of delayed
+treatment, both unadjusted and adjusted. Number of injuries had the
+correlation of higher number of injuries having lower incidence of
+delayed treatment unadjusted, but that correlation was not seen when
+adjusted for.
 
 ![](results1.png)
 
-## Discussion
+# Discussion
 
 Key results
 
