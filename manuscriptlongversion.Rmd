@@ -348,25 +348,19 @@ adjusted for.
 
 Key results
 
-The results show that generally, patients do not systemically receive
-delayed treatment because of a patient level factor. In both groups, ISS
-had an unadjusted odds ratio of 0.98 and 0.96 respectively. The
-disparity between these ORs is because of previously mentioned slightly
-different group sizes and patients because of the different patients
-being excluded.
-
-As we see in the results, there were two variables that, when adjusted,
-had a correlation with the risk for a patient of receiving delayed
-treatment, one being the highest hospital care level. Compared with
-having the ER as the highest care level, patients who were in the ICU or
-the OR had a substantially lowered chance of receiving delayed
-treatment. This can be attributed to
-
-The other variable that when adjusted for had a correlation with
-receiving delayed treatment was getting a emergency procedure. Compared
-to not receiving an emergency measure, all observed emergency procedures
-had a correlation with lower chance of delayed treatment. This can be
-attributed to
+These results show that there seems to be a correlation between some
+variables and the presence of delayed treatment. A higher GCS had a
+correlation with delayed treatment while a lower ISS had the same
+correlation. This suggests that a less injured and more awake patient
+has a higher risk of receiving delayed treatment. Compared to previous a
+previous study analysing the same data but with ofi as the outcome, this
+result is surprising as that study came to the opposite result
+[@Pat_factors]. This can possibly be explained by that the study looked
+at all ofi, whereas this study concentrates on delayed treatment.
+Delayed treatment might have this correlation because an injured and
+unconscious patient might receive more attention at the hospital,
+leading to fewer instances delays compared to a patient that seems less
+injured.
 
 Limitations
 
@@ -391,10 +385,6 @@ bias and misclassification bias. Our aim is to make this applicable to
 the whole trauma patient
 
 Interpretation
-
-The above shown results should be seen as a good thing, as it suggests
-that the delayed treatment happens more at random than because of a
-factor on a patient level.
 
 Give a cautious overall interpretation of results considering
 objectives, limitations, multiplicity of analyses, results from similar
