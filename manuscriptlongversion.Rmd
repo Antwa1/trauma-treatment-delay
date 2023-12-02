@@ -297,7 +297,7 @@ impossible for anyone to identify patients. During the analysis, a VPN
 was used to access the database to ensure that no data was leaked or
 used for other purposes.
 
-## Results
+# Results
 
 Out of the 14,022 patients receiving trauma care at Karolinska
 University Hospital, 5,710 patients were not screened for ofi, which
@@ -365,24 +365,22 @@ injured.
 Limitations
 
 In this study, one of the limitations was the amount of people having
-the recorded outcome being quite small, leading to having the variables
-being split up into two groups for the logistical regression.
-Furthermore, the original plan was to divide RR, SBP and GCS into
-revised trauma score (RTS) categories, from 1-4. However, many of the
-RTS variables had few to no patients with the observed outcome. This led
-to separation in the logistical regression in these variables, referring
-to when an outcome variable separates a predictor variable completely,
-which occurs when the predictor is only associated with one outcome
-value [@OARC]. In the case of these variables, it was only RTS 3 and 4
-who had patients with the observed outcome, which left RTS 1 and 2 with
-confidence intervals of 0.00 to infinity. This way would have been the
-best way to examine these variables, but as that wasn't possible with
-this group of patients, we resorted to making these variables
-continuous.
+the recorded outcome being quite small, leading us into having to limit
+the amount of variables we wanted to examine. Furthermore, the original
+plan was to divide RR, SBP and GCS into revised trauma score (RTS)
+categories, from 1-4. However, many of the RTS variables had few to no
+patients with the observed outcome. This led to separation in the
+logistical regression in these variables, referring to when an outcome
+variable separates a predictor variable completely, which occurs when
+the predictor is only associated with one outcome value [@OARC]. In the
+case of these variables, it was only RTS 3 and 4 who had patients with
+the observed outcome, which left RTS 1 and 2 with confidence intervals
+of 0.00 to infinity. This way would have been the best way to examine
+these variables, but as that wasn't possible with this group of
+patients, we resorted to making these variables continuous.
 
 The biases that might have been present in this study would be selection
-bias and misclassification bias. Our aim is to make this applicable to
-the whole trauma patient
+bias and misclassification bias.
 
 Interpretation
 
@@ -401,6 +399,7 @@ ofi. Additional patients were excluded because of missing data, but no
 distinct groups except the not screened patients were removed. On that
 basis, this population should be a general representation of trauma
 patients at the equivalent of a level 1 trauma center, making this study
-generalisable.
+generalisable. This is in line with our aim, as it was to make it
+applicable to the whole trauma patient population
 
 Discuss the generalisability (external validity) of the study results
