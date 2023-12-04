@@ -205,10 +205,12 @@ treatment using logistic regression.
 
 ## Outcome
 
-The outcome is delayed treatment, as identified by the multidisciplinary
-review board and recorded in the trauma care quality database. The
-outcome we'll be using is "long time untill CT" and "long time until
-operation", which will be referred to as delayed treatment from now on.
+The outcome is the ofi delayed treatment. An ofi is any failure in care,
+e.g. clinical judgement error, any preventable or potentially
+preventable death, missed diagnosis, technical error and delayed
+treatment as identified and decided my the MoM conference. The outcomes
+we'll be using is "long time until CT" and "long time until operation",
+which will be referred to as delayed treatment from now on.
 
 ## Participants
 
@@ -219,13 +221,17 @@ they were missing information in one of the examined patient factors.
 
 ## Variables
 
-The outcome is delayed treatment as identified by the multidisciplinary
-review board and recorded in the trauma care quality database. The
-independent variables are gender, GCS on arrival, respiratory rate on
-arrival, systolic blood pressure on arrival, number of injuries, ISS and
-age. Of these variables, GCS, respiratory rate, systolic blood pressure,
-number of injuries, ISS and age are used as continuous variables in the
-analysis. Gender is used as a categorical variable.
+The independent variables are gender, GCS on arrival, respiratory rate
+on arrival, systolic blood pressure on arrival, number of injuries, ISS
+and age. Of these variables, GCS, respiratory rate, systolic blood
+pressure, number of injuries, ISS and age are used as continuous
+variables in the analysis. Gender is used as a categorical variable.
+
+For missing hospital values in GCS, RR and SBP, values from EMT
+personnel were used. This was accomplished by identifying missing data
+in the column for the hospital value of the variable and, if available,
+replacing the row in the dataset with the prehospital value. If a
+prehospital value is missing, the patient is excluded from the study.
 
 ## Data sources/measurement
 
@@ -262,22 +268,16 @@ Rstudio was used to perform the logistical regression. The code was
 written to clean and prepare the data from the database. The data was
 processed to have the variables customized to fit into the logistical
 regression model, such as making them into factors, renaming outcomes in
-the database and removing unknown values. The variables were either
-binary or continuous. This code was used on scrambled data at first so
-to avoid selection bias as much as possible. When the code was finished,
-it was run on the unscrambled data.
+the database and replacing or removing unknown values. The variables
+were either binary or continuous. This code was used on scrambled data
+at first so to avoid selection bias as much as possible. When the code
+was finished, it was run on the unscrambled data.
 
 Using the one in ten rule, 7 independent variables were used for the
 logistical regression given that we have 72 patients with delayed
 treatment. The one in ten rule states that for every variable examined,
 10 events are needed in the group. In this case, this means that because
 we have 72 patients with the examined outcome, we can have 7 variables.
-
-For the missing hospital values in GCS, RR and SBP, values from EMT
-personnel were used. This was accomplished by identifying missing data
-in the column for the hospital value of the variable and, if available,
-replacing the row in the dataset with the prehospital value. If a
-prehospital value is missing, the patient is excluded from the study.
 
 The logistical regression is run through Rstudio using the glm command.
 To make the tables, the package gtsummary was used to visualize the
@@ -307,7 +307,10 @@ screened for ofi.
 As we were running the logistical regression, further were excluded from
 the study due to missing data. Among the 8,312 patients screened for
 ofi, 7,378 were included in the study. 934 patients were excluded from
-the study due to missing values in one or more variables.
+the study due to missing values in one or more variables. This left us
+with 70 patients in the delayed treatment group and 7,308 patients in
+the no delay to treatment group. The flowchart below illustrates the
+exclusion and inclusion of patients.
 
 ![](Rplot.png)
 
@@ -379,8 +382,26 @@ of 0.00 to infinity. This way would have been the best way to examine
 these variables, but as that wasn't possible with this group of
 patients, we resorted to making these variables continuous.
 
+The problem mentioned above with too few patients in the outcome group
+made this into a post hoc analysis. As we didn't know the amount of
+people who received delayed treatment when we handled the scrambled
+data, we ran the code on the real data when we had too many variables
+for the dataset. Therefore, we had to change the variables after having
+seen the real data, making it a post hoc analysis. This could in theory
+open up for possible selection bias, as we might choose variables which
+give us results we are looking for. However, all the variables included
+in the final analysis were already included in the first one. Variables
+were only removed, not added after having seen the real data.
+
 The biases that might have been present in this study would be selection
-bias and misclassification bias.
+bias and misclassification bias. Selection bias I've explained above but
+misclassification bias is something that we can't control in this study.
+As previously mentioned, the possible existence of an ofi is decided
+during the MoM conferences, where they then add it to the database.
+However, they might not always be right in their judgement and
+misclassify from time to time, leading to patients landing in the wrong
+group in the analysis. This bias should not be big enough to have a
+significant impact on the results, but should be kept in mind.
 
 Interpretation
 
@@ -389,8 +410,6 @@ objectives, limitations, multiplicity of analyses, results from similar
 studies, and other relevant evidence
 
 Generalisability
-
-21
 
 Discussing the generalisability of this study, we included the all the
 trauma patients treated and Karolinska University Hospital and excluded
