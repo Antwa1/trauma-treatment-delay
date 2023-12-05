@@ -349,8 +349,6 @@ adjusted for.
 
 # Discussion
 
-Key results
-
 These results show that there seems to be a correlation between some
 variables and the presence of delayed treatment. A higher GCS had a
 correlation with delayed treatment while a lower ISS had the same
@@ -364,6 +362,17 @@ Delayed treatment might have this correlation because an injured and
 unconscious patient might receive more attention at the hospital,
 leading to fewer instances delays compared to a patient that seems less
 injured.
+
+Respiratory rate also had the correlation that lower respiratory rate
+correlated with lower rates of delayed treatment among the patients.
+
+Number of injuries was significant when unadjusted, but the correlation
+dissapeared when adjusted for with other variables. Our guess as to why
+this is due to confounding due to it's shared variability with the ISS
+variable. Number of injuries and ISS is often correlated as a more
+severely injured patient will both score higher on ISS and number of
+injuries. Therefore, we hypothesize that the effect of number of
+injuries become insignificant when adjusting for ISS.
 
 Limitations
 
@@ -391,7 +400,12 @@ seen the real data, making it a post hoc analysis. This could in theory
 open up for possible selection bias, as we might choose variables which
 give us results we are looking for. However, all the variables included
 in the final analysis were already included in the first one. Variables
-were only removed, not added after having seen the real data.
+were only removed, not added after having seen the real data. The best
+way to have gone about this would have been to just look at the amount
+of people who received delayed treatment before choosing the variables.
+Then, choosing an amount of variables that would work with the amount of
+patients. This would have avoided making it post hoc and changing the
+variables after seeing the data.
 
 The biases that might have been present in this study would be selection
 bias and misclassification bias. Selection bias I've explained above but
@@ -402,6 +416,12 @@ However, they might not always be right in their judgement and
 misclassify from time to time, leading to patients landing in the wrong
 group in the analysis. This bias should not be big enough to have a
 significant impact on the results, but should be kept in mind.
+
+Another limitation with this study is that logistical regressions
+assumes that the data is binomial, which the data used is not. The
+analysis assumes a linear correlation between the dependent variable and
+the independent variable, which is best analysed in a normal
+distribution.
 
 Interpretation
 
