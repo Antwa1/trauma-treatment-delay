@@ -364,7 +364,17 @@ leading to fewer instances delays compared to a patient that seems less
 injured.
 
 Respiratory rate also had the correlation that lower respiratory rate
-correlated with lower rates of delayed treatment among the patients.
+correlated with lower rates of delayed treatment among the patients. As
+the interval is \>10 to \<29 in the triage guideline, both too low and
+too high respiratory rate is not desirable[@EHCP2015]. This might have a
+similar explanation to ISS and GCS, that bradypnea in a patient might
+attract more attention in the hospital and lower the incidence of
+delayed treatment. Another possible explanation might be that patients
+with tachypnea might receive higher rates of delayed treatment because
+they are more severely injured, therefore a higher risk of missing a
+possible injury. Another similar study, which focused on ofi generally,
+showed the same correlation, although the significance dissapeared in
+the adjusted analysis.
 
 Number of injuries was significant when unadjusted, but the correlation
 dissapeared when adjusted for with other variables. Our guess as to why
@@ -407,21 +417,27 @@ Then, choosing an amount of variables that would work with the amount of
 patients. This would have avoided making it post hoc and changing the
 variables after seeing the data.
 
-The biases that might have been present in this study would be selection
-bias and misclassification bias. Selection bias I've explained above but
-misclassification bias is something that we can't control in this study.
-As previously mentioned, the possible existence of an ofi is decided
-during the MoM conferences, where they then add it to the database.
-However, they might not always be right in their judgement and
+Further discussing possible biases, misclassification bias might also be
+present in this study, though it is something that we can't control in
+this study. As previously mentioned, the possible existence of an ofi is
+decided during the MoM conferences, where they then add it to the
+database. However, they might not always be right in their judgement and
 misclassify from time to time, leading to patients landing in the wrong
-group in the analysis. This bias should not be big enough to have a
-significant impact on the results, but should be kept in mind.
+group in the analysis. Also, some patients might have been missed even
+before reaching the MoM conference. The patients included in the
+conference are selected through audit filters and two specialized
+nurses, and patients might be missed in this stage. This bias should not
+be big enough to have a significant impact on the results, but should be
+kept in mind.
 
 Another limitation with this study is that logistical regressions
 assumes that the data is binomial, which the data used is not. The
 analysis assumes a linear correlation between the dependent variable and
 the independent variable, which is best analysed in a normal
-distribution.
+distribution. However, Fischers test showed an association between 4 of
+the 7 variables, all of them being the ones who showed an increased or
+decreased risk of delayed treatment, showing that these results still
+are significant.
 
 Interpretation
 
@@ -439,6 +455,8 @@ distinct groups except the not screened patients were removed. On that
 basis, this population should be a general representation of trauma
 patients at the equivalent of a level 1 trauma center, making this study
 generalisable. This is in line with our aim, as it was to make it
-applicable to the whole trauma patient population
-
-Discuss the generalisability (external validity) of the study results
+applicable to the whole trauma patient population. However, as it is a
+single center study, where it's result only illustrates the situation in
+Stockholm, it is less applicable nationally or globally. This does not
+make it only applicable to the population of Stockholm, but is something
+to keep in mind.
