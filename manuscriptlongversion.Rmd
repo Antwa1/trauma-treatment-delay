@@ -187,9 +187,11 @@ includes information relevant for MoM conferences. At Karolinska
 University Hospital, patients who die during hospital stay gets their
 case sent to a MoM everytime. However, for the rest of the patients, two
 specialized nurses determine whether they are. Several audit filters are
-set up to flag for patients with possible OFIs. Flagged patients are
-then reviewed by these two nurses who decide if there is a possible OFI,
-in which case their case is sent to a MoM conference for further review.
+set up to flag for patients with possible OFIs. Audit filters may
+include low SBP, high RR, EMS scene time greater than 20 mins etc.
+Flagged patients are then reviewed by these two nurses who decide if
+there is a possible OFI, in which case their case is sent to a MoM
+conference for further review.
 
 ## Study design
 
@@ -240,11 +242,13 @@ database.
 
 ## Bias
 
-Selection bias as this is a retrospective cohort study where the outcome
-has occurred.
+Selection bias as this is a retrospective, pots hoc cohort study where
+the outcome has occurred.
 
 Misclassification bias as the conference may reach a consensus that is
-wrong.
+wrong, alternatively that the two specialized nurses going through the
+patients flagged for audit filters might missclassify patients or that
+the audit filter misses a patient with ofi.
 
 ## Study size
 
@@ -280,8 +284,14 @@ treatment. The one in ten rule states that for every variable examined,
 we have 72 patients with the examined outcome, we can have 7 variables.
 
 The logistical regression is run through Rstudio using the glm command.
-To make the tables, the package gtsummary was used to visualize the
-adjusted and unadjusted regression.
+It was ran several times to make an ajusted table and 7 unadjusted, one
+for each variable To make the tables, the package gtsummary was used to
+visualize the adjusted and unadjusted regression.
+
+This process was the only time AI was used in the writing process. It
+was used to make snippets of code for a specific purpose, revise and
+optimize code and find solutions when written code was not functioning
+properly.
 
 ## Ethical considerations
 
@@ -329,21 +339,26 @@ GCS was 13.93, being lower among patients with delayed treatment at
 
 ![](table1.png)
 
-In the following table, the results from the second regression analysis
-is displayed.
+In the following table, the results from the logistical regression
+analysis is displayed.
 
-The odds ratio is calculated in the same way as the previous regression
-model, as well as a 95% confidence interval. The p value is also shown.
+The odds ratio is calculated both unadjusted and adjusted for other
+variables, as well as a 95% confidence interval. The p value is also
+shown.
 
 The analysis shows that some variables seem to have a correlation with
 patients receiving delayed treatment. ISS and respiratory rate both have
 a trend that patient with higher values seem to have a lower incidence
-of delayed treatment, both unadjusted and adjusted. GCS had the opposite
+of delayed treatment, both unadjusted (ISS, OR 0.96, 95% CI
+0.95-0.98)(RR, OR 0.95, 95% CI 0.91-0.98) and adjusted (ISS, OR 0.97,
+95% CI 0.95-0.99)(RR, OR 0.96, 95% CI 0.93-0.99). GCS had the opposite
 correlation, with lower GCS often having lower incidence of delayed
-treatment, both unadjusted and adjusted. Number of injuries had the
-correlation of higher number of injuries having lower incidence of
-delayed treatment unadjusted, but that correlation was not seen when
-adjusted for.
+treatment, both unadjusted (OR 1.13, 95% CI 1.07-1.20) and adjusted (OR
+1.08, 95% CI 1.00-1.15). Number of injuries had the correlation of
+higher number of injuries having lower incidence of delayed treatment
+unadjusted (OR 0.94, 95% CI 0.91-0.98), but that correlation was not
+seen when adjusted for. The three remaining variables, age, gender and
+SBP, showed no correlation with the observed outcome.
 
 ![](results1.png)
 
@@ -358,10 +373,9 @@ previous study analysing the same data but with ofi as the outcome, this
 result is surprising as that study came to the opposite result
 [@Pat_factors]. This can possibly be explained by that the study looked
 at all ofi, whereas this study concentrates on delayed treatment.
-Delayed treatment might have this correlation because an injured and
-unconscious patient might receive more attention at the hospital,
-leading to fewer instances delays compared to a patient that seems less
-injured.
+Possible explanations to the correlation include the idea that
+unconsious and more severely injured patients receive more immediate
+attention at the hospital, leading to fewer delays.
 
 Respiratory rate also had the correlation that lower respiratory rate
 correlated with lower rates of delayed treatment among the patients. As
@@ -374,7 +388,7 @@ with tachypnea might receive higher rates of delayed treatment because
 they are more severely injured, therefore a higher risk of missing a
 possible injury. Another similar study, which focused on ofi generally,
 showed the same correlation, although the significance dissapeared in
-the adjusted analysis.
+the adjusted analysis [@Pat_factors].
 
 Number of injuries was significant when unadjusted, but the correlation
 dissapeared when adjusted for with other variables. Our guess as to why
@@ -384,7 +398,9 @@ severely injured patient will both score higher on ISS and number of
 injuries. Therefore, we hypothesize that the effect of number of
 injuries become insignificant when adjusting for ISS.
 
-Limitations
+The fact that age and gender did not show an increased odds ratio should
+be seen as a positive sign. It suggests that among trauma patients,
+there is no systematical delay based on gender or age.
 
 In this study, one of the limitations was the amount of people having
 the recorded outcome being quite small, leading us into having to limit
@@ -399,7 +415,10 @@ case of these variables, it was only RTS 3 and 4 who had patients with
 the observed outcome, which left RTS 1 and 2 with confidence intervals
 of 0.00 to infinity. This way would have been the best way to examine
 these variables, but as that wasn't possible with this group of
-patients, we resorted to making these variables continuous.
+patients, we resorted to making these variables continuous. We
+considered expanding the outcome group to include more ofi, but opted
+for the solution used in the study instead as we were solely interested
+in this ofi for this study.
 
 The problem mentioned above with too few patients in the outcome group
 made this into a post hoc analysis. As we didn't know the amount of
@@ -439,11 +458,15 @@ the 7 variables, all of them being the ones who showed an increased or
 decreased risk of delayed treatment, showing that these results still
 are significant.
 
-Interpretation
+Interpretation and clinical applications
 
-Give a cautious overall interpretation of results considering
-objectives, limitations, multiplicity of analyses, results from similar
-studies, and other relevant evidence
+Further discussing the results and discussing it's clinical
+applications, the results can be interpreted as that it is mostly
+uninjured and awake patients that receive delayed treatment. The
+clinical applications for this are not clear, but might suggest that
+personnel working with trauma patients should be aware of that people
+that seem uninjured might be more likely to receive delayed treatment
+and trying to lower that risk.
 
 Generalisability
 
@@ -460,3 +483,5 @@ single center study, where it's result only illustrates the situation in
 Stockholm, it is less applicable nationally or globally. This does not
 make it only applicable to the population of Stockholm, but is something
 to keep in mind.
+
+## 
