@@ -494,7 +494,7 @@ outcome group would be needed, either by expanding the register to
 several hospitals, or expanding the outcome group by adding different
 ofi. This however would make the study less specific for delayed
 treatment. Further studies might also look into different ofi other than
-delayed treatment, such as
+delayed treatment, such as XXX.
 
 ## Conclusion
 
