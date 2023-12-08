@@ -484,4 +484,18 @@ Stockholm, it is less applicable nationally or globally. This does not
 make it only applicable to the population of Stockholm, but is something
 to keep in mind.
 
-## 
+In future studies building upon this one, various methods to further
+examine the correlation between delayed treatment and various variables,
+alternatively using another ofi as the outcome variable. Examining
+different variables such as highest hospital care lever, intubation
+status or first emergency procedure performed might be interesting
+variables, among others. To be able to do this, more patients in the
+outcome group would be needed, either by expanding the register to
+several hospitals, or expanding the outcome group by adding different
+ofi. This however would make the study less specific for delayed
+treatment. Further studies might also look into different ofi other than
+delayed treatment, such as
+
+## Conclusion
+
+# Abstract
