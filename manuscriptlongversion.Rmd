@@ -15,6 +15,58 @@ editor_options:
     wrap: 72
 ---
 
+# Abstract
+
+*Introduction:* Trauma remains a global health challenge, leading to
+millions of deaths each year. The biggest impact can be seen in low to
+middle income countries, but in high income countries, trauma systems
+have been developed to lower the mortality and morbidity associated with
+trauma. To further improve on these systems, conferences are held to
+better the care patients receive and to identify errors made, called
+opportunities for improvement, e.g. delayed treatment. *Aim:* This
+retrospective cohort study aims to identify patient level factors that
+are linked with receiving delayed treatment among trauma patients.
+*Material and Methods:* This study uses the database of Karolinska
+university hospital, the equivalent of a level 1 trauma center, to run a
+logistical regression linking the outcome, delayed treatment, to
+variables, observed patient level factors. Patients treated for trauma
+at the hospital between 2012 and 2022 were included, with ISS\>9 and/or
+trauma code activation. Exclusion criterias were not being screened for
+ofi and missing values in the used variables, age, gender, ISS, SBP, RR,
+GCS and number of injuries. *Results:* Higher ISS and RR was linked to
+higher rates of delay in treatment (ISS, OR 1.03, 95% CI 1.01-1.06)(RR,
+OR 1.04, 95% CI 1.01-1.08), while a lower GCS also was linked to delayed
+treatment (OR 0.93, 95% CI 0.87-1.00). Number of injuries showed a
+correlation to higher rates of delay, but not when adjusted for. The
+remaining variables showed no correlation. *Conclusion:* Our study
+suggests that it is mostly more severely injured and less awake patients
+that receive delayed treatment.
+
+*Inledning:* Trauma är fortfarande en global hälsoutmaning som skördar
+miljontals liv varje år. Den största effekten kan ses i låg till
+medelinkomstländer, men i höginkomstländer har traumasystem utvecklats
+för att sänka morbiditeten och mortaliteten relaterat till trauma. För
+att ytterliggare förbättra dessa system hålls konferenser för att
+förbättra vården patienter får och identifiera misstag som gjorts, så
+kallade förbättringsmöjligheter, t.ex. försenad vård. *Syfte:* Denna
+retrospektiva kohortstudie syftar till att identifiera patientfaktorer
+kopplade till försenad vård bland traumapatienter. *Material och Metod:*
+Denna studie använder Karolinska universitetssjukhusets databas,
+motsvarande ett traumacenter på nivå 1, för att köra en logistisk
+regression som kopplar utfallet, försenad vård, till variabler,
+observerade patientnivåfaktorer. Patienter som behandlades för trauma på
+sjukhuset mellan 2012 och 2022 inkluderades, med ISS\>9 och/eller
+traumakodaktivering. Exklusionskriterier var om patient inte screenades
+för ofi samt saknade värden i de använda variablerna, ålder, kön, ISS,
+SBT, AF, GCS och antal skador. *Resultat:* Högre ISS och AF var kopplade
+till högre grad av försenad vård (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR
+1.04, 95% CI 1.01-1.08), medan ett lägre GCS också var kopplad till
+försenad vård (OR 0.93, 95% CI 0.87-1.00). Antalet skador visade först
+ett samband med högre förseningsfrekvens, men inte i den justerade
+analysen. De återstående variablerna visade ingen korrelation.
+*Slutsats*: Vår studie tyder på att det mestadels är svårare skadade och
+mindre vakna patienter som får försenad behandling.
+
 # Introduction
 
 ## Definition
@@ -247,7 +299,7 @@ the outcome has occurred.
 
 Misclassification bias as the conference may reach a consensus that is
 wrong, alternatively that the two specialized nurses going through the
-patients flagged for audit filters might missclassify patients or that
+patients flagged for audit filters might misclassify patients or that
 the audit filter misses a patient with ofi.
 
 ## Study size
@@ -348,15 +400,15 @@ shown.
 
 The analysis shows that some variables seem to have a correlation with
 patients receiving delayed treatment. ISS and respiratory rate both have
-a trend that patient with higher values seem to have a lower incidence
-of delayed treatment, both unadjusted (ISS, OR 0.96, 95% CI
-0.95-0.98)(RR, OR 0.95, 95% CI 0.91-0.98) and adjusted (ISS, OR 0.97,
-95% CI 0.95-0.99)(RR, OR 0.96, 95% CI 0.93-0.99). GCS had the opposite
-correlation, with lower GCS often having lower incidence of delayed
-treatment, both unadjusted (OR 1.13, 95% CI 1.07-1.20) and adjusted (OR
-1.08, 95% CI 1.00-1.15). Number of injuries had the correlation of
-higher number of injuries having lower incidence of delayed treatment
-unadjusted (OR 0.94, 95% CI 0.91-0.98), but that correlation was not
+a trend that patient with lower values seem to have a lower incidence of
+delayed treatment, both unadjusted (ISS, OR 1.04, 95% CI 1.02-1.05)(RR,
+OR 1.06, 95% CI 1.02-1.09) and adjusted (ISS, OR 1.03, 95% CI
+1.01-1.06)(RR, OR 1.04, 95% CI 1.01-1.08). GCS had the opposite
+correlation, with higher GCS often having lower incidence of delayed
+treatment, both unadjusted (OR 0.88, 95% CI 0.83-0.94) and adjusted (OR
+0.93, 95% CI 0.87-1.00). Number of injuries had the correlation of
+higher number of injuries having higher incidence of delayed treatment
+unadjusted (OR 1.06, 95% CI 1.02-1.10), but that correlation was not
 seen when adjusted for. The three remaining variables, age, gender and
 SBP, showed no correlation with the observed outcome.
 
@@ -365,17 +417,17 @@ SBP, showed no correlation with the observed outcome.
 # Discussion
 
 These results show that there seems to be a correlation between some
-variables and the presence of delayed treatment. A higher GCS had a
-correlation with delayed treatment while a lower ISS had the same
-correlation. This suggests that a less injured and more awake patient
-has a higher risk of receiving delayed treatment. Compared to previous a
-previous study analysing the same data but with ofi as the outcome, this
-result is surprising as that study came to the opposite result
-[@Pat_factors]. This can possibly be explained by that the study looked
-at all ofi, whereas this study concentrates on delayed treatment.
-Possible explanations to the correlation include the idea that
-unconsious and more severely injured patients receive more immediate
-attention at the hospital, leading to fewer delays.
+variables and the presence of delayed treatment. A lower GCS had a
+correlation with delayed treatment while a higher ISS had the same
+correlation. This suggests that a more heavily injured and less awake
+patient is more prone to receiving delayed treatment. Compared to
+previous a previous study analysing the same data but with ofi as the
+outcome, this result is similar to what they found using the same
+database [@Pat_factors]. As the mentioned study suggests, this could be
+explained by that lower GCS indicates severe trauma, aswell as higher
+ISS. More injured patients often entails a more complex management and
+require more interventions. More interventions leave more room for delay
+to these interventions, why they are more prone to delay in treatment.
 
 Respiratory rate also had the correlation that lower respiratory rate
 correlated with lower rates of delayed treatment among the patients. As
@@ -453,20 +505,20 @@ Another limitation with this study is that logistical regressions
 assumes that the data is binomial, which the data used is not. The
 analysis assumes a linear correlation between the dependent variable and
 the independent variable, which is best analysed in a normal
-distribution. However, Fischers test showed an association between 4 of
-the 7 variables, all of them being the ones who showed an increased or
-decreased risk of delayed treatment, showing that these results still
-are significant.
+distribution. However, Fischers test showed a significant difference
+between the groups in 4 of the 7 variables, all of them being the ones
+who showed an increased or decreased risk of delayed treatment, showing
+that these results still are significant.
 
 Interpretation and clinical applications
 
 Further discussing the results and discussing it's clinical
 applications, the results can be interpreted as that it is mostly
-uninjured and awake patients that receive delayed treatment. The
-clinical applications for this are not clear, but might suggest that
-personnel working with trauma patients should be aware of that people
-that seem uninjured might be more likely to receive delayed treatment
-and trying to lower that risk.
+injured and less awake patients that receive delayed. The clinical
+applications for this are not clear, but caregivers should already be
+aware that the more injuries a patients has, the more room for error
+exists. It is good though to receive a reminder that it's important to
+always work towards minimizing the delay for these injured patients.
 
 Generalisability
 
@@ -494,8 +546,15 @@ outcome group would be needed, either by expanding the register to
 several hospitals, or expanding the outcome group by adding different
 ofi. This however would make the study less specific for delayed
 treatment. Further studies might also look into different ofi other than
-delayed treatment, such as XXX.
+delayed treatment, such as missed injury, faulty communication or
+triage.
 
 ## Conclusion
 
-# Abstract
+In conclusion, based on this small population, the results suggests that
+it is mostly more injured and less awake trauma patients that receive
+delayed treatment. However, due to the limitations of this study, the
+result should only be seen as something to keep in mind when treating
+patients as further studies need to be conducted on this subject.
+
+# 

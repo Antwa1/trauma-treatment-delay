@@ -2,41 +2,7 @@ library(gtsummary)
 library(magrittr)
 library(dplyr)
 library(purrr)
-
-model.data <- function(dataset){
   
-  ## regression model nr 1
-  model1 <-
-    glm(
-      OFI_delay ~ Gender + Highest_care_level + Intubated + ISS + Age + Weekday + work_hours,
-      data = factors.data,
-      family = binomial)
-      
-      adjusted1 <-
-        tbl_regression(model1, exponentiate = TRUE,
-                       pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
-        bold_p() %>%
-        bold_labels()
-}
-  
-  unadjust1 <- tbl_uvregression(data = factors.data,
-                                exponentiate = TRUE,
-                                method = glm,
-                                y = OFI_delay,
-                                method.args = list(family = binomial),
-                                pvalue_fun = ~ style_pvalue(.x, digits = 2),
-                                hide_n = TRUE
-  ) %>%
-    bold_p(t = 0.05) %>%
-    bold_labels()
-
-    
-
-fancy_table1 <-
-    tbl_merge(
-      tbls        = list(adjusted1, unadjust1),
-      tab_spanner = c("Adjusted", "Unadjusted")
-    )
 
   
 ## regression model nr 2
@@ -67,29 +33,11 @@ unadjust2 <- tbl_uvregression(data = factors.data2,
 
 fancy_table2 <-
   tbl_merge(
-    tbls        = list(adjusted2, unadjust2),
-    tab_spanner = c("Adjusted", "Unadjusted")
+    tbls        = list(unadjust2, adjusted2),
+    tab_spanner = c("Unadjusted", "Adjusted")
   )
   ## view model
 
-    
-
-##table1
-table1 <-
-factors.data %>%
-  tbl_summary(  
-    by = OFI_delay,
-    label = list(
-      Age = "Age (years)",
-      Gender = "Gender",
-      work_hours = "Work hours"),
-    statistic = list(all_continuous() ~ "{mean} ± {sd}"),
-    digits = list(all_continuous() ~ c(2, 2))
-  ) %>%
-  add_p(list(all_continuous() ~ "t.test",
-             all_categorical() ~ "fisher.test")) %>%
-    add_overall("**Overall (N = {N})**") %>%
-   bold_labels()
 
 
 
