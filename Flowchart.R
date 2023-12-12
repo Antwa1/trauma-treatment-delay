@@ -5,6 +5,8 @@ library(grid)
 library(magrittr)
 library(gtsummary)
 
+flow.chart <- function(factors.data2){
+
 treated <- boxGrob(glue("Treated at KS between 2012 and 2022",
                         "n = {pop}",
                         pop = txtInt(14022),
@@ -15,16 +17,16 @@ screened <- boxGrob(glue("Screened for ofi",
                          .sep = "\n"))
 included <- boxGrob(glue("Included in study",
                          "n = {incl}",
-                         incl = txtInt(6489),
+                         incl = txtInt(7378),
                          .sep = "\n"))
 delay <- boxGrob(glue("Delay in treatment",
                       "n = {recr}",
-                      recr = txtInt(69),
+                      recr = txtInt(70),
                       .sep = "\n"))
 
 no_delay <- boxGrob(glue("No delay in treatment",
                          "n = {recr}",
-                         recr = txtInt(6420),
+                         recr = txtInt(7308),
                          .sep = "\n"))
 
 not_screened <- boxGrob(glue("Not screened for ofi",
@@ -34,7 +36,7 @@ not_screened <- boxGrob(glue("Not screened for ofi",
 
 missing_data <- boxGrob(glue("Missing data",
                              "n = {recr}",
-                             recr = txtInt(8312-6489),
+                             recr = txtInt(934),
                              .sep = "\n"))
 grid.newpage()
 vert <- spreadVertical(treated = treated,
@@ -69,3 +71,5 @@ grps
 not_screened
 missing_data
 
+
+}

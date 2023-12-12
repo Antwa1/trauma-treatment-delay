@@ -4,7 +4,7 @@ library(dplyr)
 library(purrr)
   
 
-  
+table.1 <- function(factors.data2){
 ## regression model nr 2
 model2 <-
   glm(
@@ -41,8 +41,8 @@ fancy_table2 <-
 
 
 
-##table2
-table2 <-
+##table1
+table1 <-
 factors.data2 %>%
   tbl_summary(  
     by = OFI_delay,
@@ -60,6 +60,7 @@ factors.data2 %>%
 add_overall("**Overall (N = {N})**") %>%
   bold_labels()
   
-  return(model)
+  return(table1)
+}
 
 

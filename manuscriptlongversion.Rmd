@@ -4,16 +4,27 @@ author: "Anton Wasielewski"
 subtitle: A retrospective cohort study on the factors affecting the delays in trauma
   care
 output:
-  word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
+  word_document: default
 bibliography: bibliography.bib
 csl: vancouver.csl
 editor_options:
   markdown:
     wrap: 72
 ---
+
+```{r sourcecode, echo=FALSE, fig.align="center", warning=FALSE, message=FALSE,error=FALSE}
+source("main.R")
+library(rofi)
+library(dplyr)
+library(ggplot2)
+library(gtsummary)
+library(gt)
+library(knitr)
+
+```
 
 # Abstract
 
@@ -389,7 +400,9 @@ being slightly higher in the outcome population at 20.39. Lastly, mean
 GCS was 13.93, being lower among patients with delayed treatment at
 12.56.
 
-![](table1.png)
+```{r message = FALSE}
+table1
+```
 
 In the following table, the results from the logistical regression
 analysis is displayed.
@@ -412,7 +425,9 @@ unadjusted (OR 1.06, 95% CI 1.02-1.10), but that correlation was not
 seen when adjusted for. The three remaining variables, age, gender and
 SBP, showed no correlation with the observed outcome.
 
-![](results1.png)
+```{r message = FALSE}
+result1
+```
 
 # Discussion
 
