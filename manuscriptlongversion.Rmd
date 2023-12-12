@@ -240,21 +240,21 @@ center.
 ## Setting
 
 Karolinska University hospital, which is the equivalent of a trauma
-level 1 hospital, admits 1500 trauma patients each year. To be added to
-the trauma registry, a patient must be over 15 years of age, had ISS\>9
-and/or had trauma code activation. They get added to both the Karolinska
-Trauma registry as well as the national trauma registry (SweTrau). The
-registry includes data on vital signs, injuries, interventions and
-patient information. Another database, the trauma care quality database
-includes information relevant for MoM conferences. At Karolinska
-University Hospital, patients who die during hospital stay gets their
-case sent to a MoM everytime. However, for the rest of the patients, two
-specialized nurses determine whether they are. Several audit filters are
-set up to flag for patients with possible OFIs. Audit filters may
-include low SBP, high RR, EMS scene time greater than 20 mins etc.
-Flagged patients are then reviewed by these two nurses who decide if
-there is a possible OFI, in which case their case is sent to a MoM
-conference for further review.
+level 1 hospital, admits 1500 trauma patients each year. To have your
+information added to the trauma registry, a patient must be over 15
+years of age, had ISS\>9 and/or had trauma code activation. They get
+added to both the Karolinska Trauma registry as well as the national
+trauma registry (SweTrau). The registry includes data on vital signs,
+injuries, interventions and patient information. Another database, the
+trauma care quality database includes information relevant for MoM
+conferences. At Karolinska University Hospital, patients who die during
+hospital stay gets their case sent to a MoM everytime. However, for the
+rest of the patients, two specialized nurses determine whether they are.
+Several audit filters are set up to flag for patients with possible
+OFIs. Audit filters may include low SBP, high RR, EMS scene time greater
+than 20 mins etc. Flagged patients are then reviewed by these two nurses
+who decide if there is a possible OFI, in which case their case is sent
+to a MoM conference for further review.
 
 ## Study design
 
@@ -263,9 +263,9 @@ registry and trauma care quality database at the Karolinska University
 Hospital in Solna. The trauma registry includes about 14,022 patients
 treated between 2012 and 2022. The trauma care quality database is a
 subset of the trauma registry and includes about 8000 patients selected
-for review between 2013 and 2022. This project will link the two
-databases and assess how different patient level factors, such as age,
-sex, blood pressure, and injury severity, are associated with delayed
+for review between 2013 and 2022. This project linked the two databases
+and assessed how different patient level factors, such as age, sex,
+blood pressure, and injury severity, are associated with delayed
 treatment using logistic regression.
 
 ## Outcome
@@ -292,21 +292,22 @@ and age. Of these variables, GCS, respiratory rate, systolic blood
 pressure, number of injuries, ISS and age are used as continuous
 variables in the analysis. Gender is used as a categorical variable.
 
-For missing hospital values in GCS, RR and SBP, values from EMT
-personnel were used. This was accomplished by identifying missing data
-in the column for the hospital value of the variable and, if available,
-replacing the row in the dataset with the prehospital value. If a
-prehospital value is missing, the patient is excluded from the study.
+For missing hospital values in GCS, RR and SBP, values collected from
+EMT personnel before arrival to hospital were used. This was
+accomplished by identifying missing data in the column for the hospital
+value of the variable and, if available, replacing the row in the
+dataset with the prehospital value. If a prehospital value is missing,
+the patient is excluded from the study.
 
 ## Data sources/measurement
 
 The data comes from the trauma registry and trauma care quality
-database.
+database,
 
 ## Bias
 
-Selection bias as this is a retrospective, pots hoc cohort study where
-the outcome has occurred.
+Selection bias as this is a retrospective post hoc cohort study where
+the outcome has occurred before the study began.
 
 Misclassification bias as the conference may reach a consensus that is
 wrong, alternatively that the two specialized nurses going through the
@@ -341,15 +342,16 @@ at first so to avoid selection bias as much as possible. When the code
 was finished, it was run on the unscrambled data.
 
 Using the one in ten rule, 7 independent variables were used for the
-logistical regression given that we have 72 patients with delayed
+logistical regression given that we have 70 patients with delayed
 treatment. The one in ten rule states that for every variable examined,
 10 events are needed in the group. In this case, this means that because
-we have 72 patients with the examined outcome, we can have 7 variables.
+we have 70 patients with the examined outcome, we can have 7 variables.
 
 The logistical regression is run through Rstudio using the glm command.
 It was ran several times to make an ajusted table and 7 unadjusted, one
-for each variable To make the tables, the package gtsummary was used to
-visualize the adjusted and unadjusted regression.
+for each variable. To make the tables, the package gtsummary was used to
+visualize the adjusted and unadjusted regression individually, then
+merging them together into one table.
 
 This process was the only time AI was used in the writing process. It
 was used to make snippets of code for a specific purpose, revise and
@@ -431,31 +433,31 @@ result1
 
 # Discussion
 
-These results show that there seems to be a correlation between some
-variables and the presence of delayed treatment. A lower GCS had a
-correlation with delayed treatment while a higher ISS had the same
-correlation. This suggests that a more heavily injured and less awake
-patient is more prone to receiving delayed treatment. Compared to
-previous a previous study analysing the same data but with ofi as the
-outcome, this result is similar to what they found using the same
-database [@Pat_factors]. As the mentioned study suggests, this could be
-explained by that lower GCS indicates severe trauma, aswell as higher
-ISS. More injured patients often entails a more complex management and
-require more interventions. More interventions leave more room for delay
-to these interventions, why they are more prone to delay in treatment.
+These results show a possible correlation between some variables and the
+presence of delayed treatment. A lower GCS had a correlation with
+delayed treatment while a higher ISS had the same correlation. This
+suggests that a more heavily injured and less awake patient is more
+prone to receiving delayed treatment. Compared to previous a previous
+study analysing the same data but with ofi as the outcome, this result
+is similar to what they found using the same database [@Pat_factors]. As
+the mentioned study suggests, this could be explained by that lower GCS
+indicates severe trauma, aswell as higher ISS. More injured patients
+often entails a more complex management and require more interventions.
+More interventions leave more room for delay to these interventions, why
+they are more prone to delay in treatment.
 
 Respiratory rate also had the correlation that lower respiratory rate
 correlated with lower rates of delayed treatment among the patients. As
 the interval is \>10 to \<29 in the triage guideline, both too low and
 too high respiratory rate is not desirable[@EHCP2015]. This might have a
-similar explanation to ISS and GCS, that bradypnea in a patient might
-attract more attention in the hospital and lower the incidence of
-delayed treatment. Another possible explanation might be that patients
-with tachypnea might receive higher rates of delayed treatment because
-they are more severely injured, therefore a higher risk of missing a
-possible injury. Another similar study, which focused on ofi generally,
-showed the same correlation, although the significance dissapeared in
-the adjusted analysis [@Pat_factors].
+similar explanation to ISS and GCS, that patients with tachypnea might
+receive higher rates of delayed treatment because they are more severely
+injured, therefore a higher risk of missing a possible injury. Another
+possible explanation might be bradypnea in a patient might attract more
+attention in the hospital and lower the incidence of delayed treatment.
+Another similar study, which focused on ofi generally, showed the same
+correlation, although the significance dissapeared in the adjusted
+analysis [@Pat_factors].
 
 Number of injuries was significant when unadjusted, but the correlation
 dissapeared when adjusted for with other variables. Our guess as to why
@@ -467,7 +469,7 @@ injuries become insignificant when adjusting for ISS.
 
 The fact that age and gender did not show an increased odds ratio should
 be seen as a positive sign. It suggests that among trauma patients,
-there is no systematical delay based on gender or age.
+there is no systematic delay based on gender or age.
 
 In this study, one of the limitations was the amount of people having
 the recorded outcome being quite small, leading us into having to limit
@@ -503,7 +505,7 @@ Then, choosing an amount of variables that would work with the amount of
 patients. This would have avoided making it post hoc and changing the
 variables after seeing the data.
 
-Further discussing possible biases, misclassification bias might also be
+On discussing possible biases, misclassification bias might also be
 present in this study, though it is something that we can't control in
 this study. As previously mentioned, the possible existence of an ofi is
 decided during the MoM conferences, where they then add it to the
@@ -513,7 +515,7 @@ group in the analysis. Also, some patients might have been missed even
 before reaching the MoM conference. The patients included in the
 conference are selected through audit filters and two specialized
 nurses, and patients might be missed in this stage. This bias should not
-be big enough to have a significant impact on the results, but should be
+be big enough to have a significant impact on the results, but can be
 kept in mind.
 
 Another limitation with this study is that logistical regressions
@@ -525,17 +527,13 @@ between the groups in 4 of the 7 variables, all of them being the ones
 who showed an increased or decreased risk of delayed treatment, showing
 that these results still are significant.
 
-Interpretation and clinical applications
-
-Further discussing the results and discussing it's clinical
-applications, the results can be interpreted as that it is mostly
-injured and less awake patients that receive delayed. The clinical
-applications for this are not clear, but caregivers should already be
-aware that the more injuries a patients has, the more room for error
-exists. It is good though to receive a reminder that it's important to
-always work towards minimizing the delay for these injured patients.
-
-Generalisability
+Further analysing the results and it's clinical applications, the
+results can be interpreted as that it is mostly injured and less awake
+patients that receive delayed. The clinical applications for this are
+not clear, but caregivers should already be aware that the more injuries
+a patients has, the more room for error exists. It is good though to
+receive a reminder that it's important to always work towards minimizing
+the delay for these injured patients.
 
 Discussing the generalisability of this study, we included the all the
 trauma patients treated and Karolinska University Hospital and excluded
