@@ -441,38 +441,40 @@ prone to receiving delayed treatment. Compared to previous a previous
 study analysing the same data but with ofi as the outcome, this result
 is similar to what they found using the same database [@Pat_factors]. As
 the mentioned study suggests, this could be explained by that lower GCS
-indicates severe trauma, aswell as higher ISS. More injured patients
+indicates severe trauma, as well as higher ISS. More injured patients
 often entails a more complex management and require more interventions.
 More interventions leave more room for delay to these interventions, why
-they are more prone to delay in treatment.
+they are more prone to delay in treatment. Respiratory rate also had the
+correlation that lower respiratory rate correlated with lower rates of
+delayed treatment among the patients. As the interval is \>10 to \<29 in
+the triage guideline, both too low and too high respiratory rate is not
+desirable[@EHCP2015]. This might have a similar explanation to ISS and
+GCS, that patients with tachypnea might receive higher rates of delayed
+treatment because they are more severely injured, therefore a higher
+risk of missing a possible injury. A previous study also found this, but
+the correlation dissapeared when adjusted for, which was hypothesised
+being due to it's shared variability with the ISS
+variable[@Pat_factors]. In this study, this was the case for number of
+injuries, as it and ISS is often correlated as a more severely injured
+patient will both score higher on ISS and number of injuries. Therefore,
+we hypothesize that the effect of number of injuries become
+insignificant when adjusting for ISS.
 
-Respiratory rate also had the correlation that lower respiratory rate
-correlated with lower rates of delayed treatment among the patients. As
-the interval is \>10 to \<29 in the triage guideline, both too low and
-too high respiratory rate is not desirable[@EHCP2015]. This might have a
-similar explanation to ISS and GCS, that patients with tachypnea might
-receive higher rates of delayed treatment because they are more severely
-injured, therefore a higher risk of missing a possible injury. Another
-possible explanation might be bradypnea in a patient might attract more
-attention in the hospital and lower the incidence of delayed treatment.
-Another similar study, which focused on ofi generally, showed the same
-correlation, although the significance dissapeared in the adjusted
-analysis [@Pat_factors].
-
-Number of injuries was significant when unadjusted, but the correlation
-dissapeared when adjusted for with other variables. Our guess as to why
-this is due to confounding due to it's shared variability with the ISS
-variable. Number of injuries and ISS is often correlated as a more
-severely injured patient will both score higher on ISS and number of
-injuries. Therefore, we hypothesize that the effect of number of
-injuries become insignificant when adjusting for ISS.
+Not many studies regarding trauma and patient level factors have had
+delayed treatment as their outcome, with many analysing mortality. Some
+likeness exist with which patient level factors predict the outcome,
+with higher mortality being seen in patients with lower GCS and higher
+ISS [@Mort_sam][@Mort_hef]. Increased age was also a factor linked to
+mortality, which was not seen to be linked to delayed treatment in this
+study. This
 
 When looking at the patient demographic, it is clear that the majority
 admitted to trauma care are men, with it being slightly higher in the
-delay to treatment group. The fact that age and gender did not show an
-increased odds ratio should be seen as a positive sign. It suggests that
-among trauma patients, there is no systematic delay based on gender or
-age.
+delay to treatment group. However, not high enough to be statistically
+significant. The fact that gender did not show an increased odds ratio
+should be seen as a positive sign. It suggests that among trauma
+patients, there is no systematic delay based on this patient level
+factor. The same goes for age, as
 
 #### Limitations
 
