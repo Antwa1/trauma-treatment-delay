@@ -260,13 +260,13 @@ to a MoM conference for further review.
 
 We conducted a registry based cohort study using data from the trauma
 registry and trauma care quality database at the Karolinska University
-Hospital in Solna. The trauma registry includes about 14,022 patients
-treated between 2012 and 2022. The trauma care quality database is a
-subset of the trauma registry and includes about 8000 patients selected
-for review between 2013 and 2022. This project linked the two databases
-and assessed how different patient level factors, such as age, sex,
-blood pressure, and injury severity, are associated with delayed
-treatment using logistic regression.
+Hospital in Solna. The trauma registry includes 14,022 patients treated
+between 2012 and 2022. The trauma care quality database is a subset of
+the trauma registry and includes about 8000 patients selected for review
+between 2013 and 2022. This project linked the two databases and
+assessed how different patient level factors, such as age, sex, blood
+pressure, and injury severity, are associated with delayed treatment
+using logistic regression.
 
 ## Outcome
 
@@ -280,8 +280,8 @@ which will be referred to as delayed treatment from now on.
 ## Participants
 
 The database only includes patients 15 years old and above, ISS \>9
-and/or trauma team activation. Inclusion in the study further requires
-that the patients have been assessed for OFIs. Patients were excluded if
+and/or trauma team activation. Inclusion in the study further required
+that the patients has been assessed for OFIs. Patients were excluded if
 they were missing information in one of the examined patient factors.
 
 ## Variables
@@ -467,9 +467,14 @@ severely injured patient will both score higher on ISS and number of
 injuries. Therefore, we hypothesize that the effect of number of
 injuries become insignificant when adjusting for ISS.
 
-The fact that age and gender did not show an increased odds ratio should
-be seen as a positive sign. It suggests that among trauma patients,
-there is no systematic delay based on gender or age.
+When looking at the patient demographic, it is clear that the majority
+admitted to trauma care are men, with it being slightly higher in the
+delay to treatment group. The fact that age and gender did not show an
+increased odds ratio should be seen as a positive sign. It suggests that
+among trauma patients, there is no systematic delay based on gender or
+age.
+
+#### Limitations
 
 In this study, one of the limitations was the amount of people having
 the recorded outcome being quite small, leading us into having to limit
@@ -527,6 +532,8 @@ between the groups in 4 of the 7 variables, all of them being the ones
 who showed an increased or decreased risk of delayed treatment, showing
 that these results still are significant.
 
+#### Clinical applications
+
 Further analysing the results and it's clinical applications, the
 results can be interpreted as that it is mostly injured and less awake
 patients that receive delayed. The clinical applications for this are
@@ -534,6 +541,8 @@ not clear, but caregivers should already be aware that the more injuries
 a patients has, the more room for error exists. It is good though to
 receive a reminder that it's important to always work towards minimizing
 the delay for these injured patients.
+
+#### Generalisability
 
 Discussing the generalisability of this study, we included the all the
 trauma patients treated and Karolinska University Hospital and excluded
@@ -548,6 +557,8 @@ single center study, where it's result only illustrates the situation in
 Stockholm, it is less applicable nationally or globally. This does not
 make it only applicable to the population of Stockholm, but is something
 to keep in mind.
+
+#### Future studies
 
 In future studies building upon this one, various methods to further
 examine the correlation between delayed treatment and various variables,
