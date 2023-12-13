@@ -332,14 +332,14 @@ among two of the patients.
 Multivariable and univariable logistical regression. A 5% significance
 level and 95% confidence levels will be used.
 
-Rstudio was used to perform the logistical regression. The code was
-written to clean and prepare the data from the database. The data was
-processed to have the variables customized to fit into the logistical
-regression model, such as making them into factors, renaming outcomes in
-the database and replacing or removing unknown values. The variables
-were either binary or continuous. This code was used on scrambled data
-at first so to avoid selection bias as much as possible. When the code
-was finished, it was run on the unscrambled data.
+Rstudio was used to clean and prepare the data from the database. The
+data was processed to have the variables customized to fit into the
+logistical regression model, such as making them into factors, renaming
+outcomes in the database and replacing or removing unknown values. The
+variables were either binary or continuous. While writing the code, it
+was tested on scrambled data so to avoid selection bias as much as
+possible. When the code was finished, it was run on the unscrambled data
+for a result.
 
 Using the one in ten rule, 7 independent variables were used for the
 logistical regression given that we have 70 patients with delayed
@@ -348,7 +348,7 @@ treatment. The one in ten rule states that for every variable examined,
 we have 70 patients with the examined outcome, we can have 7 variables.
 
 The logistical regression is run through Rstudio using the glm command.
-It was ran several times to make an ajusted table and 7 unadjusted, one
+It was ran several times to make an adjusted table and 7 unadjusted, one
 for each variable. To make the tables, the package gtsummary was used to
 visualize the adjusted and unadjusted regression individually, then
 merging them together into one table.
@@ -466,7 +466,9 @@ likeness exist with which patient level factors predict the outcome,
 with higher mortality being seen in patients with lower GCS and higher
 ISS [@Mort_sam][@Mort_hef]. Increased age was also a factor linked to
 mortality, which was not seen to be linked to delayed treatment in this
-study. This
+study. An older patient is more likely to have co-morbidities that might
+affect their mortality but not increase their likelihood of receiving
+delayed treatment the same way ISS and GCS does[@Gioffre2018].
 
 When looking at the patient demographic, it is clear that the majority
 admitted to trauma care are men, with it being slightly higher in the
@@ -474,7 +476,7 @@ delay to treatment group. However, not high enough to be statistically
 significant. The fact that gender did not show an increased odds ratio
 should be seen as a positive sign. It suggests that among trauma
 patients, there is no systematic delay based on this patient level
-factor. The same goes for age, as
+factor.
 
 #### Limitations
 
