@@ -34,3 +34,40 @@ plan B, vi har all data så det ska gå
 tog bort csl: bmcemerg.csl
 
 <https://openarchive.ki.se/xmlui/bitstream/handle/10616/44832/Thesis_Martin_Gerdin.pdf?sequence=3&isAllowed=y>
+
+as.gt till word
+
+kommentera att best clinical practice är dt inom 30 min. Många får inte
+det, bara liten andel får det som största problem
+
+etiska tillstånd för detta projekt, skilt från swetrau. Etiska tillstånd
+diarienummer
+
+The categorical factors
+
+-   sex- Gender
+
+-   survival after 30 days- res_survival
+
+-   highest hospital care level- host_care_level
+
+-   GCS- ed_gcs_sum
+
+-   respiratory rate- ed_rr_value
+
+-   systolic blood pressure- ed_sbp_value
+
+-   working hours
+
+-   weekend
+
+-   time from arrival at the hospital until first computed tomography
+    (CT)- dt_ed_first_ct
+
+-   if the patient was intubated- ed_intubated eller pre_intubated
+
+We also included the continuous factors
+
+-   age- pt_age_yrs
+
+-   ISS- ISS

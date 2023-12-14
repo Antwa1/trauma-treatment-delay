@@ -4,13 +4,19 @@ library(rofi)
 noacsr::source_all_functions()
 
 ## Prepare data
-prepared.data <- prepare_data(data)
+prepared.data <- prepare.data()
 
-## Create subset
-subset.data <- Create_subset(data)
+##clean data
+cleaned.data <- clean.dataset(prepared.data)
 
+## Create subset 2
+factors.data2 <- create.factors2(cleaned.data)
 
-print(subset.data)
+## table1
+table1 <- table.1(factors.data2)
+
+## result1
+result1 <- result.1(factors.data2)
 
 ## Welcome!
 
