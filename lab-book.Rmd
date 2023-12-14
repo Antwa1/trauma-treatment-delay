@@ -71,3 +71,7 @@ We also included the continuous factors
 -   age- pt_age_yrs
 
 -   ISS- ISS
+
+delay over 30/60 mins not always delay, only if bad
+
+OR 1.03 for each step over 0
