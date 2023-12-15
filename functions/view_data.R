@@ -14,8 +14,17 @@ model2 <-
 
 adjusted2 <-
   tbl_regression(model2, exponentiate = TRUE,
-                 pvalue_fun = ~ style_pvalue(.x, digits = 2),) %>%
-  
+                 pvalue_fun = ~ style_pvalue(.x, digits = 2),
+  rename = list(
+    Gender = "Gender",
+    ISS = "ISS",
+    Age = "Age",
+    Number_of_injuries = "Number of injuries",
+    Systolic_blood_pressure = "Systolic blood pressure",
+    Respiratory_rate = "Respiratory rate",
+    Total_GCS = "GCS"
+  )
+  ) %>%
   bold_p() %>%
   bold_labels()
 
@@ -26,7 +35,16 @@ unadjust2 <- tbl_uvregression(data = factors.data2,
                               y = OFI_delay,
                               method.args = list(family = binomial),
                               pvalue_fun = ~ style_pvalue(.x, digits = 2),
-                              hide_n = TRUE
+                              hide_n = TRUE,
+                              rename = list(
+                                Gender = "Gender",
+                                ISS = "ISS",
+                                Age = "Age",
+                                Number_of_injuries = "Number of injuries",
+                                Systolic_blood_pressure = "Systolic blood pressure",
+                                Respiratory_rate = "Respiratory rate",
+                                Total_GCS = "GCS"
+                              )
 ) %>%
   bold_p(t = 0.05) %>%
   bold_labels()

@@ -479,14 +479,6 @@ this study. An older patient is more likely to have co-morbidities that
 might affect their mortality but not increase their likelihood of
 receiving delayed treatment the same way ISS and GCS does[@Gioffre2018].
 
-When looking at the patient demographics, it is clear that the majority
-admitted to trauma care are men, with it being slightly higher in the
-delay to treatment group. However, not high enough to be statistically
-significant. The fact that gender did not show an increased odds ratio
-should be seen as a positive sign. It suggests that among trauma
-patients, there is no systematic delay based on this patient level
-factor.
-
 It is important to keep in mind that delay in treatment does not have a
 set limit of time as a where under it is within the accepted timeframe
 and if you go over it, it is considered delayed treatment. The audit
@@ -561,16 +553,20 @@ kept in mind.
 <!-- Revise this section now after our meeting -->
 
 Further analysing the results and it's clinical applications, the
-results can be interpreted as that it is mostly injured and less awake
-patients that receive delayed. The clinical applications for this are
-not clear, but caregivers should already be aware that the more injuries
-a patients has, the more room for error exists. It is good though to
-receive a reminder that it's important to always work towards minimizing
-the delay for these injured patients.
-
-Further analysing the results and it's clinical applications, the
 results can be interpreted as that it is mostly injured patients with
-affected consciousness that receive delayed treatment.
+affected consciousness that receive delayed treatment. The clinical
+applications of this can be seen as we need to do more to avoid this
+delay for this patient group. If clinicians are aware of that these
+patients receive delayed treatment more frequently, active steps can be
+taken towards reducing this risk and bettering the trauma care.
+
+Regarding health equity when looking at the patient demographics, it is
+clear that the majority admitted to trauma care are men, with it being
+slightly higher in the delay to treatment group. However, not high
+enough to be statistically significant. The fact that gender did not
+show an increased odds ratio should be seen as a positive sign. It
+suggests that among trauma patients, there is no systematic delay based
+on this patient level factor.
 
 #### Generalisability
 
