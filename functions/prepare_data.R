@@ -5,7 +5,7 @@ prepare.data <- function(){
   ## Import data
   data <- rofi::import_data(
     user = "antonw",
-    password = "2-parts-Attack-applied")
+    password = "Analyzer-51-liberty-feared")
     
   ## Create variable combined datasets by merging
   combined.datasets <- rofi::merge_data(data)

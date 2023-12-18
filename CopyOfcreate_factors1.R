@@ -151,3 +151,32 @@ create.factors <- function(dataset){
   return(dataset)
 }
 
+
+
+
+
+library(gtsummary)
+library(broom)
+
+# Fit the logistic regression model
+model1 <- glm(
+  OFI_delay ~ Gender + ISS + Age + Number_of_injuries + Systolic_blood_pressure + Respiratory_rate + Total_GCS,
+  data = factors.data2,
+  family = binomial
+)
+
+adjusted <- tbl_regression(model1, exponentiate = TRUE,
+                           pvalue_fun = ~style_pvalue(.x, digits = 2)) %>%
+  bold_p() %>%
+  bold_labels() %>%
+  modify_table_styling(
+    columns = var_label(
+      Gender = "New Gender Name",
+      ISS = "New ISS Name",
+      Age = "New Age Name",
+      Number_of_injuries = "New Injuries Name",
+      Systolic_blood_pressure = "New SBP Name",
+      Respiratory_rate = "New Respiratory Rate Name",
+      Total_GCS = "New GCS Name"
+    )
+  )

@@ -69,7 +69,7 @@ create.factors2 <- function(dataset){
   
   dataset$OFI_delay <- as.factor(dataset$OFI_delay)
   
-  dataset$OFI_delay <- relevel(factors.data2$OFI_delay, ref = "No delay to treatment")
+  dataset$OFI_delay <- relevel(dataset$OFI_delay, ref = "No delay to treatment")
   
 
   

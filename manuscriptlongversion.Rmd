@@ -4,10 +4,10 @@ author: "Anton Wasielewski"
 subtitle: A retrospective cohort study on the factors affecting the delays in trauma
   care
 output:
-  pdf_document: default
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
+  pdf_document: default
 bibliography: bibliography.bib
 csl: vancouver.csl
 editor_options:
@@ -91,11 +91,6 @@ hospital care, patient follow up and prevention programs [@Choi_2021].
 
 ## Trauma globally
 
-```{=html}
-<!-- I suggest you name this section something else, like "Trauma globally" 
-or something like that. Also, divide the second paragraph into two or 
-three paragraphs-->
-```
 Trauma is often divided into two subgroups, blunt force trauma and
 penetrating trauma. Blunt force trauma is when an object or force
 strikes the body, often causing bruising, broken bones or deep cuts.
@@ -398,7 +393,7 @@ the exclusion and inclusion of patients.
 <!-- You need to refer to tables and figures by numbers in the text, 
 i.e. Figure 1, Table 1 and so on -->
 ```
-Table 1 shows the characteristics of the group used in the logistic
+Table1 shows the characteristics of the group used in the logistic
 regression. Most of the patients were men, 68%, with that being a bit
 higher in the delayed treatment group, 74%. The mean value for the ISS
 score was 10.18, with that value being higher in the outcome group, at
@@ -415,8 +410,8 @@ GCS was 13.93, being lower among patients with delayed treatment at
 table1
 ```
 
-In the following table<!-- See comments above-->, the results from the
-logistical regression analysis is displayed.
+In the following table, result1, the results from the logistical
+regression analysis is displayed.
 
 The odds ratio is calculated both unadjusted and adjusted. A 95%
 confidence interval was used with the p value shown in the table.
@@ -424,15 +419,16 @@ confidence interval was used with the p value shown in the table.
 The analysis shows that some variables seem to have a association with
 patients receiving delayed treatment. ISS and respiratory rate (RR) both
 have a trend that patient with lower values seem to have a lower
-incidence of delayed treatment, in both unadjusted (ISS, OR 1.04, 95% CI
-1.02-1.05)(RR, OR 1.06, 95% CI 1.02-1.09) and adjusted analyses (ISS, OR
-1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI 1.01-1.08). GCS had the
-opposite correlation, with higher GCS often having lower incidence of
-delayed treatment, both unadjusted (OR 0.88, 95% CI 0.83-0.94) and
-adjusted (OR 0.93, 95% CI 0.87-1.00). Number of injuries had the
-association of higher number of injuries having higher incidence of
-delayed treatment unadjusted (OR 1.06, 95% CI 1.02-1.10), but that
-association was not seen when adjusted for. The three remaining
+incidence of delayed treatment, in both unadjusted
+
+(ISS, OR 1.04, 95% CI 1.02-1.05)(RR, OR 1.06, 95% CI 1.02-1.09) and
+adjusted analyses (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI
+1.01-1.08). GCS had the opposite correlation, with higher GCS often
+having lower incidence of delayed treatment, both unadjusted (OR 0.88,
+95% CI 0.83-0.94) and adjusted (OR 0.93, 95% CI 0.87-1.00). Number of
+injuries had the association of higher number of injuries having higher
+incidence of delayed treatment unadjusted (OR 1.06, 95% CI 1.02-1.10),
+but that association was not seen when adjusted for. The three remaining
 variables, age, gender and SBP, were not shown to be linked to the
 outcome.
 
