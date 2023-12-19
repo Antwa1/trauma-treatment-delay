@@ -25,71 +25,72 @@ library(gt)
 library(knitr)
 ```
 
-# Abstract
+# **Trauma and the patient level factors linked with delayed treatment**
 
-*Introduction:* Trauma remains a global health challenge, leading to
+Introduction: Trauma remains a global health challenge, leading to
 millions of deaths each year. The biggest impact can be seen in low to
 middle income countries, but in high income countries, trauma systems
 have been developed to lower the mortality and morbidity associated with
 trauma. To further improve on these systems, conferences are held to
 better the care patients receive and to identify errors made, called
 opportunities for improvement, one of the more common being delayed
-treatment. *Aim:* This retrospective cohort study aimed to determine the
+treatment. Aim: This retrospective cohort study aimed to determine the
 associations between different patient level factors and receiving
-delayed treatment. *Material and Methods:* This study used the database
-of Karolinska university hospital to run a logistical regression linking
-the outcome, delayed treatment, to variables, observed patient level
+delayed treatment. Material and Methods: This study used the database of
+Karolinska university hospital to run a logistic regression linking the
+outcome, delayed treatment, to variables, observed patient level
 factors. Patients treated for trauma at the hospital between 2012 and
 2022 were included, with ISS\>9 and/or trauma code activation. Exclusion
 criterias were not being screened for OFI and missing values in any of
-the observed variables. *Results:* Higher ISS and RR was linked to
-higher rates of delay in treatment (ISS, OR 1.03, 95% CI 1.01-1.06)(RR,
-OR 1.04, 95% CI 1.01-1.08), while a lower GCS also was linked to delayed
+the observed variables. Results: Higher ISS and RR was linked to higher
+rates of delay in treatment (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR
+1.04, 95% CI 1.01-1.08), while a lower GCS also was linked to delayed
 treatment (OR 0.93, 95% CI 0.87-1.00). Number of injuries showed a
 correlation to higher rates of delay, but not when adjusted for. The
-remaining variables showed no correlation. *Conclusion:* Our study
+remaining variables showed no correlation. Conclusion: Our study
 suggests that it is mostly more severely injured and less awake patients
 that receive delayed treatment.
 
-*Inledning:* Trauma är fortfarande en global hälsoutmaning som skördar
+**Trauma och patientnivåfaktorerna kopplade till försenad behandling**
+
+Inledning: Trauma är fortfarande en global hälsoutmaning som skördar
 miljontals liv varje år. Den största effekten kan ses i låg till
 medelinkomstländer, men i höginkomstländer har traumasystem utvecklats
-för att sänka morbiditeten och mortaliteten relaterat till trauma. För
-att ytterliggare förbättra dessa system hålls konferenser för att
+för att minska morbiditeten och mortaliteten relaterat till trauma. För
+att ytterligare förbättra dessa system hålls konferenser för att
 förbättra vården patienter får och identifiera misstag som gjorts, så
 kallade förbättringsmöjligheter, där försenad vård är en av de
-vanligaste. *Syfte:* Denna retrospektiva kohortstudie syftade till att
+vanligaste. Syfte: Denna retrospektiva kohortstudie syftade till att
 identifiera associationen mellan patientfaktorer och försenad vård.
-*Material och Metod:* Denna studie använde Karolinska
+Material och Metod: Denna studie använde Karolinska
 universitetssjukhusets databas för att köra en logistisk regression som
 kopplar utfallet, försenad vård, till variabler, observerade
 patientnivåfaktorer. Patienter som behandlades för trauma på sjukhuset
 mellan 2012 och 2022 inkluderades, med ISS\>9 och/eller
 traumakodaktivering. Exklusionskriterier var om patient inte screenades
-för ofi samt om de saknade värden i de undersökta variablerna.
-*Resultat:* Högre ISS och AF var kopplade till högre grad av försenad
-vård (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI 1.01-1.08),
-medan ett lägre GCS också var kopplad till försenad vård (OR 0.93, 95%
-CI 0.87-1.00). Antalet skador visade först ett samband med högre
-förseningsfrekvens, men inte i den justerade analysen. De återstående
-variablerna visade ingen korrelation. *Slutsats*: Vår studie tyder på
-att det mestadels är svårare skadade och mindre vakna patienter som får
-försenad behandling.
+för ofi samt om de saknade värden i de undersökta variablerna. Resultat:
+Högre ISS och AF var kopplade till högre grad av försenad vård (ISS, OR
+1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI 1.01-1.08), medan ett lägre
+GCS också var kopplad till försenad vård (OR 0.93, 95% CI 0.87-1.00).
+Antalet skador visade först ett samband med högre förseningsfrekvens,
+men inte i den justerade analysen. De återstående variablerna visade
+ingen korrelation. Slutsats: Vår studie tyder på att det mestadels är
+svårare skadade och mindre vakna patienter som får försenad behandling.
 
 Keywords: Trauma, Delay to treatment, Patient factors.
 
-# Introduction
+# **Introduction**
 
-## Definition
+## **Definition**
 
 Trauma, defined as the clinical entity composed of physical injury and
-the body's associated response [@gerdin_risk_2015], is and has long been
-a major cause of death around the world [@WHO_2021]. The trauma system
-plays an important part in modern healthcare and has shown to lower
-mortality and morbidity in injured patients through many means, such as
-hospital care, patient follow up and prevention programs [@Choi_2021].
+the body\'s associated response (1), is and has long been a major cause
+of death around the world (2). The trauma system plays an important part
+in modern healthcare and has shown to lower mortality and morbidity in
+injured patients through many means, such as hospital care, patient
+follow up and prevention programs (3).
 
-## Trauma globally
+## **Trauma globally**
 
 Trauma is often divided into two subgroups, blunt force trauma and
 penetrating trauma. Blunt force trauma is when an object or force
@@ -97,166 +98,144 @@ strikes the body, often causing bruising, broken bones or deep cuts.
 Examples of blunt trauma could be car crashes, falls or direct blows to
 the body. Penetrating trauma is when an object pierces the skin or body
 and creates an open wound. Examples of penetrating trauma are gunshot
-wounds and stab wounds [@NIGMS_2020]. Differences exist between the two
-groups, as blunt trauma patients tend to be more injured on arrival to
-the hospital and as such, require more resources and are hospitalized
-for a longer periods [@FITCH2019].
+wounds and stab wounds (4). Differences exist between the two groups, as
+blunt trauma patients tend to be more injured on arrival to the hospital
+and as such, require more resources and are hospitalised for a longer
+period (5).
 
 Today, trauma takes the lives of around 4,4 million people each year,
-almost 8% of all deaths [@WHO_2021]. In the United States, trauma is the
-4th leading cause of death among the general population and the leading
-cause for people between the ages of 1 and 44 [@AAST_2020]. It is also
-an important cause of hospitalization and morbidity among all age
-groups, including seniors, and is responsible for an estimated 10% of
-all years lived with a disability globally. This has a significant
-burden on social and economic level, costing countries billions of US
-dollars each year in healthcare and lost productivity [@connolly_2018].
-Studies estimate the cost of trauma care being between 18,500\$ and
-41,500\$ per patient in high income countries (HIC), depending on the
-country [@Willenberg_2012].However, it has been shown that this burden
-is not evenly distributed between or within countries.
+almost 8% of all deaths (2). In the United States, trauma is the 4th
+leading cause of death among the general population and the leading
+cause for people between the ages of 1 and 44 (6). It is also an
+important cause of hospitalisation and morbidity among all age groups,
+including seniors, and is responsible for an estimated 10% of all years
+lived with a disability globally. This has a significant burden on
+social and economic level, costing countries billions of US dollars each
+year in healthcare and lost productivity (7). Studies estimate the cost
+of trauma care being between 18,500\$ and 41,500\$ per patient in high
+income countries (HIC), depending on the country (8).However, it has
+been shown that this burden is not evenly distributed between or within
+countries.
 
 Many social factors such as age, sex and social status play a major role
 in the risk of dying from trauma, with young men with low socio-economic
-status being at most risk [@WHO_2021]. But it is not only patient level
-factors that affect what effect trauma has on people. About 90% of all
-trauma related deaths occur in low- and middle-income countries (LMIC),
-with death rates by trauma also being higher than in HIC. Even within
-these LMIC, people of poorer socio-economic status have higher death
-rates from trauma. Problems identified within these countries that
-contribute to these statisitics were infrastructure, education and
-training, attributed to lack of funding, brain drain to HIC and lack of
-availability of basic amenities [@Shanthakumar_2021]. In HIC where
-funding and governance over the healthcare system is better designed,
-functioning trauma systems and dedicated trauma centers exist that have
-been shown to lower mortality but also improve functional outcome in
-trauma patients [@Nirula_2006].
+status being at most risk (2). But it is not only patient level factors
+that affect what effect trauma has on people. About 90% of all trauma
+related deaths occur in low- and middle-income countries (LMIC), with
+death rates by trauma also being higher than in HIC. Even within these
+LMIC, people of poorer socio-economic status have higher death rates
+from trauma. Problems identified within these countries that contribute
+to these statistics were infrastructure, education and training,
+attributed to lack of funding, brain drain to HIC and lack of
+availability of basic amenities (9). In HIC where funding and governance
+over the healthcare system is better designed, functioning trauma
+systems and dedicated trauma centers exist that have been shown to lower
+mortality but also improve functional outcome in trauma patients (10).
 
-## Trauma systems
+## **Trauma systems**
 
-Trauma systems are infrastructures that exist to provide and optimize
+Trauma systems are infrastructures that exist to provide and optimise
 care for injured patients starting with injury recognition and triage,
 transport to appropriate trauma center, inpatient care and outpatient
 follow-up. Beyond the clinical side, trauma systems work with outreach,
 education and advocacy, data collection through registries, research,
 funding, and disaster preparedness and response. A comprehensive and
 functioning trauma system requires strong leadership and engagement at
-the trauma center, regional and national level [@connolly_2018]. This
-system is crucial to provide care for trauma patients, both in reducing
-morbidity and mortality in this patient group. Earlier studies from
-Sweden have shown that treating severely injured patients at a trauma
-center is associated with a 41% lower adjusted 30-day mortality rate
-compared to being treated at a non trauma care center due to them being
-more capable of treating these patients, with potential survival benefit
-increasing with higher injury severity [@Candefjord_2020]. Other studies
-have shown similar results, showing that treating injured patients at
-trauma centers is associated with a 15-30% decrease in mortality
-[@Moran_2018; @Celso_2006; @MacKenzie_2006; @Haas_2012].
+the trauma center, regional and national level (7). This system is
+crucial to provide care for trauma patients, both in reducing morbidity
+and mortality in this patient group. Earlier studies from Sweden have
+shown that treating severely injured patients at a trauma center is
+associated with a 41% lower adjusted 30-day mortality rate compared to
+being treated at a non trauma care center due to them being more capable
+of treating these patients, with potential survival benefit increasing
+with higher injury severity (11). Other studies have shown similar
+results, showing that treating injured patients at trauma centers is
+associated with a 15-30% decrease in mortality (12--15).
 
 During the last three decades, the introduction of trauma systems has
 contributed to lowering the incidence of preventable death. This is
 attributed to the improvements in care for acute brain injuries and
 bleeding control. The incidence of late death because of sepsis and
 multiple organ failure has also been lowered, possibly a result of
-better and earlier resuscitation [@Asensio_2008]. Functioning trauma
-systems saves lives in the hospital, but their work outside of the
-hospital is just as important. Data collection from injured patients,
-such as mechanism of injury or mortality, are essential for creating
-databases that can be used for research. In turn, that research can be
-used for planning injury prevention programs that target the most common
-injuries in the most efficient ways, e.g. teen drivers, children,
-specific occupations etc. These injury prevention programs can be
-planned on trauma center, organizational or government level[@ACS].
+better and earlier resuscitation (16). Functioning trauma systems saves
+lives in the hospital, but their work outside of the hospital is just as
+important. Data collection from injured patients, such as mechanism of
+injury or mortality, are essential for creating databases that can be
+used for research. In turn, that research can be used for planning
+injury prevention programs that target the most common injuries in the
+most efficient ways, e.g. teen drivers, children, specific occupations
+etc. These injury prevention programs can be planned on trauma center,
+organisational or government level(17).
 
-Trauma teams are multidisciplinary and operate in these centers. They
-play a pivotal role in the treatment of the trauma patient, as they
+Trauma teams are multidisciplinary teams and operate in these centers.
+They play a pivotal role in the treatment of the trauma patient, as they
 provide the initial care in the critical stage of trauma. In Sweden,
-trauma teams are lead by a team leader who is a surgeon, and include
-practitioners from the specialities of intensive care, orthopedics,
-nursing and support staff[@västra_G]. For the trauma team to be
-mobilized, a trauma code has to be activated, often by an emergency
-nurse. The nurse uses information gathered by the first responders to
-assess if the patient fits any of the criteria for trauma code. Most
-healthcare facilities have established criteria or guidelines that
-trigger trauma code activation. These criteria typically include
-mechanisms of injury, physiological criteria, anatomical criteria and
-other specific indicators of severe trauma. There are different levels
-of trauma code with different criteria correlating with severity of
-injury, with level 1 mobilizing the most personnel to the trauma room.
-Once in the trauma room, the team works systematically to manage the
-patients injuries. They handle the most urgent problems first, such as
-airways and breathing, with the aim to rapidly assess and stabilise the
-patient, prioritise their injuries and arrange for site of definitive
-care. [@Hedberg_2020]
+trauma teams are led by a team leader who is a surgeon, and include
+practitioners from the specialities of intensive care, orthopaedics,
+nursing and support staff(18). For the trauma team to be mobilised, a
+trauma code has to be activated, often by an emergency nurse. The nurse
+uses information gathered by the first responders to assess if the
+patient fits any of the criteria for trauma code. Most healthcare
+facilities have established criteria or guidelines that trigger trauma
+code activation. These criteria typically include mechanisms of injury,
+physiological criteria, anatomical criteria and other specific
+indicators of severe trauma. There are different levels of trauma code
+with different criteria correlating with severity of injury, with level
+1 mobilising the most personnel to the trauma room. Once in the trauma
+room, the team works systematically to manage the patient's injuries.
+They handle the most urgent problems first, such as airways and
+breathing, with the aim to rapidly assess and stabilise the patient,
+prioritise their injuries and arrange for a site of definitive care.
+(19)
 
-## Opportunities for improvement
+## **Opportunities for improvement**
 
 Many hospitals have a trauma registry where they log the patients
 information and timeline of what happened. The extent of the registry
 varies, with HIC having more complete registries. In Sweden, 48 out of
 the 49 hospitals receiving trauma patients are connected to the national
 registry SweTrau, which functions as a national database designed to
-enable scientific processing with epidemiological technology
-[@SweTrau_2021] This logging of information is important work, as a
-cornerstone of trauma quality improvement programs is multidisciplinary
-MoM conferences. The MoM conference is a meeting where different
-specialities who work with trauma care sit down and discuss deaths and
-complications in order to look for preventable factors. These
+enable scientific processing with epidemiological technology (20). This
+logging of information is important work, as a cornerstone of trauma
+quality improvement programs is multidisciplinary mortality and
+morbidity (MoM) conferences. The MoM conference is a meeting where
+different specialties who work within trauma care sit down and discuss
+deaths and complications in order to look for preventable factors. These
 conferences are performed in many hospitals globally, almost everywhere
 where there are formal medical specialty departments and sometimes in
-smaller hospitals as well [@WHO_2009]. In Sweden, many hospitals have
-mortality conferences on deceased patient cases, but only one has MoM
-conferences to better their trauma care on patients who lived
-[@SweTrau_2023]. The reason being that this expansion of MoM conferences
-takes time and resources, which is why all hospitals don't implement
-this.
+smaller hospitals as well (21). In Sweden, many hospitals have mortality
+conferences on deceased patient cases, but few has MoM conferences to
+better their trauma care on patients who lived (22). The reason being
+that this expansion of MoM conferences takes time and resources, which
+is why all hospitals don\'t implement this.
 
 The endpoint of these MoM conferences are opportunities for improvement
 (OFI). At the end of the conference, consensus is reached regarding the
 existence of an OFI and implementation of corrective action. This
 process is effective, as it has been shown that this review is
-associated with high-quality trauma care [@Santana_2014]. Examples of
-OFI may include lack of resources and management errors. One common OFI
-is delayed treatment. According to previous studies, among the
-preventable or possibly preventable deaths in trauma patients, delay in
-treatment has been identified as a major error contributing to death,
-found in up to 52.9% of patients in said group [@Teixeira_2007]. Delayed
-treatment has been shown to have adverse effects on patients, showing
-why it is such an important issue and the need to develop strategies to
-combat [@Sampalis_1995; @Sampalis_1994]. Although it is such a common
-OFI, the patient level factors associated with delayed treatment are
-poorly understood. There may be several factors that correlate with
-receiving delayed treatment, but they have yet to be identified. Mapping
-these factors may help in identifying patients that might be at risk for
-receiving delayed treatment before it happens.
+associated with high-quality trauma care (23). Examples of OFI may
+include lack of resources and management errors. One common OFI is
+delayed treatment. According to previous studies, among the preventable
+or possibly preventable deaths in trauma patients, delay in treatment
+has been identified as a major error contributing to death, found in up
+to 52.9% of patients in said group (24). Delayed treatment has been
+shown to have adverse effects on patients, showing why it is such an
+important issue and the need to develop strategies to combat (25,26).
+Although it is such a common OFI, the patient level factors associated
+with delayed treatment are poorly understood. There may be several
+factors that correlate with receiving delayed treatment, but they have
+yet to be identified. Mapping these factors may help in identifying
+patients that might be at risk for receiving delayed treatment before it
+happens.
 
-## Aim
+## **Aim**
 
 This retrospective cohort study aimed to determine the associations
 between different patient level factors and receiving delayed treatment.
 
-# Methods
+# **Methods**
 
-## Setting
-
-The Karolinska University hospital, which is the equivalent of a trauma
-level 1 hospital, admits 1500 trauma patients each year. To be included
-in the trauma registry, a patient must be over 15 years of age, had
-ISS\>9 and/or had trauma code activation. They get added to both the
-Karolinska Trauma registry as well as the national trauma registry
-(SweTrau). The registry includes data on vital signs, injuries,
-interventions and patient information. Another database, the trauma care
-quality database includes information relevant for MoM conferences. At
-Karolinska University Hospital, patients who die during hospital stay
-gets their case sent to a MoM everytime. However, for the rest of the
-patients, two specialized nurses determine whether they are. Several
-audit filters are set up to flag for patients with possible OFIs. Audit
-filters may include low SBP, high RR, EMS scene time greater than 20
-mins etc. Flagged patients are then reviewed by these two nurses who
-decide if there is a possible OFI, in which case their case is sent to a
-MoM conference for further review.
-
-## Study design
+## **Study design**
 
 We conducted a registry based cohort study using data from the trauma
 registry and trauma care quality database at the Karolinska University
@@ -268,23 +247,43 @@ assessed how different patient level factors, such as age, sex, blood
 pressure, and injury severity, are associated with delayed treatment
 using logistic regression.
 
-## Outcome
+## **Setting**
+
+The Karolinska University hospital, which is the equivalent of a trauma
+level 1 hospital, admits 1500 trauma patients each year. To be included
+in the trauma registry, a patient must be over 15 years of age, had
+ISS\>9 and/or had trauma code activation. They are added to both the
+Karolinska Trauma registry as well as the national trauma registry
+(SweTrau). The registry includes data on vital signs, injuries,
+interventions and patient information. Another database, the trauma care
+quality database includes information relevant for MoM conferences. At
+Karolinska University Hospital, patients who die during hospital stay
+get their case sent to a MoM every time. However, for the rest of the
+patients, two specialised nurses determine whether they are. Several
+audit filters are set up to flag for patients with possible OFIs. Audit
+filters may include low SBP, high RR, EMS scene time greater than 20
+mins etc. Flagged patients are then reviewed by these two nurses who
+decide if there is a possible OFI, in which case their case is sent to a
+MoM conference for further review.
+
+## **Outcome**
 
 The outcome is the OFI delayed treatment. An OFI is any failure in care,
-e.g. clinical judgement error, any preventable or potentially
+e.g. clinical judgement error, any preventable or potentially
 preventable death, missed diagnosis, technical error and delayed
 treatment as identified and decided my the MoM conference. The outcomes
-we used were "long time until CT" and "long time until operation", which
-will be referred to as delayed treatment from now on.
+we used were \"long time until CT\" and \"long time until operation\",
+which will be referred to as delayed treatment from now on.
 
-## Participants
+## **Participants**
 
-The database only includes patients 15 years old and above, ISS \>9
-and/or trauma team activation. Inclusion in the study further required
-that the patients has been assessed for OFIs. Patients were excluded if
-they were missing information in one of the examined patient factors.
+The database, as previously mentioned, only includes patients 15 years
+old and above, ISS \>9 and/or trauma team activation. Inclusion in the
+study further required that the patients have been assessed for OFIs.
+Patients were excluded if they were missing information in one of the
+examined patient factors.
 
-## Variables
+## **Variables**
 
 The independent variables are gender, GCS on arrival, respiratory rate
 on arrival, systolic blood pressure on arrival, number of injuries, ISS
@@ -299,24 +298,26 @@ value of the variable and, if available, replacing the row in the
 dataset with the prehospital value. If a prehospital value is missing,
 the patient is excluded from the study.
 
-## Data sources/measurement
+## **Data sources/measurement**
 
-The data comes from the trauma registry and trauma care quality
-database.
+The data comes from the trauma registry and trauma care quality database
+and is accessed through the program rstudio.
 
-## Bias
+## **Bias**
 
 Selection bias as this is a retrospective post hoc cohort study where
-the outcome has occurred before the study began.
+the outcome has occurred before the study began. This might have
+affected how we chose variables, opting for variables with more
+interesting results.
 
 Misclassification bias as the conference may reach a consensus that is
-wrong, alternatively that the two specialized nurses going through the
+wrong, alternatively that the two specialised nurses going through the
 patients flagged for audit filters might misclassify patients or that
 the audit filter misses a patient with ofi.
 
-## Study size
+## **Study size**
 
-The study size is all of the eligible patients that was treated at the
+The study size is all of the eligible patients that were treated at the
 hospital between 2012 and 2022. Starting 2013 only a subgroup of
 patients were screened for OFIs, but starting 2017 all patients that are
 included in the database are screened for OFIs. Out of the 14,022
@@ -327,19 +328,17 @@ received delayed treatment. However, only 70 patients with the
 registered outcome were included in the study due to missing values
 among two of the patients.
 
-## Statistical methods
+## **Statistical methods**
 
-Multivariable and univariable logistical regression. A 5% significance
-level and 95% confidence levels will be used.
-
-Rstudio was used to clean and prepare the data from the database. The
-data was processed to have the variables customized to fit into the
-logistical regression model, such as making them into factors, renaming
-outcomes in the database and replacing or removing unknown values. The
-variables were either binary or continuous. While writing the code, it
-was tested on scrambled data so to avoid selection bias as much as
-possible. When the code was finished, it was run on the unscrambled data
-for a result.
+Multivariable and univariable logistic regression. A 5% significance
+level and 95% confidence level was used. Rstudio was used to clean and
+prepare the data from the database. The data was processed to have the
+variables customised to fit into the logistical regression model, such
+as making them into factors, renaming outcomes in the dataframe and
+replacing or removing unknown values. The variables were either binary
+or continuous. While writing the code, it was tested on scrambled data
+so as to avoid selection bias as much as possible. When the code was
+finished, it was run on the unscrambled data for a result.
 
 Using the one in ten rule, 7 independent variables were used for the
 logistical regression given that we have 70 patients with delayed
@@ -347,25 +346,25 @@ treatment. The one in ten rule states that for every variable examined,
 10 events are needed in the group. In this case, this means that because
 we have 70 patients with the examined outcome, we can have 7 variables.
 
-The logistical regression is run through Rstudio using the glm command.
-It was ran several times to make an adjusted table and 7 unadjusted, one
+The logistical regression was run through Rstudio using the glm command.
+It was run several times to make an adjusted table and 7 unadjusted, one
 for each variable. To make the tables, the package gtsummary was used to
-visualize the adjusted and unadjusted regression individually, then
+visualise the adjusted and unadjusted regression individually, then
 merging them together into one table.
 
 This process was the only time generative AI was used in the writing
 process. It was used to make snippets of code for a specific purpose,
-revise and optimize code and find solutions when written code was not
+revise and optimise code and find solutions when written code was not
 functioning properly.
 
-## Ethical considerations
+## **Ethical considerations**
 
 An ethical problem that might be brought up is the anonymity of the
-patients. In the registry, patients social security number is present
+patients. In the registry, a patient's social security number is present
 and could theoretically be used to identify the patient in question.
 This will not be a problem though, as in the analysis, the social
-security number is removed from the data before the logistical
-regression is ran. Furthermore, the results will be presented with
+security number is removed from the dataframe before the logistical
+regression was run. Furthermore, the results will be presented with
 patients grouped together, not individually. This will make it
 impossible for anyone to identify patients. During the analysis, a VPN
 was used to access the database to ensure that no data was leaked or
@@ -387,13 +386,13 @@ This left us with 70 patients in the delayed treatment group and 7,308
 patients in the no delay to treatment group. Figure 1 below illustrates
 the exclusion and inclusion of patients.
 
+**Figure 1. The flowchart illustrates how patients were included and
+excluded from the study, with what group they are in and the amount of
+patients in that group illustrated in the boxes**
+
 ![](Rplot.png)
 
-```{=html}
-<!-- You need to refer to tables and figures by numbers in the text, 
-i.e. Figure 1, Table 1 and so on -->
-```
-Table1 shows the characteristics of the group used in the logistic
+Figure 2 shows the characteristics of the group used in the logistic
 regression. Most of the patients were men, 68%, with that being a bit
 higher in the delayed treatment group, 74%. The mean value for the ISS
 score was 10.18, with that value being higher in the outcome group, at
@@ -406,37 +405,54 @@ being slightly higher in the outcome population at 20.39. Lastly, mean
 GCS was 13.93, being lower among patients with delayed treatment at
 12.56.
 
+**Figure 2. Characteristics of patients included in study. Shown is the
+amount of participants in each group and overall with mean values and
+standard deviations, except in gender, where the amount of participants
+in each category is shown instead.**
+
 ```{r message = FALSE}
 table1
 ```
 
-In the following table, result1, the results from the logistical
+**Abbreviations: N - number of patients, ISS - Injury Severity Score,
+GCS - Glasgow Coma Scale.**
+
+**a P-value shows fisher's test for gender and Welch t-test for the rest
+of the variables.**
+
+In the following table, figure 3, the results from the logistical
 regression analysis is displayed.
 
 The odds ratio is calculated both unadjusted and adjusted. A 95%
 confidence interval was used with the p value shown in the table.
 
-The analysis shows that some variables seem to have a association with
+The analysis shows that some variables seem to have an association with
 patients receiving delayed treatment. ISS and respiratory rate (RR) both
 have a trend that patient with lower values seem to have a lower
-incidence of delayed treatment, in both unadjusted
-
-(ISS, OR 1.04, 95% CI 1.02-1.05)(RR, OR 1.06, 95% CI 1.02-1.09) and
-adjusted analyses (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI
-1.01-1.08). GCS had the opposite correlation, with higher GCS often
-having lower incidence of delayed treatment, both unadjusted (OR 0.88,
-95% CI 0.83-0.94) and adjusted (OR 0.93, 95% CI 0.87-1.00). Number of
-injuries had the association of higher number of injuries having higher
-incidence of delayed treatment unadjusted (OR 1.06, 95% CI 1.02-1.10),
-but that association was not seen when adjusted for. The three remaining
+incidence of delayed treatment, in both unadjusted (ISS, OR 1.04, 95% CI
+1.02-1.05)(RR, OR 1.06, 95% CI 1.02-1.09) and adjusted analyses (ISS, OR
+1.03, 95% CI 1.01-1.06)(RR, OR 1.04, 95% CI 1.01-1.08). GCS had the
+opposite correlation, with higher GCS often having lower incidence of
+delayed treatment, both unadjusted (OR 0.88, 95% CI 0.83-0.94) and
+adjusted (OR 0.93, 95% CI 0.87-1.00). Number of injuries had the
+association of a higher number of injuries having higher incidence of
+delayed treatment unadjusted (OR 1.06, 95% CI 1.02-1.10), but that
+association was not seen when adjusted for. The three remaining
 variables, age, gender and SBP, were not shown to be linked to the
 outcome.
+
+**Figure 3. Results of logistic regression with odds ratio, 95%
+confidence interval and p-value. Both unadjusted values and adjusted
+values are shown.**
 
 ```{r message = FALSE}
 result1
 ```
 
-# Discussion
+**Abbreviations: OR - Odds ratio, CI - Confidence interval, ISS - Injury
+Severity Score, GCS - Glasgow Coma Scale.**
+
+# **Discussion**
 
 These results show a possible correlation between some variables and the
 presence of delayed treatment. A lower GCS had a correlation with
@@ -444,58 +460,70 @@ delayed treatment while a higher ISS had the same correlation. This
 suggests that a more heavily injured and less conscious patient is more
 prone to receiving delayed treatment. Compared to a previous study
 analysing the same data but with OFI as the outcome, this result is
-similar to what they found using the same database [@Pat_factors]. As
-the mentioned study suggests, this could be explained by that lower GCS
-as well as higher ISS indicates severe trauma. More injured patients
-often requires a more complex management and more interventions. More
+similar to what they found using the same database (27). As the
+mentioned study suggests, this could be explained by that lower GCS as
+well as higher ISS indicates severe trauma. More injured patients often
+require more complex management and more interventions. More
 interventions leave more room for delay to these interventions, why they
 are more prone to delay in treatment. Respiratory rate also had the
 correlation that lower respiratory rate correlated with lower rates of
 delayed treatment among the patients. As the interval is \>10 to \<29 in
 the triage guideline, both too low and too high respiratory rate is not
-desirable[@EHCP2015]. This might have a similar explanation to ISS and
-GCS, that patients with tachypnea might receive higher rates of delayed
+desirable(28). This might have a similar explanation to ISS and GCS,
+that patients with tachypnea might receive higher rates of delayed
 treatment because they are more severely injured, therefore a higher
 risk of missing a possible injury. The previous study also found this,
-but the correlation dissapeared when adjusted for, which was
+but the correlation disappeared when adjusted for, which was
 hypothesised being due to its shared variability with the ISS
-variable[@Pat_factors]. In this study, this was the case for number of
-injuries, as it and ISS is often correlated as a more severely injured
-patient will both score higher on ISS and number of injuries. Therefore,
-we hypothesize that the effect of number of injuries become
-insignificant when adjusting for ISS.
+variable(27). In this study, this was the case for number of injuries,
+with it and ISS often being linked, as a more severely injured patient
+will both score higher on ISS and number of injuries. Therefore, we
+hypothesise that the effect of number of injuries becomes insignificant
+when adjusting for ISS.
 
 Not many studies regarding trauma and patient level factors have had
-delayed treatment as their outcome, while many analysing mortality. Some
-similarities exist with which patient level factors predict the outcome,
-with higher mortality being seen in patients with lower GCS and higher
-ISS [@Mort_sammy][@Mort_hefny]. Increased age was also a factor linked
-to mortality, which was not seen to be linked to delayed treatment in
-this study. An older patient is more likely to have co-morbidities that
-might affect their mortality but not increase their likelihood of
-receiving delayed treatment the same way ISS and GCS does[@Gioffre2018].
+delayed treatment as their outcome, as many are analysing mortality.
+Some similarities exist with which patient level factors predict the
+outcome, with higher mortality being seen in patients with lower GCS and
+higher ISS [(29)](30). Increased age was also a factor linked to
+mortality, which was not seen to be linked to delayed treatment in this
+study. An older patient is more likely to have comorbidities that might
+affect their mortality but not increase their likelihood of receiving
+delayed treatment the same way ISS and GCS does(31).
 
 It is important to keep in mind that delay in treatment does not have a
 set limit of time as a where under it is within the accepted timeframe
 and if you go over it, it is considered delayed treatment. The audit
 filters flag for a wait for CT over 30 minutes and a wait for operation
 over 60 minutes, which then gets reviewed by previously mentioned two
-specialized nurses. However, if a patient has a longer wait, it does not
+specialised nurses. However, if a patient has a longer wait, it does not
 necessarily mean that there was a delay. If it takes a longer time for a
 trauma patient to receive a CT or operation, it might be because there
-was more urgent matters who had to be taken care of, alternatively, the
+were more urgent matters who had to be taken care of, alternatively, the
 MoM conference might deem it as the delay was justified for other
-reasons. The point is that the mean waiting time for CT and operation is
-higher than 30 and 60 minutes respectively when looking at the database.
-Using this audit filter as the definition for delay would not mean
-anything, as the majority of patients would be classified as having
-waited for too long. Instead, it is the MoM conferences that decide if
-the delay had any adverse effects for the patient, such as an injury
-worsening during the time spent waiting without a clear motivation to
-why it had to wait. It is these cases that they label it as the ofi "too
-long until CT" or "Too long until operation".
+reasons. The point being, it is clear that the mean waiting time for CT
+and operation is higher than 30 and 60 minutes respectively when looking
+at the database. Using this audit filter as the definition for delay
+would not mean anything, as the majority of patients would be classified
+as having waited for too long. Instead, it is the MoM conferences that
+decide if the delay had any adverse effects for the patient, such as an
+injury worsening during the time spent waiting without a clear
+motivation to why it had to wait. It is these cases that they label it
+as the "too long until CT '' or "Too long until operation". Meaning, all
+delays in the database are actual assessed delays, not just a time limit
+that has been surpassed.
 
-#### Limitations
+The results of the study are expected as previous similar studies have
+come to similar conclusions. A goal to strive towards in trauma care
+through research and improvement programs is that no patient level
+factors should be linked with a higher risk of delayed treatment. The
+variables found in this study to be linked with delayed treatment are
+however factors that originate from the trauma, not previously existing
+in the patient such as age or gender. This implies that patients are not
+systematically discriminated against based on their gender or age, which
+is a positive sign seen from a health equity point of view.
+
+#### **Strengths and Limitations**
 
 In this study, one of the limitations was the number of people having
 the recorded outcome being quite small, leading us into having to limit
@@ -505,15 +533,15 @@ categories, from 1-4. However, many of the RTS variables had few to no
 patients with the observed outcome. This led to separation in the
 logistic regression in these variables, referring to when an outcome
 variable separates a predictor variable completely, which occurs when
-the predictor is only associated with one outcome value [@OARC]. In the
+the predictor is only associated with one outcome value (32). In the
 case of these variables, it was only RTS 3 and 4 who had patients with
 the observed outcome, which left RTS 1 and 2 with confidence intervals
 of 0.00 to infinity. This way would have been the best way to examine
 these variables, but as that was not possible with this group of
 patients, we resorted to making these variables continuous. We
 considered expanding the outcome group to include more OFI, but opted
-for the solution used in the study instead as we were solely interested
-in this OFI for this study.
+for the solution used in the study instead as we felt that including
+more OFI would lead to less clinically applicable results.
 
 The problem mentioned above with too few patients in the outcome group
 made this into a post hoc analysis. As we did not know the number of
@@ -539,34 +567,35 @@ database. However, they might not always be right in their judgement and
 misclassify from time to time, leading to patients landing in the wrong
 group in the analysis. Also, some patients might have been missed even
 before reaching the MoM conference. The patients included in the
-conference are selected through audit filters and two specialized
+conference are selected through audit filters and two specialised
 nurses, and patients might be missed in this stage. This bias should not
 be big enough to have a significant impact on the results, but can be
 kept in mind.
 
-#### Clinical applications
+#### **Clinical applications**
 
-<!-- Revise this section now after our meeting -->
+Further analysing the results and its clinical applications, the results
+can be interpreted as that it is mostly injured patients with affected
+consciousness that receive delayed treatment. The clinical applications
+of this can be seen as we need to do more to avoid this delay for this
+patient group. The study highlights the urgency in these patients and
+the heightened risk for delay they face due to their situation. If
+clinicians are aware that these patients receive delayed treatment more
+frequently, active steps can be taken towards reducing this risk and
+bettering the trauma care. 
 
-Further analysing the results and it's clinical applications, the
-results can be interpreted as that it is mostly injured patients with
-affected consciousness that receive delayed treatment. The clinical
-applications of this can be seen as we need to do more to avoid this
-delay for this patient group. If clinicians are aware of that these
-patients receive delayed treatment more frequently, active steps can be
-taken towards reducing this risk and bettering the trauma care.
+Further applying the study clinically, it is also important to educate
+clinicians on what steps went wrong in these patients. If clinicians
+know the most common mistakes made in this patient group, they might be
+less likely to make these mistakes themselves, possibly lowering the
+risk of receiving delayed treatment for these patients with these
+factors. The results of this study and similar ones should be
+communicated to trauma centers, as the goal is to always better the
+trauma care for patients.
 
-Regarding health equity when looking at the patient demographics, it is
-clear that the majority admitted to trauma care are men, with it being
-slightly higher in the delay to treatment group. However, not high
-enough to be statistically significant. The fact that gender did not
-show an increased odds ratio should be seen as a positive sign. It
-suggests that among trauma patients, there is no systematic delay based
-on this patient level factor.
+#### **Generalisability**
 
-#### Generalisability
-
-Discussing the generalisability of this study, we included the all the
+Discussing the generalisability of this study, we included all the
 trauma patients treated and Karolinska University Hospital and excluded
 40.7% of that population based on that they had not been screened for
 ofi. Additional patients were excluded because of missing data, but no
@@ -574,31 +603,36 @@ distinct groups except the not screened patients were removed. On that
 basis, this population should be a general representation of trauma
 patients at the equivalent of a level 1 trauma center, making this study
 generalisable. While the population only represents Karolinska
-university hospital, the conclusion is should be applicable to the whole
+university hospital, the conclusion should be applicable to the whole
 trauma population.
 
-#### Future studies
+#### **Future studies**
 
-In future studies building upon this one, various methods to further
-examine the correlation between delayed treatment and various variables,
-alternatively using another OFI as the outcome variable. Examining
-different variables such as highest hospital care lever, intubation
-status or first emergency procedure performed might be interesting
-variables, among others. To be able to do this, more patients in the
-outcome group would be needed, either by expanding the register to
-several hospitals, or expanding the outcome group by adding different
-ofi. This however would make the study less specific for delayed
-treatment. Further studies might also look into different ofi other than
-delayed treatment, such as missed injury, faulty communication or
-triage.
+In future studies, various methods to further examine the association
+between delayed treatment and various variables, alternatively using
+another OFI as the outcome variable. Examining different variables such
+as highest hospital care level, intubation status or first emergency
+procedure performed might be interesting variables, among others. To be
+able to do this, more patients in the outcome group would be needed,
+either by expanding the register to several hospitals, or expanding the
+outcome group by adding different ofi. This however would make the study
+less specific for delayed treatment. Further studies might also look
+into different ofi other than delayed treatment, such as missed injury,
+faulty communication or triage.
 
-## Conclusion
+## **Conclusion**
 
-In conclusion, based on this small population, the results suggests that
-it is mostly more injured and patients with affected consciousness that
-receive delayed treatment. However, due to the limitations of this
-study, the result should only be seen as something to keep in mind when
-treating patients as further studies need to be conducted on this
-subject.
+In conclusion, based on this single trauma center, the results suggest
+that it is mostly more injured and patients with affected consciousness
+that receive delayed treatment. Clinicians should be aware of this as
+they can take steps to lower that risk for this patient group. Further
+studies need to be conducted on this subject to further examine the link
+between delayed treatment and other patient level factors.
 
-# 
+# **Acknowledgements**
+
+I would like to extend my gratitude to my supervisor Martin Gerdin and
+my two co-supervisors Jonatan Attergrim and Kelvin Szolnoky for always
+being quick with providing valuable help and feedback during all stages
+of the writing process as well as guidance during the data analysis part
+of the project.
