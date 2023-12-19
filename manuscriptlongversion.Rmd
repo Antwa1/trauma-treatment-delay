@@ -84,7 +84,7 @@ Keywords: Trauma, Delay to treatment, Patient factors.
 ## **Definition**
 
 Trauma, defined as the clinical entity composed of physical injury and
-the body\'s associated response (1), is and has long been a major cause
+the body's associated response (1), is and has long been a major cause
 of death around the world (2). The trauma system plays an important part
 in modern healthcare and has shown to lower mortality and morbidity in
 injured patients through many means, such as hospital care, patient
@@ -207,7 +207,7 @@ smaller hospitals as well (21). In Sweden, many hospitals have mortality
 conferences on deceased patient cases, but few has MoM conferences to
 better their trauma care on patients who lived (22). The reason being
 that this expansion of MoM conferences takes time and resources, which
-is why all hospitals don\'t implement this.
+is why all hospitals don't implement this.
 
 The endpoint of these MoM conferences are opportunities for improvement
 (OFI). At the end of the conference, consensus is reached regarding the
@@ -272,8 +272,8 @@ The outcome is the OFI delayed treatment. An OFI is any failure in care,
 e.g. clinical judgement error, any preventable or potentially
 preventable death, missed diagnosis, technical error and delayed
 treatment as identified and decided my the MoM conference. The outcomes
-we used were \"long time until CT\" and \"long time until operation\",
-which will be referred to as delayed treatment from now on.
+we used were "long time until CT" and "long time until operation", which
+will be referred to as delayed treatment from now on.
 
 ## **Participants**
 
@@ -509,7 +509,7 @@ as having waited for too long. Instead, it is the MoM conferences that
 decide if the delay had any adverse effects for the patient, such as an
 injury worsening during the time spent waiting without a clear
 motivation to why it had to wait. It is these cases that they label it
-as the "too long until CT '' or "Too long until operation". Meaning, all
+as the "too long until CT '' or"Too long until operation". Meaning, all
 delays in the database are actual assessed delays, not just a time limit
 that has been surpassed.
 
