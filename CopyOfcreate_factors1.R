@@ -180,3 +180,26 @@ adjusted <- tbl_regression(model1, exponentiate = TRUE,
       Total_GCS = "New GCS Name"
     )
   )
+
+
+
+
+
+
+tbl_summary(
+  by = OFI_delay,
+  data = factors.data2,
+  label = list(
+    Age = "Age (years)",
+    Gender = "Gender",
+    Total_GCS = "GCS",
+    ISS = "ISS",
+    Number_of_injuries = "Number of injuries",
+    Systolic_blood_pressure = "Systolic blood pressure",
+    Respiratory_rate = "Respiratory rate"
+  ),
+  statistic = list(c("Total_GCS", "ISS") ~ "{median} ({p25}, {p75})"),
+  digits = list(all_continuous() ~ c(2, 2))
+) %>%
+  add_p() %>%
+  add_overall()

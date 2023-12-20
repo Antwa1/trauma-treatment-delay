@@ -4,10 +4,10 @@ author: "Anton Wasielewski"
 subtitle: A retrospective cohort study on the factors affecting the delays in trauma
   care
 output:
-  word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
+  word_document: default
 bibliography: bibliography.bib
 csl: vancouver.csl
 editor_options:
@@ -574,24 +574,38 @@ kept in mind.
 
 #### **Clinical applications**
 
+#### **Clinical applications**
+
 Further analysing the results and its clinical applications, the results
 can be interpreted as that it is mostly injured patients with affected
 consciousness that receive delayed treatment. The clinical applications
 of this can be seen as we need to do more to avoid this delay for this
-patient group. The study highlights the urgency in these patients and
-the heightened risk for delay they face due to their situation. If
-clinicians are aware that these patients receive delayed treatment more
-frequently, active steps can be taken towards reducing this risk and
-bettering the trauma care. 
+patient group. It is important to remember that the delays are all
+patients that have received adverse outcomes because of their delay.
+Some might include injuries being missed or not being treated. The study
+highlights the urgency in these patients and the heightened risk for
+delay they face due to their situation. If clinicians are aware that
+these patient factors receive delayed treatment more frequently, active
+steps can be taken towards reducing this risk and bettering the trauma
+care. 
+
+This also highlights the importance of adequate diagnostic imaging when
+the patient is stabilised. It occurs that patients are stabilised in the
+operating room (OR), gets taken to the CT then back to the OR. This is
+important as to not miss any injury, especially in severely injured
+patients where it can be difficult to identify all injuries without
+diagnostic imaging. When clinicians have access to these instruments
+they should be used whenever deemed necessary, as studies suggest it has
+a positive effect on patient outcome [@Hajibandeh_2014].
 
 Further applying the study clinically, it is also important to educate
-clinicians on what steps went wrong in these patients. If clinicians
-know the most common mistakes made in this patient group, they might be
-less likely to make these mistakes themselves, possibly lowering the
-risk of receiving delayed treatment for these patients with these
-factors. The results of this study and similar ones should be
-communicated to trauma centers, as the goal is to always better the
-trauma care for patients.
+clinicians on what steps went wrong in these patients and what could
+have been done to prevent it. If clinicians know the most common
+mistakes made in this patient group, they might be less likely to make
+these mistakes themselves, possibly lowering the risk of receiving
+delayed treatment for these patients with these factors. The results of
+this study and similar ones should be communicated to trauma centers, as
+the goal is to always better the trauma care for patients.
 
 #### **Generalisability**
 
