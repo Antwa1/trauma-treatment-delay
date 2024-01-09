@@ -454,165 +454,152 @@ Severity Score, GCS - Glasgow Coma Scale.**
 
 # **Discussion**
 
-These results show a possible correlation between some variables and the
-presence of delayed treatment. A lower GCS had a correlation with
-delayed treatment while a higher ISS had the same correlation. This
-suggests that a more heavily injured and less conscious patient is more
+The aim was to determine the associations between patient level factors
+and receiving delayed treatment in adult trauma patients. A logistic
+regression on seven variables showed that higher ISS and RR and lower
+GCS was significantly associated with patients receiving delayed
+treatment.
+
+This suggests that a heavily injured and less conscious patient is more
 prone to receiving delayed treatment. Compared to a previous study
-analysing the same data but with OFI as the outcome, this result is
-similar to what they found using the same database (27). As the
-mentioned study suggests, this could be explained by that lower GCS as
-well as higher ISS indicates severe trauma. More injured patients often
-require more complex management and more interventions. More
-interventions leave more room for delay to these interventions, why they
-are more prone to delay in treatment. Respiratory rate also had the
-correlation that lower respiratory rate correlated with lower rates of
-delayed treatment among the patients. As the interval is \>10 to \<29 in
-the triage guideline, both too low and too high respiratory rate is not
-desirable(28). This might have a similar explanation to ISS and GCS,
-that patients with tachypnea might receive higher rates of delayed
-treatment because they are more severely injured, therefore a higher
-risk of missing a possible injury. The previous study also found this,
-but the correlation disappeared when adjusted for, which was
-hypothesised being due to its shared variability with the ISS
-variable(27). In this study, this was the case for number of injuries,
-with it and ISS often being linked, as a more severely injured patient
-will both score higher on ISS and number of injuries. Therefore, we
-hypothesise that the effect of number of injuries becomes insignificant
-when adjusting for ISS.
+analysing the same data but with OFI as the observed outcome, this
+result is similar to what they found[@Pat_factors]. As the mentioned
+study suggests, this could be explained by that lower GCS as well as a
+higher ISS indicates severe trauma. More injured patients often require
+more complex management and a higher number of interventions, increasing
+the risk of delayed treatment.
+
+Respiratory rate had the correlation that a lower respiratory rate was
+associated with lower rates of delayed treatment among the patients. As
+the interval is \>10 to \<29 in the triage guideline, both too low and
+too high respiratory rate is not desirable[@EHCP2015]. This could have a
+similar explanation to ISS and GCS, that patients with tachypnea might
+receive higher rates of delayed treatment because they are more severely
+injured, therefore a higher risk of missing a possible injury. The
+previous study also found this, but the correlation disappeared when
+adjusted for, which said study hypothesised being due to its shared
+variability with the ISS variable[@Pat_factors]. In this study, the same
+correlation could be seen with NOI. A more severely injured patient will
+score higher on both ISS and NOI. Therefore, our thought is that the
+effect of NOI becomes insignificant when adjusting for ISS.
 
 Not many studies regarding trauma and patient level factors have had
 delayed treatment as their outcome, as many are analysing mortality.
-Some similarities exist with which patient level factors predict the
+Some similarities exist between which patient level factors predict the
 outcome, with higher mortality being seen in patients with lower GCS and
-higher ISS [(29)](30). Increased age was also a factor linked to
-mortality, which was not seen to be linked to delayed treatment in this
-study. An older patient is more likely to have comorbidities that might
-affect their mortality but not increase their likelihood of receiving
-delayed treatment the same way ISS and GCS does(31).
+higher ISS [@Mort_sammy][@Mort_hefny]. Advanced age has also been
+identified as a contributory factor to increased mortality. However, it
+is noteworthy that this study did not establish a significant
+association between age and delayed treatment. Unlike ISS and GCS, which
+are indicative of the severity of injuries and the immediate treatment
+needs, advanced age is more likely to introduce comorbidities that
+affect overall mortality but may not necessarily heighten the
+probability of receiving delayed treatment[@Gioffre2018].
 
-It is important to keep in mind that delay in treatment does not have a
-set limit of time as a where under it is within the accepted timeframe
-and if you go over it, it is considered delayed treatment. The audit
-filters flag for a wait for CT over 30 minutes and a wait for operation
+When discussing the outcome delay in treatment used in this study, it is
+not a set time limit where if the wait exceeds it, it is considered
+delayed treatment. The audit filters used at Karolinska University
+Hospital flag for a wait for CT over 30 minutes and a wait for operation
 over 60 minutes, which then gets reviewed by previously mentioned two
 specialised nurses. However, if a patient has a longer wait, it does not
-necessarily mean that there was a delay. If it takes a longer time for a
-trauma patient to receive a CT or operation, it might be because there
-were more urgent matters who had to be taken care of, alternatively, the
-MoM conference might deem it as the delay was justified for other
-reasons. The point being, it is clear that the mean waiting time for CT
-and operation is higher than 30 and 60 minutes respectively when looking
-at the database. Using this audit filter as the definition for delay
-would not mean anything, as the majority of patients would be classified
-as having waited for too long. Instead, it is the MoM conferences that
-decide if the delay had any adverse effects for the patient, such as an
-injury worsening during the time spent waiting without a clear
-motivation to why it had to wait. It is these cases that they label it
-as the "too long until CT '' or"Too long until operation". Meaning, all
-delays in the database are actual assessed delays, not just a time limit
-that has been surpassed.
+necessarily mean that there was a delay. 30 and 60 minutes are time
+limits set to have a high sensitivity and low specificity in the audit
+filters. Whether it is a delay is decided by the MoM conferences. It is
+clear that the mean waiting time for CT and operation is higher than 30
+and 60 minutes respectively when looking at the database. Using this
+audit filter as the definition for delay would not mean anything, as the
+majority of patients would be classified as having waited for too long.
+Instead, the MoM conferences decide if the wait had any adverse effects
+on the patients, such as an injury worsening during this time. It is
+these cases that they label it as the \"too long until CT\" or \"Too
+long until operation\". All delays in the database are delays that
+adversely affected the patients.
+
+#### **Strengths and Limitations**
+
+In this study, one of the limitations was the number of patients having
+the recorded outcome being quite small, leading us into having to limit
+the number of variables we wanted to examine. Furthermore, the original
+plan was to divide RR, SBP and GCS into revised trauma score (RTS)
+categories from 1-4, since this would have allowed for a more detailed
+analysis. However, the sample size was too small in the outcome group
+which led us to resort to making these variables continuous. We
+considered expanding the outcome group to include more OFI, but opted
+for the solution used in the study instead as we felt that including
+more OFI would lead to less clinically applicable results.
+
+The problem mentioned above with too few patients in the outcome group
+made the study into a post hoc analysis. We were not aware of the number
+of patients who received delayed treatment when we handled the scrambled
+data as we wanted to minimise selection bias. When we ran the code on
+the real data it became clear that the sample size was too small for our
+approach. Therefore, we had to change the variables after having seen
+the real data, making it a post hoc analysis. This could in theory open
+up for selection bias, as we might have chosen variables which give us
+results we are looking for. We did our best to remove variables at
+random, but it is possible that we subconsciously removed variables that
+would change the result in a way benefiting us. The best way to have
+gone about this would have been to calculate the amount of people who
+received delayed treatment before choosing the variables. Then, choosing
+an amount of variables that would work with the amount of patients. This
+would have avoided making it post hoc and minimised selection bias.
+
+On discussing possible biases, misclassification bias might also be
+present in this study, though it is something that we cannot control in
+this study. As previously mentioned, the possible existence of an OFI is
+decided during the MoM conferences. However, they might not always be
+correct in their judgement and occasionally misclassify, leading to
+patients being in the wrong group in the analysis. Also, some patients
+might have been missed even before reaching the MoM conference. The
+patients included in the conference are selected through audit filters
+and two specialised nurses, and patients might be missed in this stage.
+This bias should not be big enough to have a significant impact on the
+results, but can be kept in mind.
+
+#### **Clinical applications**
+
+Analysing the results and its clinical applications, the results can be
+interpreted as that it is mostly injured patients with affected
+consciousness that receive delayed treatment. The clinical applications
+of this are that clinicians need to do more to avoid this delay for this
+patient group. All patients in the outcome group are patients that
+experienced adverse effects because of their delayed treatment. Some
+might include injuries being missed or not being treated, leading to
+unnecessary suffering for the patient. Clinicians being aware of the
+patient level factors at risk for delayed treatment might help with
+their decision making when caring for these patients.
+
+It is important to highlight the importance of adequate diagnostic
+imaging when the patient is stabilised, as a substantial part of the
+patients in the outcome group were patients who waited too long for
+diagnostic imaging. To lower this risk, it occurs that patients are
+stabilised in the operating room (OR), gets taken to the CT then back to
+the OR. This is done to minimise the risk of missing an injury,
+especially in severely injured patients where it can be difficult to
+identify all injuries without diagnostic imaging. When clinicians have
+access to these instruments they should be used whenever deemed
+necessary, as studies suggest it has a positive effect on patient
+outcome [@Hajibandeh_2014].
+
+#### Equity
 
 The results of the study are expected as previous similar studies have
 come to similar conclusions. A goal to strive towards in trauma care
 through research and improvement programs is that no patient level
 factors should be linked with a higher risk of delayed treatment. The
 variables found in this study to be linked with delayed treatment are
-however factors that originate from the trauma, not previously existing
-in the patient such as age or gender. This implies that patients are not
-systematically discriminated against based on their gender or age, which
-is a positive sign seen from a health equity point of view.
-
-#### **Strengths and Limitations**
-
-In this study, one of the limitations was the number of people having
-the recorded outcome being quite small, leading us into having to limit
-the number of variables we wanted to examine. Furthermore, the original
-plan was to divide RR, SBP and GCS into revised trauma score (RTS)
-categories, from 1-4. However, many of the RTS variables had few to no
-patients with the observed outcome. This led to separation in the
-logistic regression in these variables, referring to when an outcome
-variable separates a predictor variable completely, which occurs when
-the predictor is only associated with one outcome value (32). In the
-case of these variables, it was only RTS 3 and 4 who had patients with
-the observed outcome, which left RTS 1 and 2 with confidence intervals
-of 0.00 to infinity. This way would have been the best way to examine
-these variables, but as that was not possible with this group of
-patients, we resorted to making these variables continuous. We
-considered expanding the outcome group to include more OFI, but opted
-for the solution used in the study instead as we felt that including
-more OFI would lead to less clinically applicable results.
-
-The problem mentioned above with too few patients in the outcome group
-made this into a post hoc analysis. As we did not know the number of
-people who received delayed treatment when we handled the scrambled
-data, we ran the code on the real data when we had too many variables
-for the dataset. Therefore, we had to change the variables after having
-seen the real data, making it a post hoc analysis. This could in theory
-open up for possible selection bias, as we might choose variables which
-give us results we are looking for. However, all the variables included
-in the final analysis were already included in the first one. Variables
-were only removed, not added after having seen the real data. The best
-way to have gone about this would have been to just look at the amount
-of people who received delayed treatment before choosing the variables.
-Then, choosing an amount of variables that would work with the amount of
-patients. This would have avoided making it post hoc and changing the
-variables after seeing the data.
-
-On discussing possible biases, misclassification bias might also be
-present in this study, though it is something that we cannot control in
-this study. As previously mentioned, the possible existence of an OFI is
-decided during the MoM conferences, where they then add it to the
-database. However, they might not always be right in their judgement and
-misclassify from time to time, leading to patients landing in the wrong
-group in the analysis. Also, some patients might have been missed even
-before reaching the MoM conference. The patients included in the
-conference are selected through audit filters and two specialised
-nurses, and patients might be missed in this stage. This bias should not
-be big enough to have a significant impact on the results, but can be
-kept in mind.
-
-#### **Clinical applications**
-
-#### **Clinical applications**
-
-Further analysing the results and its clinical applications, the results
-can be interpreted as that it is mostly injured patients with affected
-consciousness that receive delayed treatment. The clinical applications
-of this can be seen as we need to do more to avoid this delay for this
-patient group. It is important to remember that the delays are all
-patients that have received adverse outcomes because of their delay.
-Some might include injuries being missed or not being treated. The study
-highlights the urgency in these patients and the heightened risk for
-delay they face due to their situation. If clinicians are aware that
-these patient factors receive delayed treatment more frequently, active
-steps can be taken towards reducing this risk and bettering the trauma
-care. 
-
-This also highlights the importance of adequate diagnostic imaging when
-the patient is stabilised. It occurs that patients are stabilised in the
-operating room (OR), gets taken to the CT then back to the OR. This is
-important as to not miss any injury, especially in severely injured
-patients where it can be difficult to identify all injuries without
-diagnostic imaging. When clinicians have access to these instruments
-they should be used whenever deemed necessary, as studies suggest it has
-a positive effect on patient outcome [@Hajibandeh_2014].
-
-Further applying the study clinically, it is also important to educate
-clinicians on what steps went wrong in these patients and what could
-have been done to prevent it. If clinicians know the most common
-mistakes made in this patient group, they might be less likely to make
-these mistakes themselves, possibly lowering the risk of receiving
-delayed treatment for these patients with these factors. The results of
-this study and similar ones should be communicated to trauma centers, as
-the goal is to always better the trauma care for patients.
+patient factors that arise from the experienced trauma, not previously
+existing in the patient such as age or gender. This implies that
+patients are not systematically discriminated against based on their
+gender or age, which is a positive sign seen from a health equity point
+of view.
 
 #### **Generalisability**
 
 Discussing the generalisability of this study, we included all the
 trauma patients treated and Karolinska University Hospital and excluded
 40.7% of that population based on that they had not been screened for
-ofi. Additional patients were excluded because of missing data, but no
+OFI. Additional patients were excluded because of missing data, but no
 distinct groups except the not screened patients were removed. On that
 basis, this population should be a general representation of trauma
 patients at the equivalent of a level 1 trauma center, making this study
@@ -622,26 +609,28 @@ trauma population.
 
 #### **Future studies**
 
-In future studies, various methods to further examine the association
-between delayed treatment and various variables, alternatively using
-another OFI as the outcome variable. Examining different variables such
-as highest hospital care level, intubation status or first emergency
-procedure performed might be interesting variables, among others. To be
-able to do this, more patients in the outcome group would be needed,
-either by expanding the register to several hospitals, or expanding the
-outcome group by adding different ofi. This however would make the study
-less specific for delayed treatment. Further studies might also look
-into different ofi other than delayed treatment, such as missed injury,
-faulty communication or triage.
+To further expand the knowledge on what patient level factors are
+associated with delayed treatment, future studies should aim for a
+larger sample size to be able to analyse more variables, such as highest
+hospital care level, intubation status or first emergency procedure
+performed. To be able to do this, more patients in the outcome group
+would be needed. This can be done by conducting a study which includes
+the registries of several hospitals.
+
+A question that arose during this study was what factors are associated
+with other OFI, such as missed injury, communication errors or faulty
+triage, and if they are similar to the ones found in this study. Future
+studies could use the same data but use another OFI as the outcome to
+compare how variables associated with each OFI differ.
 
 ## **Conclusion**
 
-In conclusion, based on this single trauma center, the results suggest
-that it is mostly more injured and patients with affected consciousness
-that receive delayed treatment. Clinicians should be aware of this as
-they can take steps to lower that risk for this patient group. Further
+Based on this single trauma center, the results suggest that it is
+mostly more injured and patients with affected consciousness that
+receive delayed treatment. Clinicians should be aware of this as they
+can take steps to lower that risk for this patient group. Further
 studies need to be conducted on this subject to further examine the link
-between delayed treatment and other patient level factors.
+between delayed treatment and patient level factors.
 
 # **Acknowledgements**
 
