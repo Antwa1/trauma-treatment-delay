@@ -37,21 +37,18 @@ opportunities for improvement, one of the more common being delayed
 treatment. Aim: This retrospective cohort study aimed to determine the
 associations between different patient level factors and receiving
 delayed treatment. Material and Methods: This study used the database of
-Karolinska university hospital to run a logistic regression linking the
-outcome, delayed treatment, to variables, observed patient level
+Karolinska university hospital to run a logistic regression associating the outcome, delayed treatment, to variables, observed patient level
 factors. Patients treated for trauma at the hospital between 2012 and
 2022 were included, with ISS\>9 and/or trauma code activation. Exclusion
-criterias were not being screened for OFI and missing values in any of
-the observed variables. Results: Higher ISS and RR was linked to higher
-rates of delay in treatment (ISS, OR 1.03, 95% CI 1.01-1.06)(RR, OR
-1.04, 95% CI 1.01-1.08), while a lower GCS also was linked to delayed
+criteria were not being screened for OFI and missing values in any of
+the observed variables. Results: Higher ISS (OR 1.03, 95% CI 1.01-1.06)and RR (OR 1.04, 95% CI 1.01-1.08) was linked to higher
+rates of delay in treatment while a lower GCS also was linked to delayed
 treatment (OR 0.93, 95% CI 0.87-1.00). Number of injuries showed a
-correlation to higher rates of delay, but not when adjusted for. The
-remaining variables showed no correlation. Conclusion: Our study
-suggests that it is mostly more severely injured and less awake patients
-that receive delayed treatment.
+correlation to higher rates of delay, but not in the adjusted analysis. The remaining variables were not significantly associated with delayed treatment. Conclusion: Our study suggests that it is mostly more severely injured patients and patients with affected consciousness that receive delayed treatment.
 
 **Trauma och patientnivåfaktorerna kopplade till försenad behandling**
+
+<!-- See edits above -->
 
 Inledning: Trauma är fortfarande en global hälsoutmaning som skördar
 miljontals liv varje år. Den största effekten kan ses i låg till
@@ -455,8 +452,7 @@ Severity Score, GCS - Glasgow Coma Scale.**
 # **Discussion**
 
 The aim was to determine the associations between patient level factors
-and receiving delayed treatment in adult trauma patients. A logistic
-regression on seven variables showed that higher ISS and RR and lower
+and receiving delayed treatment in adult trauma patients<!-- Make sure this aim is exactly the same as in the abstract and at the end of the introduction-->. The results indicate that higher ISS and RR and lower
 GCS was significantly associated with patients receiving delayed
 treatment.
 
@@ -469,25 +465,13 @@ higher ISS indicates severe trauma. More injured patients often require
 more complex management and a higher number of interventions, increasing
 the risk of delayed treatment.
 
-Respiratory rate had the correlation that a lower respiratory rate was
-associated with lower rates of delayed treatment among the patients. As
-the interval is \>10 to \<29 in the triage guideline, both too low and
-too high respiratory rate is not desirable[@EHCP2015]. This could have a
-similar explanation to ISS and GCS, that patients with tachypnea might
-receive higher rates of delayed treatment because they are more severely
-injured, therefore a higher risk of missing a possible injury. The
-previous study also found this, but the correlation disappeared when
-adjusted for, which said study hypothesised being due to its shared
-variability with the ISS variable[@Pat_factors]. In this study, the same
-correlation could be seen with NOI. A more severely injured patient will
-score higher on both ISS and NOI. Therefore, our thought is that the
-effect of NOI becomes insignificant when adjusting for ISS.
+A lower respiratory rate was associated  with lower rates of delayed treatment among the patients. As the interval is \>10 to \<29 in the triage guideline, both too low and too high respiratory rate is not desirable[@EHCP2015]. This could have a similar explanation to ISS and GCS, that patients with tachypnea might have higher rates of delayed treatment because they are more severely injured, therefore a higher risk of missing a possible injury. The previous study also found this, but the association was no longer significant in the adjusted analysis for, which said study hypothesised being due to its shared variability with the ISS variable[@Pat_factors]. In this study, the same correlation could be seen with NOI. A more severely injured patient will score higher on both ISS and NOI. Therefore, our thought is that the effect of NOI becomes insignificant when adjusting for ISS.
 
 Not many studies regarding trauma and patient level factors have had
 delayed treatment as their outcome, as many are analysing mortality.
 Some similarities exist between which patient level factors predict the
 outcome, with higher mortality being seen in patients with lower GCS and
-higher ISS [@Mort_sammy][@Mort_hefny]. Advanced age has also been
+higher ISS [@Mort_sammy; @Mort_hefny]. Advanced age has also been
 identified as a contributory factor to increased mortality. However, it
 is noteworthy that this study did not establish a significant
 association between age and delayed treatment. Unlike ISS and GCS, which
@@ -603,9 +587,7 @@ OFI. Additional patients were excluded because of missing data, but no
 distinct groups except the not screened patients were removed. On that
 basis, this population should be a general representation of trauma
 patients at the equivalent of a level 1 trauma center, making this study
-generalisable. While the population only represents Karolinska
-university hospital, the conclusion should be applicable to the whole
-trauma population.
+generalisable to similar hospitals in high resource settings. While the population only represents Karolinska university hospital, the conclusion should be applicable to the whole trauma population.<!-- Consider removing this last sentence-->
 
 #### **Future studies**
 
@@ -634,8 +616,4 @@ between delayed treatment and patient level factors.
 
 # **Acknowledgements**
 
-I would like to extend my gratitude to my supervisor Martin Gerdin and
-my two co-supervisors Jonatan Attergrim and Kelvin Szolnoky for always
-being quick with providing valuable help and feedback during all stages
-of the writing process as well as guidance during the data analysis part
-of the project.
+I would like to extend my gratitude to my supervisor Martin Gerdin Wärnberg and my two co-supervisors Jonatan Attergrim and Kelvin Szolnoky for always being quick with providing valuable help and feedback during all stages of the writing process as well as guidance during the data analysis part of the project.
